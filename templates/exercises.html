@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Exercise Library{% endblock %}
+{% block content %}
+  {% macro link(t=active_type, m=active_muscle, p=1) -%}
+    {{ url_for('exercise_list', type=t or None, muscle=m or None, q=q or None, page=p if p > 1 else None) }}
+  {%- endmacro %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">{{ total }} exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="{{ url_for('exercise_new') }}" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      {% if active_type %}<input type="hidden" name="type" value="{{ active_type }}">{% endif %}
+      {% if active_muscle %}<input type="hidden" name="muscle" value="{{ active_muscle }}">{% endif %}
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="{{ q }}" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="{{ link(t='') }}" class="{% if not active_type %}is-active{% endif %}">All types</a>
+      {% for key, label, count in types %}
+        <a href="{{ link(t=key) }}" class="{% if active_type == key %}is-active{% endif %}">{{ label }} <span>{{ count }}</span></a>
+      {% endfor %}
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="{{ link(m='') }}" class="{% if not active_muscle %}is-active{% endif %}">Any</a>
+      {% for m in muscles %}
+        <a href="{{ link(m=m) }}" class="{% if active_muscle == m %}is-active{% endif %}">{{ m }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+
+  <p class="lib-count">{{ found }} exercise{{ "s" if found != 1 }}{% if q %} matching “{{ q }}”{% endif %}</p>
+
+  <div class="ex-grid">
+    {% for ex in exercises %}
+      <article class="ex-card">
+        {% set imgs = ex.image_urls %}
+        {% if imgs %}
+          <figure class="ex-photo{% if imgs|length > 1 %} has-two{% endif %}">
+            <img src="{{ imgs[0] }}" alt="{{ ex.name }}, start position" loading="lazy" decoding="async">
+            {% if imgs|length > 1 %}<img src="{{ imgs[1] }}" alt="{{ ex.name }}, end position" loading="lazy" decoding="async">{% endif %}
+          </figure>
+        {% endif %}
+        <div class="ex-top">
+          {% if ex.category %}<span class="type-tag type-{{ ex.category|replace(' ', '-') }}" style="margin-left:0">{{ ex.category }}</span>{% endif %}
+          {% if ex.level %}<span class="level level-{{ ex.level|lower }}">{{ ex.level }}</span>{% endif %}
+        </div>
+        <h2 class="ex-name">{{ ex.name }}</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>{{ ex.muscle_group or "Not set" }}</dd></div>
+          <div><dt>Equipment</dt><dd>{{ ex.equipment if ex.equipment and ex.equipment != "body only" else "Bodyweight" }}</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>{{ ex.secondary_muscles or "Nothing else" }}</dd></div>
+        </dl>
+        {% if ex.description %}
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol>{% for step in ex.description.split("\n") if step.strip() %}<li>{{ step }}</li>{% endfor %}</ol>
+          </details>
+        {% endif %}
+        <form method="POST" action="{{ url_for('exercise_delete', exercise_id=ex.id) }}" class="ex-delete"
+              onsubmit="return confirm('Delete {{ ex.name }}? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete {{ ex.name }}">Delete</button>
+        </form>
+      </article>
+    {% else %}
+      <p class="text-muted">No exercises match. Try another type, muscle or search.</p>
+    {% endfor %}
+  </div>
+
+  {% if pages > 1 %}
+    <nav class="pager" aria-label="Pages">
+      {% if page > 1 %}<a class="btn btn-outline-secondary" href="{{ link(p=page - 1) }}">&larr; Previous</a>{% else %}<span></span>{% endif %}
+      <span class="pager-info">Page {{ page }} of {{ pages }}</span>
+      {% if page < pages %}<a class="btn btn-outline-secondary" href="{{ link(p=page + 1) }}">Next &rarr;</a>{% else %}<span></span>{% endif %}
+    </nav>
+  {% endif %}
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+{% endblock %}

@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Library · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">873 exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="exercises-new.html" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      
+      <input type="hidden" name="muscle" value="triceps">
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="exercises-muscle-triceps.html" class="is-active">All types</a>
+      
+        <a href="#" data-demo-off class="">Strength <span>581</span></a>
+      
+        <a href="#" data-demo-off class="">Cardio <span>14</span></a>
+      
+        <a href="#" data-demo-off class="">Stretching <span>123</span></a>
+      
+        <a href="#" data-demo-off class="">Plyometrics <span>61</span></a>
+      
+        <a href="#" data-demo-off class="">Powerlifting <span>38</span></a>
+      
+        <a href="#" data-demo-off class="">Olympic weightlifting <span>35</span></a>
+      
+        <a href="#" data-demo-off class="">Strongman <span>21</span></a>
+      
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="exercises.html" class="">Any</a>
+      
+        <a href="exercises-muscle-chest.html" class="">chest</a>
+      
+        <a href="exercises-muscle-shoulders.html" class="">shoulders</a>
+      
+        <a href="exercises-muscle-biceps.html" class="">biceps</a>
+      
+        <a href="exercises-muscle-triceps.html" class="is-active">triceps</a>
+      
+        <a href="exercises-muscle-lats.html" class="">lats</a>
+      
+        <a href="exercises-muscle-middle-back.html" class="">middle back</a>
+      
+        <a href="exercises-muscle-lower-back.html" class="">lower back</a>
+      
+        <a href="exercises-muscle-abdominals.html" class="">abdominals</a>
+      
+        <a href="exercises-muscle-glutes.html" class="">glutes</a>
+      
+        <a href="exercises-muscle-quadriceps.html" class="">quadriceps</a>
+      
+        <a href="exercises-muscle-hamstrings.html" class="">hamstrings</a>
+      
+        <a href="exercises-muscle-calves.html" class="">calves</a>
+      
+    </nav>
+  </div>
+
+  <p class="lib-count">71 exercises</p>
+
+  <div class="ex-grid">
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Skull_Crusher/0.jpg" alt="Band Skull Crusher, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Skull_Crusher/1.jpg" alt="Band Skull Crusher, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Skull Crusher</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure a band to the base of a rack or the bench. Lay on the bench so that the band is lined up with your head.</li><li>Take hold of the band, raising your elbows so that the upper arm is perpendicular to the floor. With the elbow flexed, the band should be above your head. This will be your starting position.</li><li>Extend through the elbow to straighten your arm, keeping your upper arm in place. Pause at the top of the motion, and return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Skull Crusher? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Skull Crusher">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Dips/0.jpg" alt="Bench Dips, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Dips/1.jpg" alt="Bench Dips, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Bench Dips</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>For this exercise you will need to place a bench behind your back. With the bench perpendicular to your body, and while looking away from it, hold on to the bench on its edge with the hands fully extended, separated at shoulder width. The legs will be extended forward, bent at the waist and perpendicular to your torso. This will be your starting position.</li><li>Slowly lower your body as you inhale by bending at the elbows until you lower yourself far enough to where there is an angle slightly smaller than 90 degrees between the upper arm and the forearm. Tip: Keep the elbows as close as possible throughout the movement. Forearms should always be pointing down.</li><li>Using your triceps to bring your torso up again, lift yourself back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bench Dips? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Dips">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_-_Powerlifting/0.jpg" alt="Bench Press - Powerlifting, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_-_Powerlifting/1.jpg" alt="Bench Press - Powerlifting, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Bench Press - Powerlifting</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, forearms, lats, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin by lying on the bench, getting your head beyond the bar if possible. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.</li><li>However wide your grip, it should cover the ring on the bar. Pull the bar out of the rack without protracting your shoulders. Focus on squeezing the bar and trying to pull it apart.</li><li>Lower the bar to your lower chest or upper stomach. The bar, wrist, and elbow should stay in line at all times.</li><li>Pause when the barbell touches your torso, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bench Press - Powerlifting? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Press - Powerlifting">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_with_Chains/0.jpg" alt="Bench Press with Chains, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_with_Chains/1.jpg" alt="Bench Press with Chains, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Bench Press with Chains</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, lats, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Adjust the leader chain, shortening it to the desired length.Place the chains on the sleeves of the bar.</li><li>Lying on the bench, get your head beyond the bar if possible. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement. However wide your grip, it should cover the ring on the bar.</li><li>Pull the bar out of the rack without protracting your shoulders. Focus on squeezing the bar and trying to pull it apart. Lower the bar to your lower chest or upper stomach. The bar, wrist, and elbow should stay in line at all times.</li><li>Pause when the barbell touches your torso, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bench Press with Chains? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Press with Chains">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Board_Press/0.jpg" alt="Board Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Board_Press/1.jpg" alt="Board Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Board Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, forearms, lats, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin by lying on the bench, getting your head beyond the bar if possible. One to five boards, made out of 2x6&#39;s, can be screwed together and held in place by a training partner, bands, or just tucked under your shirt.</li><li>Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.</li><li>You can take a standard bench grip, or shoulder width to focus on the triceps. Pull the bar out of the rack without protracting your shoulders. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.</li><li>Lower the bar to the boards, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Board Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Board Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Body_Tricep_Press/0.jpg" alt="Body Tricep Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Body_Tricep_Press/1.jpg" alt="Body Tricep Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Body Tricep Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Position a bar in a rack at chest height.</li><li>Standing, take a shoulder width grip on the bar and step a yard or two back, feet together and arms extended so that you are leaning on the bar. This will be your starting position.</li><li>Begin by flexing the elbow, lowering yourself towards the bar.</li><li>Pause, and then reverse the motion by extending the elbows.</li><li>Progress from bodyweight by adding chains over your shoulders.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Body Tricep Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Body Tricep Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Body-Up/0.jpg" alt="Body-Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Body-Up/1.jpg" alt="Body-Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Body-Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, forearms</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Assume a plank position on the ground. You should be supporting your bodyweight on your toes and forearms, keeping your torso straight. Your forearms should be shoulder-width apart. This will be your starting position.</li><li>Pressing your palms firmly into the ground, extend through the elbows to raise your body from the ground. Keep your torso rigid as you perform the movement.</li><li>Slowly lower your forearms back to the ground by allowing the elbows to flex.</li><li>Repeat.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Body-Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Body-Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Incline_Triceps_Extension/0.jpg" alt="Cable Incline Triceps Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Incline_Triceps_Extension/1.jpg" alt="Cable Incline Triceps Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Incline Triceps Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on incline an bench facing away from a high pulley machine that has a straight bar attachment on it.</li><li>Grasp the straight bar attachment overhead with a pronated (overhand; palms down) narrow grip (less than shoulder width) and keep your elbows tucked in to your sides. Your upper arms should create around a 25 degree angle when measured from the floor.</li><li>Keeping the upper arms stationary, extend the arms as you flex the triceps. Breathe out during this portion of the movement and hold the contraction for a second.</li><li>Slowly go back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Incline Triceps Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Incline Triceps Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Lying_Triceps_Extension/0.jpg" alt="Cable Lying Triceps Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Lying_Triceps_Extension/1.jpg" alt="Cable Lying Triceps Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Lying Triceps Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on a flat bench and grasp the straight bar attachment of a low pulley with a narrow overhand grip. Tip: The easiest way to do this is to have someone hand you the bar as you lay down.</li><li>With your arms extended, position the bar over your torso. Your arms and your torso should create a 90-degree angle. This will be your starting position.</li><li>Lower the bar by bending at the elbow while keeping the upper arms stationary and elbows in. Go down until the bar lightly touches your forehead. Breathe in as you perform this portion of the movement.</li><li>Flex the triceps as you lift the bar back to its starting position. Exhale as you perform this portion of the movement.</li><li>Hold for a second at the contracted position and repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Lying Triceps Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Lying Triceps Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_One_Arm_Tricep_Extension/0.jpg" alt="Cable One Arm Tricep Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_One_Arm_Tricep_Extension/1.jpg" alt="Cable One Arm Tricep Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable One Arm Tricep Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With your right hand, grasp a single handle attached to the high-cable pulley using a supinated (underhand; palms facing up) grip. You should be standing directly in front of the weight stack.</li><li>Now pull the handle down so that your upper arm and elbow are locked in to the side of your body. Your upper arm and forearm should form an acute angle (less than 90-degrees). You can keep the other arm by the waist and you can have one leg in front of you and the other one back for better balance. This will be your starting position.</li><li>As you contract the triceps, move the single handle attachment down to your side until your arm is straight. Breathe out as you perform this movement. Tip: Only the forearms should move. Your upper arms should remain stationary at all times.</li><li>Squeeze the triceps and hold for a second in this contracted position.</li><li>Slowly return the handle to the starting position.</li><li>Repeat for the recommended amount of repetitions and then perform the same movement with the other arm.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable One Arm Tricep Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable One Arm Tricep Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Rope_Overhead_Triceps_Extension/0.jpg" alt="Cable Rope Overhead Triceps Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Rope_Overhead_Triceps_Extension/1.jpg" alt="Cable Rope Overhead Triceps Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Rope Overhead Triceps Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Attach a rope to the bottom pulley of the pulley machine.</li><li>Grasping the rope with both hands, extend your arms with your hands directly above your head using a neutral grip (palms facing each other). Your elbows should be in close to your head and the arms should be perpendicular to the floor with the knuckles aimed at the ceiling. This will be your starting position.</li><li>Slowly lower the rope behind your head as you hold the upper arms stationary. Inhale as you perform this movement and pause when your triceps are fully stretched.</li><li>Return to the starting position by flexing your triceps as you breathe out.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Rope Overhead Triceps Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Rope Overhead Triceps Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chain_Handle_Extension/0.jpg" alt="Chain Handle Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chain_Handle_Extension/1.jpg" alt="Chain Handle Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Chain Handle Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.</li><li>Begin by extending through the elbow, keeping your upper arm still, with your wrists pronated.</li><li>Pause at the lockout, and reverse the motion to return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chain Handle Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chain Handle Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Barbell_Bench_Press/0.jpg" alt="Close-Grip Barbell Bench Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Barbell_Bench_Press/1.jpg" alt="Close-Grip Barbell Bench Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Close-Grip Barbell Bench Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie back on a flat bench. Using a close grip (around shoulder width), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.</li><li>As you breathe in, come down slowly until you feel the bar on your middle chest. Tip: Make sure that - as opposed to a regular bench press - you keep the elbows close to the torso at all times in order to maximize triceps involvement.</li><li>After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your triceps muscles. Lock your arms in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.</li><li>Repeat the movement for the prescribed amount of repetitions.</li><li>When you are done, place the bar back in the rack.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Close-Grip Barbell Bench Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip Barbell Bench Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Dumbbell_Press/0.jpg" alt="Close-Grip Dumbbell Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Dumbbell_Press/1.jpg" alt="Close-Grip Dumbbell Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Close-Grip Dumbbell Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Place a dumbbell standing up on a flat bench.</li><li>Ensuring that the dumbbell stays securely placed at the top of the bench, lie perpendicular to the bench with only your shoulders lying on the surface. Hips should be below the bench and your legs bent with your feet firmly on the floor.</li><li>Grasp the dumbbell with both hands and hold it straight over your chest at arm&#39;s length. Both palms should be pressing against the underside of the sides of the dumbbell. This will be your starting position.</li><li>Initiate the movement by lowering the dumbbell to your chest.</li><li>Return to the starting position by extending the elbows.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Close-Grip Dumbbell Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip Dumbbell Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_EZ-Bar_Press/0.jpg" alt="Close-Grip EZ-Bar Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_EZ-Bar_Press/1.jpg" alt="Close-Grip EZ-Bar Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Close-Grip EZ-Bar Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>e-z curl bar</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on a flat bench with an EZ bar loaded to an appropriate weight.</li><li>Using a narrow grip lift the bar and hold it straight over your torso with your elbows in. The arms should be perpendicular to the floor. This will be your starting position.</li><li>Now lower the bar down to your lower chest as you breathe in. Keep the elbows in as you perform this movement.</li><li>Using the triceps to push the bar back up, press it back to the starting position by extending the elbows as you exhale.</li><li>Repeat.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Close-Grip EZ-Bar Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip EZ-Bar Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Push-Up_off_of_a_Dumbbell/0.jpg" alt="Close-Grip Push-Up off of a Dumbbell, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Push-Up_off_of_a_Dumbbell/1.jpg" alt="Close-Grip Push-Up off of a Dumbbell, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Close-Grip Push-Up off of a Dumbbell</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on the floor and place your hands on an upright dumbbell. Supporting your weight on your toes and hands, keep your torso rigid and your elbows in with your arms straight. This will be your starting position.</li><li>Lower your body, allowing the elbows to flex while you inhale. Keep your body straight, not allowing your hips to rise or sag.</li><li>Press yourself back up to the starting position by extending the elbows. Breathe out as you perform this step.</li><li>After a pause at the contracted position, repeat the movement for the prescribed amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Close-Grip Push-Up off of a Dumbbell? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip Push-Up off of a Dumbbell">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Close-Grip_Bench_To_Skull_Crusher/0.jpg" alt="Decline Close-Grip Bench To Skull Crusher, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Close-Grip_Bench_To_Skull_Crusher/1.jpg" alt="Decline Close-Grip Bench To Skull Crusher, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Decline Close-Grip Bench To Skull Crusher</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure your legs at the end of the decline bench and slowly lay down on the bench.</li><li>Using a close grip (a grip that is slightly less than shoulder width), lift the bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.</li><li>Now lower the bar down to your lower chest as you breathe in. Keep the elbows in as you perform this movement.</li><li>Using the triceps to push the bar back up, press it back to the starting position as you exhale.</li><li>As you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.</li><li>Lift the bar back to the starting position by contracting the triceps and exhaling.</li><li>Repeat steps 3-6 until the recommended amount of repetitions is performed.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Decline Close-Grip Bench To Skull Crusher? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Decline Close-Grip Bench To Skull Crusher">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Dumbbell_Triceps_Extension/0.jpg" alt="Decline Dumbbell Triceps Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Dumbbell_Triceps_Extension/1.jpg" alt="Decline Dumbbell Triceps Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Decline Dumbbell Triceps Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure your legs at the end of the decline bench and lie down with a dumbbell on each hand on top of your thighs. The palms of your hand will be facing each other.</li><li>Once you are laying down, move the dumbbells in front of you at shoulder width. The palms of the hands should be facing each other and the arms should be perpendicular to the floor and fully extended. This will be your starting position.</li><li>As you breathe in and you keep the upper arms stationary (and elbows in), bring the dumbbells down slowly by moving your forearms in a semicircular motion towards you until your thumbs are next to your ears. Breathe in as you perform this portion of the movement.</li><li>Lift the dumbbells back to the starting position by contracting the triceps and exhaling.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Decline Dumbbell Triceps Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Decline Dumbbell Triceps Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_EZ_Bar_Triceps_Extension/0.jpg" alt="Decline EZ Bar Triceps Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_EZ_Bar_Triceps_Extension/1.jpg" alt="Decline EZ Bar Triceps Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Decline EZ Bar Triceps Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure your legs at the end of the decline bench and slowly lay down on the bench.</li><li>Using a close grip (a grip that is slightly less than shoulder width), lift the EZ bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.</li><li>As you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.</li><li>Lift the bar back to the starting position by contracting the triceps and exhaling.</li><li>Repeat until the recommended amount of repetitions is performed.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Decline EZ Bar Triceps Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Decline EZ Bar Triceps Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dip_Machine/0.jpg" alt="Dip Machine, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dip_Machine/1.jpg" alt="Dip Machine, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Dip Machine</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>machine</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit securely in a dip machine, select the weight and firmly grasp the handles.</li><li>Now keep your elbows in at your sides in order to place emphasis on the triceps. The elbows should be bent at a 90 degree angle.</li><li>As you contract the triceps, extend your arms downwards as you exhale. Tip: At the bottom of the movement, focus on keeping a little bend in your arms to keep tension on the triceps muscle.</li><li>Now slowly let your arms come back up to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dip Machine? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dip Machine">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dips_-_Triceps_Version/0.jpg" alt="Dips - Triceps Version, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dips_-_Triceps_Version/1.jpg" alt="Dips - Triceps Version, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Dips - Triceps Version</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>To get into the starting position, hold your body at arm&#39;s length with your arms nearly locked above the bars.</li><li>Now, inhale and slowly lower yourself downward. Your torso should remain upright and your elbows should stay close to your body. This helps to better focus on tricep involvement. Lower yourself until there is a 90 degree angle formed between the upper arm and forearm.</li><li>Then, exhale and push your torso back up using your triceps to bring your body back to the starting position.</li><li>Repeat the movement for the prescribed amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dips - Triceps Version? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dips - Triceps Version">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Floor_Press/0.jpg" alt="Dumbbell Floor Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Floor_Press/1.jpg" alt="Dumbbell Floor Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Dumbbell Floor Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lay on the floor holding dumbbells in your hands. Your knees can be bent. Begin with the weights fully extended above you.</li><li>Lower the weights until your upper arm comes in contact with the floor. You can tuck your elbows to emphasize triceps size and strength, or to focus on your chest angle your arms to the side.</li><li>Pause at the bottom, and then bring the weight together at the top by extending through the elbows.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dumbbell Floor Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Floor Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_One-Arm_Triceps_Extension/0.jpg" alt="Dumbbell One-Arm Triceps Extension, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_One-Arm_Triceps_Extension/1.jpg" alt="Dumbbell One-Arm Triceps Extension, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Dumbbell One-Arm Triceps Extension</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grab a dumbbell and either sit on a military press bench or a utility bench that has a back support on it as you place the dumbbells upright on top of your thighs or stand up straight.</li><li>Clean the dumbbell up to bring it to shoulder height and then extend the arm over your head so that the whole arm is perpendicular to the floor and next to your head. The dumbbell should be on top of you. The other hand can be kept fully extended to the side, by the waist, supporting the upper arm that has the dumbbell or grabbing a fixed surface.</li><li>Rotate the wrist so that the palm of your hand is facing forward and the pinkie is facing the ceiling. This will be your starting position.</li><li>Slowly lower the dumbbell behind your head as you hold the upper arm stationary. Inhale as you perform this movement and pause when your triceps are fully stretched.</li><li>Return to the starting position by flexing your triceps as you breathe out. Tip: It is imperative that only the forearm moves. The upper arm should remain at all times stationary next to your head.</li><li>Repeat for the recommended amount of repetitions and switch arms.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dumbbell One-Arm Triceps Extension? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell One-Arm Triceps Extension">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Tricep_Extension_-Pronated_Grip/0.jpg" alt="Dumbbell Tricep Extension -Pronated Grip, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Tricep_Extension_-Pronated_Grip/1.jpg" alt="Dumbbell Tricep Extension -Pronated Grip, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Dumbbell Tricep Extension -Pronated Grip</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie down on a flat bench holding two dumbbells directly above your shoulders. Your arms should be fully extended and form a 90 degree angle from your torso and the floor.</li><li>The palms of your hands should be facing forward, and your elbows should be tucked in. This will be your starting position.</li><li>Now, inhale and slowly lower the dumbbells until they are near your ears. Be sure to keep your upper arms stationary and your elbows tucked in.</li><li>Then, exhale and use your triceps to return the weight to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dumbbell Tricep Extension -Pronated Grip? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Tricep Extension -Pronated Grip">Delete</button>
+        </form>
+      </article>
+    
+  </div>
+
+  
+    <nav class="pager" aria-label="Pages">
+      <span></span>
+      <span class="pager-info">Page 1 of 3</span>
+      <a class="btn btn-outline-secondary" href="#" data-demo-off>Next &rarr;</a>
+    </nav>
+  
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

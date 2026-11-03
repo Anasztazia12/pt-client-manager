@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ plan.name }}{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow"><a href="{{ url_for('client_detail', client_id=plan.client.id) }}">&larr; {{ plan.client.name }}</a></p>
+      <h1 class="h3 mb-1">{{ plan.name }}</h1>
+      <p class="text-muted mb-0">{{ plan.description or "" }}</p>
+    </div>
+    <div>
+      <a href="{{ url_for('plan_edit', plan_id=plan.id) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
+      <form method="POST" action="{{ url_for('plan_delete', plan_id=plan.id) }}" class="d-inline"
+            onsubmit="return confirm('Delete this plan?');">
+        <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+      </form>
+    </div>
+  </div>
+
+  <h2 class="h5 mb-2">Exercises</h2>
+  {% if plan.plan_exercises %}
+    <div class="table-responsive mb-4">
+      <table class="table table-sm align-middle">
+        <thead>
+          <tr><th>Exercise</th><th>Type</th><th>Sets</th><th>Reps</th><th>Target weight</th><th></th></tr>
+        </thead>
+        <tbody>
+          {% for pe in plan.plan_exercises %}
+            <tr>
+              <td class="fw-semibold"><span class="plan-ex">{% if pe.exercise.image_urls %}<img src="{{ pe.exercise.image_urls[0] }}" alt="" loading="lazy">{% endif %}{{ pe.exercise.name }}</span></td>
+              <td>{% if pe.exercise.category %}<span class="type-tag type-{{ pe.exercise.category|replace(' ', '-') }}">{{ pe.exercise.category }}</span>{% endif %}</td>
+              <td>{{ pe.sets }}</td>
+              <td>{{ pe.reps }}</td>
+              <td>{% if pe.target_weight_kg %}{{ pe.target_weight_kg }} kg{% else %}Bodyweight{% endif %}</td>
+              <td>
+                <form method="POST" action="{{ url_for('plan_exercise_delete', pe_id=pe.id) }}"
+                      onsubmit="return confirm('Remove this exercise from the plan?');">
+                  <button type="submit" class="btn btn-sm btn-outline-danger">Remove</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="text-muted">No exercises added yet.</p>
+  {% endif %}
+
+  <div class="add-row">
+  <h2 class="h5 mb-2">Add exercise to this plan</h2>
+  <form method="POST" action="{{ url_for('plan_exercise_add', plan_id=plan.id) }}" novalidate class="row g-2">
+    {{ add_form.hidden_tag() }}
+    <div class="col-md-4">
+      {{ add_form.exercise_id(class="form-select") }}
+    </div>
+    <div class="col-md-2">
+      {{ add_form.sets(class="form-control", placeholder="Sets") }}
+    </div>
+    <div class="col-md-2">
+      {{ add_form.reps(class="form-control", placeholder="Reps") }}
+    </div>
+    <div class="col-md-2">
+      {{ add_form.target_weight_kg(class="form-control", placeholder="kg") }}
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Add</button>
+    </div>
+  </form>
+  <p class="mt-2 mb-0"><a href="{{ url_for('exercise_new') }}">+ Add a new exercise to the library</a></p>
+  </div>
+{% endblock %}

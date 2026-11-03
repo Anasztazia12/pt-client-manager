@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Library · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">873 exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="exercises-new.html" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      <input type="hidden" name="type" value="olympic weightlifting">
+      
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="exercises.html" class="">All types</a>
+      
+        <a href="exercises-type-strength.html" class="">Strength <span>581</span></a>
+      
+        <a href="exercises-type-cardio.html" class="">Cardio <span>14</span></a>
+      
+        <a href="exercises-type-stretching.html" class="">Stretching <span>123</span></a>
+      
+        <a href="exercises-type-plyometrics.html" class="">Plyometrics <span>61</span></a>
+      
+        <a href="exercises-type-powerlifting.html" class="">Powerlifting <span>38</span></a>
+      
+        <a href="exercises-type-olympic-weightlifting.html" class="is-active">Olympic weightlifting <span>35</span></a>
+      
+        <a href="exercises-type-strongman.html" class="">Strongman <span>21</span></a>
+      
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="exercises-type-olympic-weightlifting.html" class="is-active">Any</a>
+      
+        <a href="#" data-demo-off class="">chest</a>
+      
+        <a href="#" data-demo-off class="">shoulders</a>
+      
+        <a href="#" data-demo-off class="">biceps</a>
+      
+        <a href="#" data-demo-off class="">triceps</a>
+      
+        <a href="#" data-demo-off class="">lats</a>
+      
+        <a href="#" data-demo-off class="">middle back</a>
+      
+        <a href="#" data-demo-off class="">lower back</a>
+      
+        <a href="#" data-demo-off class="">abdominals</a>
+      
+        <a href="#" data-demo-off class="">glutes</a>
+      
+        <a href="#" data-demo-off class="">quadriceps</a>
+      
+        <a href="#" data-demo-off class="">hamstrings</a>
+      
+        <a href="#" data-demo-off class="">calves</a>
+      
+    </nav>
+  </div>
+
+  <p class="lib-count">35 exercises</p>
+
+  <div class="ex-grid">
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean/0.jpg" alt="Clean, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean/1.jpg" alt="Clean, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Clean</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, lower back, quadriceps, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With a barbell on the floor close to the shins, take an overhand (or hook) grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.</li><li>Begin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight. Move the weight with control as you continue to above the knees.</li><li>Next comes the second pull, the main source of acceleration for the clean. As the bar approaches the mid-thigh position, begin extending through the hips. In a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight; at the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended.</li><li>As full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out. At peak extension, aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.</li><li>Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clean? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clean">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_Deadlift/0.jpg" alt="Clean Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_Deadlift/1.jpg" alt="Clean Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Clean Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, lower back, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin standing with a barbell close to your shins. Your feet should be directly under your hips with your feet turned out slightly. Grip the bar with a double overhand grip or hook grip, about shoulder width apart. Squat down to the bar. Your spine should be in full extension, with a back angle that places your shoulders in front of the bar and your back as vertical as possible.</li><li>Begin by driving through the floor through the front of your heels. As the bar travels upward, maintain a constant back angle. Flare your knees out to the side to help keep them out of the bar&#39;s path.</li><li>After the bar crosses the knees, complete the lift by driving the hips into the bar until your hips and knees are extended.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clean Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clean Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_Pull/0.jpg" alt="Clean Pull, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_Pull/1.jpg" alt="Clean Pull, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Clean Pull</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, lower back, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With a barbell on the floor close to the shins, take an overhand or hook grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.</li><li>Begin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight and elbows out. Move the weight with control as you continue to above the knees.</li><li>Next comes the second pull, the main source of acceleration for the clean. As the bar approaches the mid-thigh position, begin extending through the hips. In a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight; at the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended. Full extension should be violent and abrupt, and ensure that you do not prolong the extension for longer than necessary.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clean Pull? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clean Pull">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_Shrug/0.jpg" alt="Clean Shrug, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_Shrug/1.jpg" alt="Clean Shrug, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Clean Shrug</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>traps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a shoulder width, double overhand or hook grip, with the bar hanging at the mid thigh position. Your back should be straight and inclined slightly forward.</li><li>Shrug your shoulders towards your ears. While this exercise can usually by loaded with heavier weight than a clean, avoid overloading to the point that the execution slows down.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clean Shrug? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clean Shrug">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_and_Jerk/0.jpg" alt="Clean and Jerk, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_and_Jerk/1.jpg" alt="Clean and Jerk, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Clean and Jerk</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, glutes, hamstrings, lower back, quadriceps, traps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With a barbell on the floor close to the shins, take an overhand or hook grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.</li><li>Begin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight. Move the weight with control as you continue to above the knees.</li><li>Next comes the second pull, the main source of acceleration for the clean. As the bar approaches the mid-thigh position, begin extending through the hips. In a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight; at the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended.</li><li>As full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out. At peak extension, aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.</li><li>Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position.</li><li>The second phase is the jerk, which raises the weight overhead. Standing with the weight racked on the front of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible.</li><li>Drive through the heels create as much speed and force as possible, and be sure to move your head out of the way as the bar leaves the shoulders.</li><li>At this moment as the feet leave the floor, the feet must be placed into the receiving position as quickly as possible. In the brief moment the feet are not actively driving against the platform, the athletes effort to push the bar up will drive them down. The feet should be split, with one foot forward, and one foot back. Receive the bar with the arms locked out overhead. Return to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clean and Jerk? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clean and Jerk">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_from_Blocks/0.jpg" alt="Clean from Blocks, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clean_from_Blocks/1.jpg" alt="Clean from Blocks, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Clean from Blocks</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, glutes, hamstrings, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With a barbell on boxes or stands of the desired height, take an overhand or hook grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.</li><li>Begin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight with the elbows pointed out.</li><li>As full extension is achieved, transition into the receiving position by aggressively shrugging and flexing the arms with the elbows up and out. Aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.</li><li>Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position. Return the weight to the boxes for the next rep.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clean from Blocks? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clean from Blocks">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Frankenstein_Squat/0.jpg" alt="Frankenstein Squat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Frankenstein_Squat/1.jpg" alt="Frankenstein Squat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Frankenstein Squat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, calves, glutes, hamstrings</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This drill teaches you the proper positioning of both the bar and your body during the clean and front squat.</li><li>Place the barbell on the front of the shoulders, releasing your grip and extending your arms out in front of you. The shoulders should be pushed forward to create a shelf, and the bar should be in contact with the throat. Ensure that you only move your shoulder blades forward; don&#39;t round the thoracic spine.</li><li>Squat by flexing the knees and hips, sitting in between your legs. Keep the torso upright, the arms up, and the shoulders forward, and the bar should stay in place. Go to the bottom of the squat, until your hamstrings contact your calves.</li><li>Return to the upright position by driving through the front of the heel and extending the knees and hips.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Frankenstein Squat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Frankenstein Squat">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Clean/0.jpg" alt="Hang Clean, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Clean/1.jpg" alt="Hang Clean, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Hang Clean</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, hamstrings, lower back, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a shoulder width, double overhand or hook grip, with the bar hanging at the mid thigh position. Your back should be straight and inclined slightly forward.</li><li>Begin by aggressively extending through the hips, knees and ankles, driving the weight upward. As you do so, shrug your shoulders towards your ears.</li><li>Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hang Clean? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hang Clean">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Clean_-_Below_the_Knees/0.jpg" alt="Hang Clean - Below the Knees, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Clean_-_Below_the_Knees/1.jpg" alt="Hang Clean - Below the Knees, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Hang Clean - Below the Knees</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, hamstrings, lower back, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a shoulder width, double overhand or hook grip, with the bar hanging just below the knees. Your back should be straight and inclined slightly forward.</li><li>Begin by aggressively extending through the hips, knees and ankles, driving the weight upward. As you do so, shrug your shoulders towards your ears. As full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out.</li><li>At peak extension, aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.</li><li>Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hang Clean - Below the Knees? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hang Clean - Below the Knees">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Snatch/0.jpg" alt="Hang Snatch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Snatch/1.jpg" alt="Hang Snatch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Hang Snatch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, calves, forearms, glutes, lower back, quadriceps, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a wide grip on the bar, with an overhand or hook grip. The feet should be directly below the hips with the feet turned out. Your knees should be slightly bent, and the torso inclined forward. The spine should be fully extended and the head facing forward. The bar should be at the hips. This will be your starting position.</li><li>Aggressively extend through the legs and hips. At peak extension, shrug the shoulders and allow the elbows to flex to the side.</li><li>As you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. Receive the bar with your body as low as possible and the arms fully extended overhead.</li><li>Return to a standing position with the weight overhead. Follow by returning the weight to the ground under control.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hang Snatch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hang Snatch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Snatch_-_Below_Knees/0.jpg" alt="Hang Snatch - Below Knees, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hang_Snatch_-_Below_Knees/1.jpg" alt="Hang Snatch - Below Knees, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Hang Snatch - Below Knees</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, calves, forearms, glutes, lower back, quadriceps, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a wide grip on the bar, with an overhand or hook grip. The feet should be directly below the hips with the feet turned out. Your knees should be slightly bent, and the torso inclined forward. The spine should be fully extended and the head facing forward. The bar should be just below the knees. This will be your starting position.</li><li>Aggressively extend through the legs and hips. At peak extension, shrug the shoulders and allow the elbows to flex to the side.</li><li>As you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. Receive the bar with your body as low as possible and the arms fully extended overhead.</li><li>Return to a standing position with the weight overhead, and then return the weight to the floor under control.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hang Snatch - Below Knees? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hang Snatch - Below Knees">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Heaving_Snatch_Balance/0.jpg" alt="Heaving Snatch Balance, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Heaving_Snatch_Balance/1.jpg" alt="Heaving Snatch Balance, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Heaving Snatch Balance</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, forearms, glutes, hamstrings, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This drill helps you learn the snatch. Begin by holding a light weight across the back of the shoulders. Your feet should be slightly wider than hip width apart with the feet turned out, the same position that you would perform a squat with.</li><li>Begin by dipping with the knees slightly, and popping back up to briefly unload the bar. Drive yourself underneath the bar, elevating it overhead as you descend into a full squat.</li><li>Return to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Heaving Snatch Balance? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Heaving Snatch Balance">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Jerk_Balance/0.jpg" alt="Jerk Balance, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Jerk_Balance/1.jpg" alt="Jerk Balance, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Jerk Balance</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, hamstrings, quadriceps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This drill helps you learn to drive yourself low enough during the jerk and corrects those who move backward during the movement. Begin with the bar racked in the jerk position, with the shoulders forward, torso upright, and the feet split slightly apart.</li><li>Initiate the movement as you would a normal jerk, dipping at the knees while keeping your torso vertical, and driving back up forcefully, using momentum and not your arms to elevate the weight.</li><li>Keep the rear foot in place, using it to drive your body forward into a full split as you jerk the weight. Recover by standing up with the weight overhead.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Jerk Balance? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Jerk Balance">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Jerk_Dip_Squat/0.jpg" alt="Jerk Dip Squat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Jerk_Dip_Squat/1.jpg" alt="Jerk Dip Squat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Jerk Dip Squat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, calves</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This movement strengthens the dip portion of the jerk. Begin with the bar racked in the jerk position, with the shoulders forward to create a shelf and the bar lightly contacting the throat. The feet should be directly under the hips, with the feet turned out as is comfortable.</li><li>Keeping the torso vertical, dip by flexing the knees, allowing them to travel forward and without moving the hips to the rear. The dip should not be excessive. Return the weight to the starting position by driving forcefully though the feet.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Jerk Dip Squat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Jerk Dip Squat">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_Jump_Squat/0.jpg" alt="Kneeling Jump Squat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_Jump_Squat/1.jpg" alt="Kneeling Jump Squat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Kneeling Jump Squat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>glutes</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, hamstrings, quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin kneeling on the floor with a barbell racked across the back of your shoulders, or you can use your body weight for this exercise. This can be done inside of a power rack to make unracking easier.</li><li>Sit back with your hips until your glutes touch your feet, keeping your head and chest up.</li><li>Explode up with your hips, generating enough power to land with your feet flat on the floor.</li><li>Continue with the squat by driving through your heels and extending the knees to come to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Kneeling Jump Squat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Kneeling Jump Squat">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Muscle_Snatch/0.jpg" alt="Muscle Snatch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Muscle_Snatch/1.jpg" alt="Muscle Snatch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Muscle Snatch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, lower back, quadriceps, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a loaded barbell held at the mid thigh position with a wide grip. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.</li><li>Begin the pull by driving through the front of the heels, raising the bar. Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body.</li><li>Continue raising the bar to the overhead position, without rebending the knees.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Muscle Snatch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Muscle Snatch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Olympic_Squat/0.jpg" alt="Olympic Squat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Olympic_Squat/1.jpg" alt="Olympic Squat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Olympic Squat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, glutes, hamstrings</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a barbell supported on top of the traps. The chest should be up, and the head facing forward. Adopt a hip width stance with the feet turned out as needed.</li><li>Descend by flexing the knees, refraining from moving the hips back as much as possible. This requires that the knees travel forward; ensure that they stay aligned with the feet. The goal is to keep the torso as upright as possible. Continue all the way down, keeping the weight on the front of the heel.</li><li>At the moment the upper legs contact the lower, reverse the motion, driving the weight upward.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Olympic Squat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Olympic Squat">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Overhead_Squat/0.jpg" alt="Overhead Squat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Overhead_Squat/1.jpg" alt="Overhead Squat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Overhead Squat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, calves, glutes, hamstrings, lower back, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Start out by having a barbell in front of you on the floor. Your feet should be wider than shoulder width apart from each other.</li><li>Bend the knees and use a pronated grip (palms facing you) to grab the barbell. Your hands should be at a wider than shoulder width apart from each other before lifting. Once you are positioned, lift the barbell up until you can rest it on your chest.</li><li>Move the barbell over and slightly behind your head and make sure your arms are fully extended. Keep your head up at all times and also maintain a straight back. Retract your shoulder blades. This is your starting position.</li><li>Slowly lower the weight by bending your knees until your thighs are parallel to the ground while inhaling. Tip: Keep your back straight while performing this exercise to avoid any injuries and your arms should remain extended and over your head at all times.</li><li>Now use your feet and legs to help bring the weight back up to the starting position while exhaling.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Overhead Squat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Overhead Squat">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Clean_from_Blocks/0.jpg" alt="Power Clean from Blocks, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Clean_from_Blocks/1.jpg" alt="Power Clean from Blocks, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Power Clean from Blocks</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With a barbell on boxes of the desired height, take a grip just outside the legs. Lower your hips with the weight focused on the heels, back straight, head facing forward, chest up, with your shoulders just in front of the bar. This will be your starting position.</li><li>Begin the first pull by driving through the heels, extending your knees. Your back angle should stay the same, and your arms should remain straight. As the bar approaches the mid-thigh position, begin extending through the hips.</li><li>In a jumping motion, accelerate by extending the hips, knees, and ankles, using speed to move the bar upward. There should be no need to actively pull through the arms to accelerate the weight. At the end of the second pull, the body should be fully extended, leaning slightly back, with the arms still extended.</li><li>As full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out. At peak extension, pull yourself under the bar far enough that it can be racked onto the shoulders, rotating your elbows under the bar as you do so. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed.</li><li>Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position, and complete the repetition by returning the weight to the boxes.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Power Clean from Blocks? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Power Clean from Blocks">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Jerk/0.jpg" alt="Power Jerk, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Jerk/1.jpg" alt="Power Jerk, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Power Jerk</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, calves, glutes, hamstrings, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Standing with the weight racked on the front of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible.</li><li>Drive through the heels create as much speed and force as possible, and be sure to move your head out of the way as the bar leaves the shoulders.</li><li>At this moment as the feet leave the floor, the feet must be placed into the receiving position as quickly as possible. In the brief moment the feet are not actively driving against the platform, the athletes effort to push the bar up will drive them down. The feet should be moved to a slightly wider stance, with the knees partially bent.</li><li>Receive the bar with the arms locked out overhead.</li><li>Return to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Power Jerk? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Power Jerk">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Snatch/0.jpg" alt="Power Snatch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Snatch/1.jpg" alt="Power Snatch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Power Snatch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, glutes, lower back, quadriceps, shoulders, traps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a loaded barbell on the floor. The bar should be close to or touching the shins, and a wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar. This will be the starting position.</li><li>Begin the first pull by driving through the front of the heels, raising the bar from the ground. The back angle should stay the same until the bar passes the knees.</li><li>Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.</li><li>As you move your feet into the receiving position, a slightly wider position, pull yourself below the bar as you elevate the bar overhead. The bar should be received in a partial squat. Continue raising the bar to the overhead position, receiving the bar locked out overhead.</li><li>Return to a standing position with the weight over head.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Power Snatch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Power Snatch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Snatch_from_Blocks/0.jpg" alt="Power Snatch from Blocks, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Power_Snatch_from_Blocks/1.jpg" alt="Power Snatch from Blocks, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Power Snatch from Blocks</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, hamstrings, lower back, shoulders, traps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with a loaded barbell on boxes or stands of the desired height. A wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar, with the elbows pointed out. This will be the starting position.</li><li>Begin the first pull by driving through the front of the heels, raising the bar from the boxes.</li><li>Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.</li><li>As you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. The feet should move to just outside the hips, turned out as necessary. Receive the bar above a full squat and with the arms fully extended overhead.</li><li>Keeping the bar aligned over the front of the heels, your head and chest up, drive through heels of the feet to move to a standing position. Carefully return the weight to the boxes.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Power Snatch from Blocks? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Power Snatch from Blocks">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push_Press/0.jpg" alt="Push Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push_Press/1.jpg" alt="Push Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Push Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>quadriceps, triceps</dd></div>
+        </dl>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Push Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Push Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push_Press_-_Behind_the_Neck/0.jpg" alt="Push Press - Behind the Neck, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push_Press_-_Behind_the_Neck/1.jpg" alt="Push Press - Behind the Neck, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-olympic-weightlifting" style="margin-left:0">olympic weightlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Push Press - Behind the Neck</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, quadriceps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Standing with the weight racked on the back of the shoulders, begin with the dip. With your feet directly under your hips, flex the knees without moving the hips backward. Go down only slightly, and reverse direction as powerfully as possible. Drive through the heels create as much speed and force as possible, moving the bar in a vertical path.</li><li>Using the momentum generated, finish pressing the weight overhead be extending through the arms.</li><li>Return to the starting position, using your legs to absorb the impact.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Push Press - Behind the Neck? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Push Press - Behind the Neck">Delete</button>
+        </form>
+      </article>
+    
+  </div>
+
+  
+    <nav class="pager" aria-label="Pages">
+      <span></span>
+      <span class="pager-info">Page 1 of 2</span>
+      <a class="btn btn-outline-secondary" href="#" data-demo-off>Next &rarr;</a>
+    </nav>
+  
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

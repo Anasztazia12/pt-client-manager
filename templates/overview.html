@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+  {% macro initials(name) -%}{% set p = name.split() %}{{ p[0][:1] }}{% if p|length > 1 %}{{ p[-1][:1] }}{% endif %}{%- endmacro %}
+
+  <section class="ov-hero">
+    <div class="ov-hero-text">
+      <p class="ov-date">{{ today.strftime("%A %d %B") }}</p>
+      <h1 class="ov-title">Your clients this week</h1>
+      <p class="ov-sub"><strong>{{ week_sessions|length }}</strong> session{{ "s" if week_sessions|length != 1 }} · <strong>{{ (minutes / 60)|round(1) }}</strong> hours coached · <strong>{{ clients|length }}</strong> active client{{ "s" if clients|length != 1 }}</p>
+    </div>
+    <div class="ov-week" aria-label="Sessions per day this week">
+      {% for d in week %}
+        <a class="ov-day{% if d.day == today %} is-today{% endif %}{% if d.day > today %} is-future{% endif %}" href="{{ url_for('day_view', day_iso=d.day.isoformat()) }}" aria-label="{{ d.day.strftime('%A %d %B') }}, {{ d.sessions|length }} session{{ 's' if d.sessions|length != 1 }}">
+          <span class="ov-day-name">{{ d.day.strftime("%a") }}</span>
+          <span class="ov-day-num">{{ d.day.day }}</span>
+          <span class="ov-dots">
+            {% for s in d.sessions %}<i class="dot-{{ s.session_type or 'other' }}" title="{{ s.client.name }}, {{ s.session_type or 'session' }}"></i>{% endfor %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+    <a href="{{ url_for('client_new') }}" class="btn btn-primary ov-add">+ Add client</a>
+  </section>
+
+  <div class="row g-3">
+    <div class="col-lg-8">
+      <h2 class="ov-h2">Today, client by client</h2>
+      <div class="ov-clients">
+        {% for r in rows %}
+          {% set c = r.client %}
+          {% set pct = r.pct if r.pct is not none else 0 %}
+          <a class="ov-client" href="{{ url_for('client_detail', client_id=c.id) }}">
+            <div class="ring{% if pct > 110 %} over{% endif %}" style="--p: {{ [pct, 100]|min }}" role="img" aria-label="{{ r.kcal }} kcal of {{ c.daily_kcal_target or 'no target' }}">
+              <span class="ring-inner">{{ initials(c.name) }}</span>
+            </div>
+            <div class="ov-client-main">
+              <h3>{{ c.name }}</h3>
+              <p class="ov-goal">{{ c.goal or "No goal set" }}</p>
+              <div class="ov-facts">
+                <span><b>{{ r.kcal }}</b>{% if c.daily_kcal_target %} / {{ c.daily_kcal_target }}{% endif %} kcal</span>
+                {% if r.change is not none %}<span class="{{ 'good' if r.change < 0 else 'warn' }}"><b>{{ '%+.1f'|format(r.change) }}</b> kg</span>{% endif %}
+                <span>{% if r.last %}Trained {{ "today" if r.days_since == 0 else ("yesterday" if r.days_since == 1 else r.days_since ~ " days ago") }}{% else %}No sessions yet{% endif %}</span>
+              </div>
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {% else %}
+          <p class="text-muted">No clients yet.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <h2 class="ov-h2">Needs a message</h2>
+      <div class="ov-attention">
+        {% for r, why in attention %}
+          <a href="{{ url_for('client_detail', client_id=r.client.id) }}">
+            <span class="initials sm" aria-hidden="true">{{ initials(r.client.name) }}</span>
+            <span><b>{{ r.client.name }}</b><small>{{ why }}</small></span>
+          </a>
+        {% else %}
+          <p class="ov-allgood">Everyone is on track today.</p>
+        {% endfor %}
+      </div>
+
+      <h2 class="ov-h2 mt-4">This week's training</h2>
+      <div class="ov-mix">
+        {% set n = week_sessions|length %}
+        {% if n %}
+          <div class="mix-bar">
+            {% for key, count in by_type %}<span class="dot-{{ key }}" style="flex: {{ count }}" title="{{ key }} {{ count }}"></span>{% endfor %}
+          </div>
+          <ul class="mix-legend">
+            {% for key, count in by_type %}<li><i class="dot-{{ key }}"></i>{{ key|capitalize }} <b>{{ count }}</b></li>{% endfor %}
+          </ul>
+        {% else %}
+          <p class="text-muted small mb-0">No sessions logged this week yet.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

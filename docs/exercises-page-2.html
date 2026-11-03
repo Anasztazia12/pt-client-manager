@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Library · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">873 exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="exercises-new.html" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      
+      
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="exercises.html" class="is-active">All types</a>
+      
+        <a href="exercises-type-strength.html" class="">Strength <span>581</span></a>
+      
+        <a href="exercises-type-cardio.html" class="">Cardio <span>14</span></a>
+      
+        <a href="exercises-type-stretching.html" class="">Stretching <span>123</span></a>
+      
+        <a href="exercises-type-plyometrics.html" class="">Plyometrics <span>61</span></a>
+      
+        <a href="exercises-type-powerlifting.html" class="">Powerlifting <span>38</span></a>
+      
+        <a href="exercises-type-olympic-weightlifting.html" class="">Olympic weightlifting <span>35</span></a>
+      
+        <a href="exercises-type-strongman.html" class="">Strongman <span>21</span></a>
+      
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="exercises.html" class="is-active">Any</a>
+      
+        <a href="exercises-muscle-chest.html" class="">chest</a>
+      
+        <a href="exercises-muscle-shoulders.html" class="">shoulders</a>
+      
+        <a href="exercises-muscle-biceps.html" class="">biceps</a>
+      
+        <a href="exercises-muscle-triceps.html" class="">triceps</a>
+      
+        <a href="exercises-muscle-lats.html" class="">lats</a>
+      
+        <a href="exercises-muscle-middle-back.html" class="">middle back</a>
+      
+        <a href="exercises-muscle-lower-back.html" class="">lower back</a>
+      
+        <a href="exercises-muscle-abdominals.html" class="">abdominals</a>
+      
+        <a href="exercises-muscle-glutes.html" class="">glutes</a>
+      
+        <a href="exercises-muscle-quadriceps.html" class="">quadriceps</a>
+      
+        <a href="exercises-muscle-hamstrings.html" class="">hamstrings</a>
+      
+        <a href="exercises-muscle-calves.html" class="">calves</a>
+      
+    </nav>
+  </div>
+
+  <p class="lib-count">873 exercises</p>
+
+  <div class="ex-grid">
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Arm_Circles/0.jpg" alt="Arm Circles, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Arm_Circles/1.jpg" alt="Arm Circles, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Arm Circles</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Stand up and extend your arms straight out by the sides. The arms should be parallel to the floor and perpendicular (90-degree angle) to your torso. This will be your starting position.</li><li>Slowly start to make circles of about 1 foot in diameter with each outstretched arm. Breathe normally as you perform the movement.</li><li>Continue the circular motion of the outstretched arms for about ten seconds. Then reverse the movement, going the opposite direction.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Arm Circles? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Arm Circles">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Arnold_Dumbbell_Press/0.jpg" alt="Arnold Dumbbell Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Arnold_Dumbbell_Press/1.jpg" alt="Arnold Dumbbell Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Arnold Dumbbell Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit on an exercise bench with back support and hold two dumbbells in front of you at about upper chest level with your palms facing your body and your elbows bent. Tip: Your arms should be next to your torso. The starting position should look like the contracted portion of a dumbbell curl.</li><li>Now to perform the movement, raise the dumbbells as you rotate the palms of your hands until they are facing forward.</li><li>Continue lifting the dumbbells until your arms are extended above you in straight arm position. Breathe out as you perform this portion of the movement.</li><li>After a second pause at the top, begin to lower the dumbbells to the original position by rotating the palms of your hands towards you. Tip: The left arm will be rotated in a counter clockwise manner while the right one will be rotated clockwise. Breathe in as you perform this portion of the movement.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Arnold Dumbbell Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Arnold Dumbbell Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Around_The_Worlds/0.jpg" alt="Around The Worlds, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Around_The_Worlds/1.jpg" alt="Around The Worlds, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Around The Worlds</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lay down on a flat bench holding a dumbbell in each hand with the palms of the hands facing towards the ceiling. Tip: Your arms should be parallel to the floor and next to your thighs. To avoid injury, make sure that you keep your elbows slightly bent. This will be your starting position.</li><li>Now move the dumbbells by creating a semi-circle as you displace them from the initial position to over the head. All of the movement should happen with the arms parallel to the floor at all times. Breathe in as you perform this portion of the movement.</li><li>Reverse the movement to return the weight to the starting position as you exhale.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Around The Worlds? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Around The Worlds">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stone_Trainer/0.jpg" alt="Atlas Stone Trainer, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stone_Trainer/1.jpg" alt="Atlas Stone Trainer, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Atlas Stone Trainer</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, forearms, glutes, hamstrings, quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This trainer is effective for developing Atlas Stone strength for those who don&#39;t have access to stones, and are typically made from bar ends or heavy pipe.</li><li>Begin by loading the desired weight onto the bar. Straddle the weight, wrapping your arms around the implement, bending at the hips.</li><li>Begin by pulling the weight up past the knees, extending through the hips. As the weight clears the knees, it can be lapped by resting it on your thighs and sitting back, hugging it tightly to your chest.</li><li>Finish the movement by extending through your hips and knees to raise the weight as high as possible. The weight can be returned to the lap or to the ground for successive repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Atlas Stone Trainer? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Atlas Stone Trainer">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stones/0.jpg" alt="Atlas Stones, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stones/1.jpg" alt="Atlas Stones, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Atlas Stones</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, adductors, biceps, calves, forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with the atlas stone between your feet. Bend at the hips to wrap your arms vertically around the Atlas Stone, attempting to get your fingers underneath the stone. Many stones will have a small flat portion on the bottom, which will make the stone easier to hold.</li><li>Pulling the stone into your torso, drive through the back half of your feet to pull the stone from the ground.</li><li>As the stone passes the knees, lap it by sitting backward, pulling the stone on top of your thighs.</li><li>Sit low, getting the stone high onto your chest as you change your grip to reach over the stone. Stand, driving through with your hips. Close distance to the loading platform, and lean back, extending the hips to get the stone as high as possible.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Atlas Stones? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Atlas Stones">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Axle_Deadlift/0.jpg" alt="Axle Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Axle_Deadlift/1.jpg" alt="Axle Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Axle Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an over/under grip.</li><li>With your feet and your grip set, take a big breath and then lower your hips and flex the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward.</li><li>After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Axle Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Axle Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Back_Flyes_-_With_Bands/0.jpg" alt="Back Flyes - With Bands, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Back_Flyes_-_With_Bands/1.jpg" alt="Back Flyes - With Bands, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Back Flyes - With Bands</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>middle back, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Run a band around a stationary post like that of a squat rack.</li><li>Grab the band by the handles and stand back so that the tension in the band rises.</li><li>Extend and lift the arms straight in front of you. Tip: Your arms should be straight and parallel to the floor while perpendicular to your torso. Your feet should be firmly planted on the floor spread at shoulder width. This will be your starting position.</li><li>As you exhale, move your arms to the sides and back. Keep your arms extended and parallel to the floor. Continue the movement until the arms are extended to your sides.</li><li>After a pause, go back to the original position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Back Flyes - With Bands? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Back Flyes - With Bands">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Backward_Drag/0.jpg" alt="Backward Drag, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Backward_Drag/1.jpg" alt="Backward Drag, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Backward Drag</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, hamstrings, lower back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Load a sled with the desired weight, attaching a rope or straps to the sled that you can hold onto.</li><li>Begin the exercise by moving backwards for a given distance. Leaning back, extend through the legs for short steps to move as quickly as possible.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Backward Drag? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Backward Drag">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Backward_Medicine_Ball_Throw/0.jpg" alt="Backward Medicine Ball Throw, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Backward_Medicine_Ball_Throw/1.jpg" alt="Backward Medicine Ball Throw, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Backward Medicine Ball Throw</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This exercise is best done with a partner. If you lack a partner, the ball can be thrown and retrieved or thrown against a wall.</li><li>Begin standing a few meters in front of your partner, both facing the same direction. Begin holding the ball between your legs.</li><li>Squat down and then forcefully reverse direction, coming to full extension and you toss the ball over your head to your partner.</li><li>Your partner can then roll the ball back to you. Repeat for the desired number of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Backward Medicine Ball Throw? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Backward Medicine Ball Throw">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Balance_Board/0.jpg" alt="Balance Board, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Balance_Board/1.jpg" alt="Balance Board, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Balance Board</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>calves</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>hamstrings, quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Place a balance board in front of you.</li><li>Stand up on it and try to balance yourself.</li><li>Hold the balance for as long as desired.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Balance Board? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Balance Board">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Ball_Leg_Curl/0.jpg" alt="Ball Leg Curl, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Ball_Leg_Curl/1.jpg" alt="Ball Leg Curl, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Ball Leg Curl</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>exercise ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, glutes</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin on the floor laying on your back with your feet on top of the ball.</li><li>Position the ball so that when your legs are extended your ankles are on top of the ball. This will be your starting position.</li><li>Raise your hips off of the ground, keeping your weight on the shoulder blades and your feet.</li><li>Flex the knees, pulling the ball as close to you as you can, contracting the hamstrings.</li><li>After a brief pause, return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Ball Leg Curl? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Ball Leg Curl">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Assisted_Pull-Up/0.jpg" alt="Band Assisted Pull-Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Assisted_Pull-Up/1.jpg" alt="Band Assisted Pull-Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Assisted Pull-Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, forearms, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance.</li><li>Pull the end of the band down, and place one bent knee into the loop, ensuring it won&#39;t slip out. Take a medium to wide grip on the bar. This will be your starting position.</li><li>Pull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements.</li><li>After a brief pause, return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Assisted Pull-Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Assisted Pull-Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Good_Morning/0.jpg" alt="Band Good Morning, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Good_Morning/1.jpg" alt="Band Good Morning, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Good Morning</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, lower back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Using a 41 inch band, stand on one end, spreading your feet a small amount. Bend at the hips to loop the end of the band behind your neck. This will be your starting position.</li><li>Keeping your legs straight, extend through the hips to come to a near vertical position.</li><li>Ensure that you do not round your back as you go down back to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Good Morning? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Good Morning">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Good_Morning_Pull_Through/0.jpg" alt="Band Good Morning (Pull Through), start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Good_Morning_Pull_Through/1.jpg" alt="Band Good Morning (Pull Through), end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Good Morning (Pull Through)</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>hamstrings</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, lower back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Loop the band around a post. Standing a little ways away, loop the opposite end around the neck. Your hands can help hold the band in position.</li><li>Begin by bending at the hips, getting your butt back as far as possible. Keep your back flat and bend forward to about 90 degrees. Your knees should be only slightly bent.</li><li>Return to the starting position be driving through with the hips to come back to a standing position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Good Morning (Pull Through)? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Good Morning (Pull Through)">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Hip_Adductions/0.jpg" alt="Band Hip Adductions, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Hip_Adductions/1.jpg" alt="Band Hip Adductions, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Hip Adductions</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>adductors</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Anchor a band around a solid post or other object.</li><li>Stand with your left side to the post, and put your right foot through the band, getting it around the ankle.</li><li>Stand up straight and hold onto the post if needed. This will be your starting position.</li><li>Keeping the knee straight, raise your right legs out to the side as far as you can.</li><li>Return to the starting position and repeat for the desired rep count.</li><li>Switch sides.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Hip Adductions? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Hip Adductions">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Pull_Apart/0.jpg" alt="Band Pull Apart, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Pull_Apart/1.jpg" alt="Band Pull Apart, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Pull Apart</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>shoulders</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>middle back, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with your arms extended straight out in front of you, holding the band with both hands.</li><li>Initiate the movement by performing a reverse fly motion, moving your hands out laterally to your sides.</li><li>Keep your elbows extended as you perform the movement, bringing the band to your chest. Ensure that you keep your shoulders back during the exercise.</li><li>Pause as you complete the movement, returning to the starting position under control.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Pull Apart? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Pull Apart">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Skull_Crusher/0.jpg" alt="Band Skull Crusher, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Skull_Crusher/1.jpg" alt="Band Skull Crusher, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Skull Crusher</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>triceps</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure a band to the base of a rack or the bench. Lay on the bench so that the band is lined up with your head.</li><li>Take hold of the band, raising your elbows so that the upper arm is perpendicular to the floor. With the elbow flexed, the band should be above your head. This will be your starting position.</li><li>Extend through the elbow to straighten your arm, keeping your upper arm in place. Pause at the top of the motion, and return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Skull Crusher? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Skull Crusher">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Ab_Rollout/0.jpg" alt="Barbell Ab Rollout, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Ab_Rollout/1.jpg" alt="Barbell Ab Rollout, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Barbell Ab Rollout</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>abdominals</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>lower back, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>For this exercise you will need to get into a pushup position, but instead of having your hands of the floor, you will be grabbing on to an Olympic barbell (loaded with 5-10 lbs on each side) instead. This will be your starting position.</li><li>While keeping a slight arch on your back, lift your hips and roll the barbell towards your feet as you exhale. Tip: As you perform the movement, your glutes should be coming up, you should be keeping the abs tight and should maintain your back posture at all times. Also your arms should be staying perpendicular to the floor throughout the movement. If you don&#39;t, you will work out your shoulders and back more than the abs.</li><li>After a second contraction at the top, start to roll the barbell back forward to the starting position slowly as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Ab Rollout? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Ab Rollout">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Ab_Rollout_-_On_Knees/0.jpg" alt="Barbell Ab Rollout - On Knees, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Ab_Rollout_-_On_Knees/1.jpg" alt="Barbell Ab Rollout - On Knees, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Barbell Ab Rollout - On Knees</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>abdominals</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>lower back, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Hold an Olympic barbell loaded with 5-10lbs on each side and kneel on the floor.</li><li>Now place the barbell on the floor in front of you so that you are on all your hands and knees (as in a kneeling push up position). This will be your starting position.</li><li>Slowly roll the barbell straight forward, stretching your body into a straight position. Tip: Go down as far as you can without touching the floor with your body. Breathe in during this portion of the movement.</li><li>After a second pause at the stretched position, start pulling yourself back to the starting position as you breathe out. Tip: Go slowly and keep your abs tight at all times.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Ab Rollout - On Knees? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Ab Rollout - On Knees">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Bench_Press_-_Medium_Grip/0.jpg" alt="Barbell Bench Press - Medium Grip, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Bench_Press_-_Medium_Grip/1.jpg" alt="Barbell Bench Press - Medium Grip, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Barbell Bench Press - Medium Grip</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.</li><li>From the starting position, breathe in and begin coming down slowly until the bar touches your middle chest.</li><li>After a brief pause, push the bar back to the starting position as you breathe out. Focus on pushing the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position at the top of the motion, hold for a second and then start coming down slowly again. Tip: Ideally, lowering the weight should take about twice as long as raising it.</li><li>Repeat the movement for the prescribed amount of repetitions.</li><li>When you are done, place the bar back in the rack.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Bench Press - Medium Grip? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Bench Press - Medium Grip">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curl/0.jpg" alt="Barbell Curl, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curl/1.jpg" alt="Barbell Curl, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Barbell Curl</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>biceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Stand up with your torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting position.</li><li>While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out. Tip: Only the forearms should move.</li><li>Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard.</li><li>Slowly begin to bring the bar back to starting position as your breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Curl? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Curl">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curls_Lying_Against_An_Incline/0.jpg" alt="Barbell Curls Lying Against An Incline, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curls_Lying_Against_An_Incline/1.jpg" alt="Barbell Curls Lying Against An Incline, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Barbell Curls Lying Against An Incline</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>biceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie against an incline bench, with your arms holding a barbell and hanging down in a horizontal line. This will be your starting position.</li><li>While keeping the upper arms stationary, curl the weight up as high as you can while squeezing the biceps. Breathe out as you perform this portion of the movement. Tip: Only the forearms should move. Do not swing the arms.</li><li>After a second contraction, slowly go back to the starting position as you inhale. Tip: Make sure that you go all of the way down.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Curls Lying Against An Incline? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Curls Lying Against An Incline">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Deadlift/0.jpg" alt="Barbell Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Deadlift/1.jpg" alt="Barbell Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Barbell Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, hamstrings, lats, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Stand in front of a loaded barbell.</li><li>While keeping the back as straight as possible, bend your knees, bend forward and grasp the bar using a medium (shoulder width) overhand grip. This will be the starting position of the exercise. Tip: If it is difficult to hold on to the bar with this grip, alternate your grip or use wrist straps.</li><li>While holding the bar, start the lift by pushing with your legs while simultaneously getting your torso to the upright position as you breathe out. In the upright position, stick your chest out and contract the back by bringing the shoulder blades back. Think of how the soldiers in the military look when they are in standing in attention.</li><li>Go back to the starting position by bending at the knees while simultaneously leaning the torso forward at the waist while keeping the back straight. When the weights on the bar touch the floor you are back at the starting position and ready to perform another repetition.</li><li>Perform the amount of repetitions prescribed in the program.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Full_Squat/0.jpg" alt="Barbell Full Squat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Full_Squat/1.jpg" alt="Barbell Full Squat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Barbell Full Squat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>quadriceps</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, glutes, hamstrings, lower back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just above shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.</li><li>Hold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.</li><li>Step away from the rack and position your legs using a shoulder-width medium stance with the toes slightly pointed out. Keep your head up at all times and maintain a straight back. This will be your starting position.</li><li>Begin to slowly lower the bar by bending the knees and sitting back with your hips as you maintain a straight posture with the head up. Continue down until your hamstrings are on your calves. Inhale as you perform this portion of the movement.</li><li>Begin to raise the bar as you exhale by pushing the floor with the heel or middle of your foot as you straighten the legs and extend the hips to go back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Full Squat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Full Squat">Delete</button>
+        </form>
+      </article>
+    
+  </div>
+
+  
+    <nav class="pager" aria-label="Pages">
+      <a class="btn btn-outline-secondary" href="exercises.html">&larr; Previous</a>
+      <span class="pager-info">Page 2 of 37</span>
+      <a class="btn btn-outline-secondary" href="exercises-page-3.html">Next &rarr;</a>
+    </nav>
+  
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

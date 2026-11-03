@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Library · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">873 exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="exercises-new.html" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      
+      <input type="hidden" name="muscle" value="lower back">
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="exercises-muscle-lower-back.html" class="is-active">All types</a>
+      
+        <a href="#" data-demo-off class="">Strength <span>581</span></a>
+      
+        <a href="#" data-demo-off class="">Cardio <span>14</span></a>
+      
+        <a href="#" data-demo-off class="">Stretching <span>123</span></a>
+      
+        <a href="#" data-demo-off class="">Plyometrics <span>61</span></a>
+      
+        <a href="#" data-demo-off class="">Powerlifting <span>38</span></a>
+      
+        <a href="#" data-demo-off class="">Olympic weightlifting <span>35</span></a>
+      
+        <a href="#" data-demo-off class="">Strongman <span>21</span></a>
+      
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="exercises.html" class="">Any</a>
+      
+        <a href="exercises-muscle-chest.html" class="">chest</a>
+      
+        <a href="exercises-muscle-shoulders.html" class="">shoulders</a>
+      
+        <a href="exercises-muscle-biceps.html" class="">biceps</a>
+      
+        <a href="exercises-muscle-triceps.html" class="">triceps</a>
+      
+        <a href="exercises-muscle-lats.html" class="">lats</a>
+      
+        <a href="exercises-muscle-middle-back.html" class="">middle back</a>
+      
+        <a href="exercises-muscle-lower-back.html" class="is-active">lower back</a>
+      
+        <a href="exercises-muscle-abdominals.html" class="">abdominals</a>
+      
+        <a href="exercises-muscle-glutes.html" class="">glutes</a>
+      
+        <a href="exercises-muscle-quadriceps.html" class="">quadriceps</a>
+      
+        <a href="exercises-muscle-hamstrings.html" class="">hamstrings</a>
+      
+        <a href="exercises-muscle-calves.html" class="">calves</a>
+      
+    </nav>
+  </div>
+
+  <p class="lib-count">27 exercises</p>
+
+  <div class="ex-grid">
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stone_Trainer/0.jpg" alt="Atlas Stone Trainer, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stone_Trainer/1.jpg" alt="Atlas Stone Trainer, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Atlas Stone Trainer</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, forearms, glutes, hamstrings, quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>This trainer is effective for developing Atlas Stone strength for those who don&#39;t have access to stones, and are typically made from bar ends or heavy pipe.</li><li>Begin by loading the desired weight onto the bar. Straddle the weight, wrapping your arms around the implement, bending at the hips.</li><li>Begin by pulling the weight up past the knees, extending through the hips. As the weight clears the knees, it can be lapped by resting it on your thighs and sitting back, hugging it tightly to your chest.</li><li>Finish the movement by extending through your hips and knees to raise the weight as high as possible. The weight can be returned to the lap or to the ground for successive repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Atlas Stone Trainer? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Atlas Stone Trainer">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stones/0.jpg" alt="Atlas Stones, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Atlas_Stones/1.jpg" alt="Atlas Stones, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Atlas Stones</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, adductors, biceps, calves, forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin with the atlas stone between your feet. Bend at the hips to wrap your arms vertically around the Atlas Stone, attempting to get your fingers underneath the stone. Many stones will have a small flat portion on the bottom, which will make the stone easier to hold.</li><li>Pulling the stone into your torso, drive through the back half of your feet to pull the stone from the ground.</li><li>As the stone passes the knees, lap it by sitting backward, pulling the stone on top of your thighs.</li><li>Sit low, getting the stone high onto your chest as you change your grip to reach over the stone. Stand, driving through with your hips. Close distance to the loading platform, and lean back, extending the hips to get the stone as high as possible.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Atlas Stones? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Atlas Stones">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Axle_Deadlift/0.jpg" alt="Axle Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Axle_Deadlift/1.jpg" alt="Axle Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Axle Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an over/under grip.</li><li>With your feet and your grip set, take a big breath and then lower your hips and flex the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward.</li><li>After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Axle Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Axle Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Deadlift/0.jpg" alt="Barbell Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Deadlift/1.jpg" alt="Barbell Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Barbell Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, forearms, glutes, hamstrings, lats, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Stand in front of a loaded barbell.</li><li>While keeping the back as straight as possible, bend your knees, bend forward and grasp the bar using a medium (shoulder width) overhand grip. This will be the starting position of the exercise. Tip: If it is difficult to hold on to the bar with this grip, alternate your grip or use wrist straps.</li><li>While holding the bar, start the lift by pushing with your legs while simultaneously getting your torso to the upright position as you breathe out. In the upright position, stick your chest out and contract the back by bringing the shoulder blades back. Think of how the soldiers in the military look when they are in standing in attention.</li><li>Go back to the starting position by bending at the knees while simultaneously leaning the torso forward at the waist while keeping the back straight. When the weights on the bar touch the floor you are back at the starting position and ready to perform another repetition.</li><li>Perform the amount of repetitions prescribed in the program.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cat_Stretch/0.jpg" alt="Cat Stretch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cat_Stretch/1.jpg" alt="Cat Stretch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cat Stretch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>middle back, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Position yourself on the floor on your hands and knees.</li><li>Pull your belly in and round your spine, lower back, shoulders, and neck, letting your head drop.</li><li>Hold for 15 seconds.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cat Stretch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cat Stretch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Childs_Pose/0.jpg" alt="Child&#39;s Pose, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Childs_Pose/1.jpg" alt="Child&#39;s Pose, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Child&#39;s Pose</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Get on your hands and knees, walk your hands in front of you.</li><li>Lower your buttocks down to sit on your heels. Let your arms drag along the floor as you sit back to stretch your entire spine.</li><li>Once you settle onto your heels, bring your hands next to your feet and relax. &#34;breathe&#34; into your back. Rest your forehead on the floor. Avoid this position if you have knee problems.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Child&#39;s Pose? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Child&#39;s Pose">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Crossover_Reverse_Lunge/0.jpg" alt="Crossover Reverse Lunge, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Crossover_Reverse_Lunge/1.jpg" alt="Crossover Reverse Lunge, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Crossover Reverse Lunge</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, abductors, glutes, hamstrings, quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Stand with your feet shoulder width apart. This will be your starting position.</li><li>Perform a rear lunge by stepping back with one foot and flexing the hips and front knee. As you do so, rotate your torso across the front leg.</li><li>After a brief pause, return to the starting position and repeat on the other side, continuing in an alternating fashion.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Crossover Reverse Lunge? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Crossover Reverse Lunge">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dancers_Stretch/0.jpg" alt="Dancer&#39;s Stretch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dancers_Stretch/1.jpg" alt="Dancer&#39;s Stretch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Dancer&#39;s Stretch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abductors, glutes</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit up on the floor.</li><li>Cross your right leg over your left, keeping the knee bent. Your left leg is straight and down on the floor.</li><li>Place your left arm on your right leg and your right hand on the floor.</li><li>Rotate your upper body to the right, and hold for 10-20 seconds. Switch sides.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dancer&#39;s Stretch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dancer&#39;s Stretch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Deadlift_with_Bands/0.jpg" alt="Deadlift with Bands, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Deadlift_with_Bands/1.jpg" alt="Deadlift with Bands, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Deadlift with Bands</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>To deadlift with short bands, simply loop them over the bar before you start, and step into them to set up. For long bands, they will need to be anchored to a secure base, such as heavy dumbbells or a rack.</li><li>With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Deadlift with Bands? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Deadlift with Bands">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Deadlift_with_Chains/0.jpg" alt="Deadlift with Chains, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Deadlift_with_Chains/1.jpg" alt="Deadlift with Chains, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Deadlift with Chains</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>You can attach the chains to the sleeves of the bar, or just drape the middle over the bar so there is a greater weight increase as you lift.</li><li>Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets. With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar.</li><li>Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Deadlift with Chains? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Deadlift with Chains">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Deficit_Deadlift/0.jpg" alt="Deficit Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Deficit_Deadlift/1.jpg" alt="Deficit Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Deficit Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, middle back, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin by having a platform or weight plates that you can stand on, usually 1-3 inches in height. Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets.</li><li>With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Deficit Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Deficit Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hug_A_Ball/0.jpg" alt="Hug A Ball, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hug_A_Ball/1.jpg" alt="Hug A Ball, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Hug A Ball</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>exercise ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>calves, glutes</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Seat yourself on the floor.</li><li>Straddle an exercise ball between both legs and lower your hips down toward the floor.</li><li>Hug your arms around the ball to support your body. Adjust your legs so that your feet are flat on the floor and your knees line up over your ankles. Keep a good grip on the ball so it doesn&#39;t roll away from you and send you back onto your buttocks.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hug A Ball? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hug A Ball">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hug_Knees_To_Chest/0.jpg" alt="Hug Knees To Chest, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hug_Knees_To_Chest/1.jpg" alt="Hug Knees To Chest, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Hug Knees To Chest</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie down on your back and pull both knees up to your chest.</li><li>Hold your arms under the knees, not over (that would put to much pressure on your knee joints).</li><li>Slowly pull the knees toward your shoulders. This also stretches your buttocks muscles.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hug Knees To Chest? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hug Knees To Chest">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hyperextensions_Back_Extensions/0.jpg" alt="Hyperextensions (Back Extensions), start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hyperextensions_Back_Extensions/1.jpg" alt="Hyperextensions (Back Extensions), end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Hyperextensions (Back Extensions)</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, hamstrings</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie face down on a hyperextension bench, tucking your ankles securely under the footpads.</li><li>Adjust the upper pad if possible so your upper thighs lie flat across the wide pad, leaving enough room for you to bend at the waist without any restriction.</li><li>With your body straight, cross your arms in front of you (my preference) or behind your head. This will be your starting position. Tip: You can also hold a weight plate for extra resistance in front of you under your crossed arms.</li><li>Start bending forward slowly at the waist as far as you can while keeping your back flat. Inhale as you perform this movement. Keep moving forward until you feel a nice stretch on the hamstrings and you can no longer keep going without a rounding of the back. Tip: Never round the back as you perform this exercise. Also, some people can go farther than others. The key thing is that you go as far as your body allows you to without rounding the back.</li><li>Slowly raise your torso back to the initial position as you inhale. Tip: Avoid the temptation to arch your back past a straight line. Also, do not swing the torso at any time in order to protect the back from injury.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hyperextensions (Back Extensions)? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hyperextensions (Back Extensions)">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hyperextensions_With_No_Hyperextension_Bench/0.jpg" alt="Hyperextensions With No Hyperextension Bench, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hyperextensions_With_No_Hyperextension_Bench/1.jpg" alt="Hyperextensions With No Hyperextension Bench, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Hyperextensions With No Hyperextension Bench</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes, hamstrings</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>With someone holding down your legs, slide yourself down to the edge a flat bench until your hips hang off the end of the bench. Tip: Your entire upper body should be hanging down towards the floor. Also, you will be in the same position as if you were on a hyperextension bench but the range of motion will be shorter due to the height of the flat bench vs. that of the hyperextension bench.</li><li>With your body straight, cross your arms in front of you (my preference) or behind your head. This will be your starting position. Tip: You can also hold a weight plate for extra resistance in front of you under your crossed arms.</li><li>Start bending forward slowly at the waist as far as you can while keeping your back flat. Inhale as you perform this movement. Keep moving forward until you almost touch the floor or you feel a nice stretch on the hamstrings (whichever comes first). Tip: Never round the back as you perform this exercise.</li><li>Slowly raise your torso back to the initial position as you exhale. Tip: Avoid the temptation to arch your back past a straight line. Also, do not swing the torso at any time in order to protect the back from injury.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Hyperextensions With No Hyperextension Bench? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hyperextensions With No Hyperextension Bench">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Keg_Load/0.jpg" alt="Keg Load, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Keg_Load/1.jpg" alt="Keg Load, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strongman" style="margin-left:0">strongman</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Keg Load</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, biceps, calves, forearms, glutes, hamstrings, middle back, quadriceps, shoulders, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>To load kegs, place the desired number a distance from the loading platform, typically 30-50 feet.</li><li>Begin by grabbing the close handle of the first keg, tilting it onto its side to grab the opposite edge of the bottom of the keg. Lift the keg up to your chest.</li><li>The higher you can place the keg, the faster you should be able to move to the platform. Shouldering is usually not allowed. Be sure to keep a firm hold on the keg. Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible.</li><li>Return to the starting position to retrieve the next keg, and repeat until the event is completed.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Keg Load? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Keg Load">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Lower_Back-SMR/0.jpg" alt="Lower Back-SMR, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Lower_Back-SMR/1.jpg" alt="Lower Back-SMR, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Lower Back-SMR</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>foam roll</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>In a seated position, place a foam roll under your lower back. Cross your arms in front of you and protract your shoulders. This will be your starting position.</li><li>Raise your hips off of the floor and lean back, keeping your weight on your lower back. Now shift your weight slightly to one side, keeping your weight off of the spine and on the muscles to the side of it. Roll over your lower back, holding points of tension for 10-30 seconds. Repeat on the other side.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Lower Back-SMR? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Lower Back-SMR">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pelvic_Tilt_Into_Bridge/0.jpg" alt="Pelvic Tilt Into Bridge, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pelvic_Tilt_Into_Bridge/1.jpg" alt="Pelvic Tilt Into Bridge, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Pelvic Tilt Into Bridge</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie down with your feet on the floor, heels directly under your knees.</li><li>Lift only your tailbone to the ceiling to stretch your lower back. (Don&#39;t lift the entire spine yet.) Pull in your stomach.</li><li>To go into a bridge, lift the entire spine except the neck.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Pelvic Tilt Into Bridge? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Pelvic Tilt Into Bridge">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pyramid/0.jpg" alt="Pyramid, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pyramid/1.jpg" alt="Pyramid, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Pyramid</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>exercise ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Start off by rolling your torso forward onto the ball so your hips rest on top of the ball and become the highest point of your body.</li><li>Rest your hands and feet on the floor. Your arms and legs can be slightly bent or straight, depending on the size of the ball, your flexibility, and the length of your limbs. This also helps develop stabilizing strength in your torso and shoulders.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Pyramid? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Pyramid">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Rack_Pull_with_Bands/0.jpg" alt="Rack Pull with Bands, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Rack_Pull_with_Bands/1.jpg" alt="Rack Pull with Bands, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Rack Pull with Bands</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, quadriceps, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Set up in a power rack with the bar on the pins. The pins should be set to the desired point; just below the knees, just above, or in the mid thigh position. Attach bands to the base of the rack, or secure them with dumbbells. Attach the other end to the bar. You may need to choke the bands to provide tension.</li><li>Position yourself against the bar in proper deadlifting position. Your feet should be under your hips, your grip shoulder width, back arched, and hips back to engage the hamstrings. Since the weight is typically heavy, you may use a mixed grip, a hook grip, or use straps to aid in holding the weight.</li><li>With your head looking forward, extend through the hips and knees, pulling the weight up and back until lockout. Be sure to pull your shoulders back as you complete the movement. Return the weight to the pins and repeat.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Rack Pull with Bands? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rack Pull with Bands">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Rack_Pulls/0.jpg" alt="Rack Pulls, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Rack_Pulls/1.jpg" alt="Rack Pulls, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Rack Pulls</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>forearms, glutes, hamstrings, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Set up in a power rack with the bar on the pins. The pins should be set to the desired point; just below the knees, just above, or in the mid thigh position. Position yourself against the bar in proper deadlifting position. Your feet should be under your hips, your grip shoulder width, back arched, and hips back to engage the hamstrings. Since the weight is typically heavy, you may use a mixed grip, a hook grip, or use straps to aid in holding the weight.</li><li>With your head looking forward, extend through the hips and knees, pulling the weight up and back until lockout. Be sure to pull your shoulders back as you complete the movement.</li><li>Return the weight to the pins and repeat.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Rack Pulls? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rack Pulls">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Reverse_Band_Deadlift/0.jpg" alt="Reverse Band Deadlift, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Reverse_Band_Deadlift/1.jpg" alt="Reverse Band Deadlift, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Reverse Band Deadlift</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abductors, adductors, calves, glutes, hamstrings, quadriceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Set the bar up in a power rack. Attach bands to the top of the rack, using either bands pegs or the frame itself. Attach the other end of the bands to the bar.</li><li>Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets.</li><li>With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward.</li><li>After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Reverse Band Deadlift? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Reverse Band Deadlift">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Seated_Good_Mornings/0.jpg" alt="Seated Good Mornings, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Seated_Good_Mornings/1.jpg" alt="Seated Good Mornings, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Seated Good Mornings</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Set up a box in a power rack. The pins should be set at an appropriate height. Begin by stepping under the bar and placing it across the back of the shoulders, not on top of your traps. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders.</li><li>Remove the bar from the rack, creating a tight arch in your lower back. Keep your head facing forward. With your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips until you are seated on the box. This will be your starting position.</li><li>Keeping the bar tight, bend forward at the hips as much as possible. If you set the pins to what would be parallel, you not only have a safety if you fail, but know when to stop.</li><li>Pause just above the pins and reverse the motion until your torso it upright.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Seated Good Mornings? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Seated Good Mornings">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Pelvic_Tilt/0.jpg" alt="Standing Pelvic Tilt, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Pelvic_Tilt/1.jpg" alt="Standing Pelvic Tilt, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Standing Pelvic Tilt</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lower back</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>glutes</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Start off with your feet hip-distance apart.</li><li>Bend your knees slightly to keep them soft and springy.</li><li>You may want to move your pelvis forward and backward and back few times before holding the tailbone forward in this stretch.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Standing Pelvic Tilt? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Standing Pelvic Tilt">Delete</button>
+        </form>
+      </article>
+    
+  </div>
+
+  
+    <nav class="pager" aria-label="Pages">
+      <span></span>
+      <span class="pager-info">Page 1 of 2</span>
+      <a class="btn btn-outline-secondary" href="#" data-demo-off>Next &rarr;</a>
+    </nav>
+  
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

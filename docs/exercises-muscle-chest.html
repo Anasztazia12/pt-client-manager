@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Library · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">873 exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="exercises-new.html" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      
+      <input type="hidden" name="muscle" value="chest">
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="exercises-muscle-chest.html" class="is-active">All types</a>
+      
+        <a href="#" data-demo-off class="">Strength <span>581</span></a>
+      
+        <a href="#" data-demo-off class="">Cardio <span>14</span></a>
+      
+        <a href="#" data-demo-off class="">Stretching <span>123</span></a>
+      
+        <a href="#" data-demo-off class="">Plyometrics <span>61</span></a>
+      
+        <a href="#" data-demo-off class="">Powerlifting <span>38</span></a>
+      
+        <a href="#" data-demo-off class="">Olympic weightlifting <span>35</span></a>
+      
+        <a href="#" data-demo-off class="">Strongman <span>21</span></a>
+      
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="exercises.html" class="">Any</a>
+      
+        <a href="exercises-muscle-chest.html" class="is-active">chest</a>
+      
+        <a href="exercises-muscle-shoulders.html" class="">shoulders</a>
+      
+        <a href="exercises-muscle-biceps.html" class="">biceps</a>
+      
+        <a href="exercises-muscle-triceps.html" class="">triceps</a>
+      
+        <a href="exercises-muscle-lats.html" class="">lats</a>
+      
+        <a href="exercises-muscle-middle-back.html" class="">middle back</a>
+      
+        <a href="exercises-muscle-lower-back.html" class="">lower back</a>
+      
+        <a href="exercises-muscle-abdominals.html" class="">abdominals</a>
+      
+        <a href="exercises-muscle-glutes.html" class="">glutes</a>
+      
+        <a href="exercises-muscle-quadriceps.html" class="">quadriceps</a>
+      
+        <a href="exercises-muscle-hamstrings.html" class="">hamstrings</a>
+      
+        <a href="exercises-muscle-calves.html" class="">calves</a>
+      
+    </nav>
+  </div>
+
+  <p class="lib-count">84 exercises</p>
+
+  <div class="ex-grid">
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Alternating_Floor_Press/0.jpg" alt="Alternating Floor Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Alternating_Floor_Press/1.jpg" alt="Alternating Floor Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Alternating Floor Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>kettlebells</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on the floor with two kettlebells next to your shoulders.</li><li>Position one in place on your chest and then the other, gripping the kettlebells on the handle with the palms facing forward.</li><li>Extend both arms, so that the kettlebells are being held above your chest. Lower one kettlebell, bringing it to your chest and turn the wrist in the direction of the locked out kettlebell.</li><li>Raise the kettlebell and repeat on the opposite side.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Alternating Floor Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternating Floor Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Around_The_Worlds/0.jpg" alt="Around The Worlds, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Around_The_Worlds/1.jpg" alt="Around The Worlds, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Around The Worlds</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lay down on a flat bench holding a dumbbell in each hand with the palms of the hands facing towards the ceiling. Tip: Your arms should be parallel to the floor and next to your thighs. To avoid injury, make sure that you keep your elbows slightly bent. This will be your starting position.</li><li>Now move the dumbbells by creating a semi-circle as you displace them from the initial position to over the head. All of the movement should happen with the arms parallel to the floor at all times. Breathe in as you perform this portion of the movement.</li><li>Reverse the movement to return the weight to the starting position as you exhale.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Around The Worlds? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Around The Worlds">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Bench_Press_-_Medium_Grip/0.jpg" alt="Barbell Bench Press - Medium Grip, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Bench_Press_-_Medium_Grip/1.jpg" alt="Barbell Bench Press - Medium Grip, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Barbell Bench Press - Medium Grip</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.</li><li>From the starting position, breathe in and begin coming down slowly until the bar touches your middle chest.</li><li>After a brief pause, push the bar back to the starting position as you breathe out. Focus on pushing the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position at the top of the motion, hold for a second and then start coming down slowly again. Tip: Ideally, lowering the weight should take about twice as long as raising it.</li><li>Repeat the movement for the prescribed amount of repetitions.</li><li>When you are done, place the bar back in the rack.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Bench Press - Medium Grip? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Bench Press - Medium Grip">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Guillotine_Bench_Press/0.jpg" alt="Barbell Guillotine Bench Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Guillotine_Bench_Press/1.jpg" alt="Barbell Guillotine Bench Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Barbell Guillotine Bench Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over your neck with your arms locked. This will be your starting position.</li><li>As you breathe in, bring the bar down slowly until it is about 1 inch from your neck.</li><li>After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. It should take at least twice as long to go down than to come up.</li><li>Repeat the movement for the prescribed amount of repetitions.</li><li>When you are done, place the bar back in the rack.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Guillotine Bench Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Guillotine Bench Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/0.jpg" alt="Barbell Incline Bench Press - Medium Grip, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/1.jpg" alt="Barbell Incline Bench Press - Medium Grip, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Barbell Incline Bench Press - Medium Grip</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie back on an incline bench. Using a medium-width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.</li><li>As you breathe in, come down slowly until you feel the bar on you upper chest.</li><li>After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms in the contracted position, squeeze your chest, hold for a second and then start coming down slowly again. Tip: it should take at least twice as long to go down than to come up.</li><li>Repeat the movement for the prescribed amount of repetitions.</li><li>When you are done, place the bar back in the rack.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Barbell Incline Bench Press - Medium Grip? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Incline Bench Press - Medium Grip">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Behind_Head_Chest_Stretch/0.jpg" alt="Behind Head Chest Stretch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Behind_Head_Chest_Stretch/1.jpg" alt="Behind Head Chest Stretch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Behind Head Chest Stretch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit upright on the floor with your partner behind you.</li><li>Place your hands behind your hand, and push your elbows back as far as you can. Your partner should hold your elbows. This will be your starting position.</li><li>Gently attempt to pull your elbows forward with your hands still behind your head for 10 or more seconds. Your partner should prevent your elbows from moving.</li><li>Now, relax your muscles and have your partner gently pull the elbows back as far as it comfortable for you. Be sure to let your partner know when the stretch is adequate to prevent overstretching or injury.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Behind Head Chest Stretch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Behind Head Chest Stretch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_-_With_Bands/0.jpg" alt="Bench Press - With Bands, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_-_With_Bands/1.jpg" alt="Bench Press - With Bands, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Bench Press - With Bands</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Using a flat bench secure a band under the leg of the bench that is nearest to your head.</li><li>Once the band is secure, grab it by both handles and lie down on the bench.</li><li>Extend your arms so that you are holding the band handles in front of you at shoulder width.</li><li>Once at shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. This will be your starting position.</li><li>Bring down the handles slowly until your elbow forms a 90 degree angle. Keep full control at all times.</li><li>As you breathe out, bring the handles up using your pectoral muscles. Lock your arms in the contracted position, squeeze your chest, hold for a second and then start coming down slowly. Tip: It should take at least twice as long to go down than to come up.</li><li>Repeat the movement for the prescribed amount of repetitions of your training program.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bench Press - With Bands? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Press - With Bands">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bent-Arm_Dumbbell_Pullover/0.jpg" alt="Bent-Arm Dumbbell Pullover, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bent-Arm_Dumbbell_Pullover/1.jpg" alt="Bent-Arm Dumbbell Pullover, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Bent-Arm Dumbbell Pullover</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>lats, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Place a dumbbell standing up on a flat bench.</li><li>Ensuring that the dumbbell stays securely placed at the top of the bench, lie perpendicular to the bench (torso across it as in forming a cross) with only your shoulders lying on the surface. Hips should be below the bench and legs bent with feet firmly on the floor. The head will be off the bench as well.</li><li>Grasp the dumbbell with both hands and hold it straight over your chest with a bend in your arms. Both palms should be pressing against the underside one of the sides of the dumbbell. This will be your starting position. Caution: Always ensure that the dumbbell used for this exercise is secure. Using a dumbbell with loose plates can result in the dumbbell falling apart and falling on your face.</li><li>While keeping your arms locked in the bent arm position, lower the weight slowly in an arc behind your head while breathing in until you feel a stretch on the chest.</li><li>At that point, bring the dumbbell back to the starting position using the arc through which the weight was lowered and exhale as you perform this movement.</li><li>Hold the weight on the initial position for a second and repeat the motion for the prescribed number of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bent-Arm Dumbbell Pullover? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent-Arm Dumbbell Pullover">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bodyweight_Flyes/0.jpg" alt="Bodyweight Flyes, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bodyweight_Flyes/1.jpg" alt="Bodyweight Flyes, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Bodyweight Flyes</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>e-z curl bar</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Position two equally loaded EZ bars on the ground next to each other. Ensure they are able to roll.</li><li>Assume a push-up position over the bars, supporting your weight on your toes and hands with your arms extended and body straight.</li><li>Place your hands on the bars. This will be your starting position.</li><li>Using a slow and controlled motion, move your hands away from the midline of your body, rolling the bars apart. Inhale during this portion of the motion.</li><li>After moving the bars as far apart as you can, return to the starting position by pulling them back together. Exhale as you perform this movement.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bodyweight Flyes? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bodyweight Flyes">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Butterfly/0.jpg" alt="Butterfly, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Butterfly/1.jpg" alt="Butterfly, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Butterfly</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>machine</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit on the machine with your back flat on the pad.</li><li>Take hold of the handles. Tip: Your upper arms should be positioned parallel to the floor; adjust the machine accordingly. This will be your starting position.</li><li>Push the handles together slowly as you squeeze your chest in the middle. Breathe out during this part of the motion and hold the contraction for a second.</li><li>Return back to the starting position slowly as you inhale until your chest muscles are fully stretched.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Butterfly? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Butterfly">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Chest_Press/0.jpg" alt="Cable Chest Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Chest_Press/1.jpg" alt="Cable Chest Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Chest Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Adjust the weight to an appropriate amount and be seated, grasping the handles. Your upper arms should be about 45 degrees to the body, with your head and chest up. The elbows should be bent to about 90 degrees. This will be your starting position.</li><li>Begin by extending through the elbow, pressing the handles together straight in front of you. Keep your shoulder blades retracted as you execute the movement.</li><li>After pausing at full extension, return to th starting position, keeping tension on the cables.</li><li>You can also execute this movement with your back off the pad, at an incline or decline, or alternate hands.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Chest Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Chest Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Crossover/0.jpg" alt="Cable Crossover, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Crossover/1.jpg" alt="Cable Crossover, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Crossover</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>To get yourself into the starting position, place the pulleys on a high position (above your head), select the resistance to be used and hold the pulleys in each hand.</li><li>Step forward in front of an imaginary straight line between both pulleys while pulling your arms together in front of you. Your torso should have a small forward bend from the waist. This will be your starting position.</li><li>With a slight bend on your elbows in order to prevent stress at the biceps tendon, extend your arms to the side (straight out at both sides) in a wide arc until you feel a stretch on your chest. Breathe in as you perform this portion of the movement. Tip: Keep in mind that throughout the movement, the arms and torso should remain stationary; the movement should only occur at the shoulder joint.</li><li>Return your arms back to the starting position as you breathe out. Make sure to use the same arc of motion used to lower the weights.</li><li>Hold for a second at the starting position and repeat the movement for the prescribed amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Crossover? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Crossover">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Iron_Cross/0.jpg" alt="Cable Iron Cross, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Iron_Cross/1.jpg" alt="Cable Iron Cross, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Iron Cross</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin by moving the pulleys to the high position, select the resistance to be used, and take a handle in each hand.</li><li>Stand directly between both pulleys with your arms extended out to your sides. Your head and chest should be up while your arms form a &#34;T&#34;. This will be your starting position.</li><li>Keeping the elbows extended, pull your arms straight to your sides.</li><li>Return your arms back to the starting position after a pause at the peak contraction.</li><li>Continue the movement for the prescribed number of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Iron Cross? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Iron Cross">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chain_Press/0.jpg" alt="Chain Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chain_Press/1.jpg" alt="Chain Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-powerlifting" style="margin-left:0">powerlifting</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Chain Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin by connecting the chains to the cable handle attachments. Position yourself on the flat bench in the same position as for a dumbbell press. Your wrists should be pronated and arms perpendicular to the floor. This will be your starting position.</li><li>Lower the chains by flexing the elbows, unloading some of the chain onto the floor.</li><li>Continue until your elbow forms a 90 degree angle, and then reverse the motion by extending through the elbow to lockout.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chain Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chain Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_And_Front_Of_Shoulder_Stretch/0.jpg" alt="Chest And Front Of Shoulder Stretch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_And_Front_Of_Shoulder_Stretch/1.jpg" alt="Chest And Front Of Shoulder Stretch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chest And Front Of Shoulder Stretch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Start off by standing with your legs together, holding a bodybar or a broomstick.</li><li>Take a slightly wider than shoulder width grip on the pole and hold it in front of you with your palms facing down.</li><li>Carefully lift the pole up and behind your head.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chest And Front Of Shoulder Stretch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest And Front Of Shoulder Stretch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_multiple_response/0.jpg" alt="Chest Push (multiple response), start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_multiple_response/1.jpg" alt="Chest Push (multiple response), end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chest Push (multiple response)</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin in a kneeling position facing a wall or utilize a partner. Hold the ball with both hands tight into the chest.</li><li>Execute the pass by exploding forward and outward with the hips while pushing the ball as hard as possible.</li><li>Follow through by falling forward, catching yourself with your hands.</li><li>Immediately return to an upright position. Repeat for the desired number of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chest Push (multiple response)? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push (multiple response)">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_single_response/0.jpg" alt="Chest Push (single response), start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_single_response/1.jpg" alt="Chest Push (single response), end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chest Push (single response)</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin in a kneeling position holding the medicine ball with both hands tightly into the chest.</li><li>Execute the pass by exploding forward and outward with the hips while pushing the ball as far as possible.</li><li>Follow through by falling forward, catching yourself with your hands.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chest Push (single response)? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push (single response)">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_from_3_point_stance/0.jpg" alt="Chest Push from 3 point stance, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_from_3_point_stance/1.jpg" alt="Chest Push from 3 point stance, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chest Push from 3 point stance</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin in a three point stance, squatted down with your back flat and one hand on the ground. Place the medicine ball directly in front of you.</li><li>To begin, take your first step as you pull the ball to your chest, positioning both hands to prepare for the throw.</li><li>As you execute the second step, explosively release the ball forward as hard as possible.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chest Push from 3 point stance? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push from 3 point stance">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_with_Run_Release/0.jpg" alt="Chest Push with Run Release, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Push_with_Run_Release/1.jpg" alt="Chest Push with Run Release, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chest Push with Run Release</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin in an athletic stance with the knees bent, hips back, and back flat. Hold the medicine ball near your legs. This will be your starting position.</li><li>While taking your first step draw the medicine ball into your chest.</li><li>As you take the second step, explosively push the ball forward, immediately sprinting for 10 yards after the release. If you are really fast, you can catch your own pass!</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chest Push with Run Release? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push with Run Release">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Stretch_on_Stability_Ball/0.jpg" alt="Chest Stretch on Stability Ball, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_Stretch_on_Stability_Ball/1.jpg" alt="Chest Stretch on Stability Ball, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chest Stretch on Stability Ball</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>exercise ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Get on your hands and knees next to an exercise ball.</li><li>Place your elbows on top of the ball, keeping your arm out to your side. This will be your starting position.</li><li>Lower your torso towards the floor, keeping your elbow on top of the ball. Hold the stretch for 20-30 seconds, and repeat with the other arm.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chest Stretch on Stability Ball? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Stretch on Stability Ball">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clock_Push-Up/0.jpg" alt="Clock Push-Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Clock_Push-Up/1.jpg" alt="Clock Push-Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Clock Push-Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Move into a prone position on the floor, supporting your weight on your hands and toes.</li><li>Your arms should be fully extended with the hands around shoulder width. Keep your body straight throughout the movement. This will be your starting position.</li><li>Descend by flexing at the elbow, lowering your chest toward the ground.</li><li>At the bottom, reverse the motion by pushing yourself up through elbow extension as quickly as possible until you are air borne. Aim to &#34;jump&#34; 12-18 inches to one side.</li><li>As you accelerate up, move your outside foot away from your direction of travel. Leaving the ground, shift your body about 30 degrees for the next repetition.</li><li>Return to the starting position and repeat the exercise, working all the way around until you are back where you started.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Clock Push-Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Clock Push-Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cross_Over_-_With_Bands/0.jpg" alt="Cross Over - With Bands, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cross_Over_-_With_Bands/1.jpg" alt="Cross Over - With Bands, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cross Over - With Bands</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>bands</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure an exercise band around a stationary post.</li><li>While facing away from the post, grab the handles on both ends of the band and step forward enough to create tension on the band.</li><li>Raise your arms to the sides, parallel to the floor, perpendicular to your torso (your torso and the arms should resemble the letter &#34;T&#34;) and with the palms facing forward. Have them extended with a slight bend at the elbows. This will be your starting position.</li><li>While keeping your arms straight, bring them across your chest in a semicircular motion to the front as you exhale and flex your pecs. Hold the contraction for a second.</li><li>Slowly return to the starting position as you inhale.</li><li>Perform for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cross Over - With Bands? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cross Over - With Bands">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Barbell_Bench_Press/0.jpg" alt="Decline Barbell Bench Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Barbell_Bench_Press/1.jpg" alt="Decline Barbell Bench Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Decline Barbell Bench Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure your legs at the end of the decline bench and slowly lay down on the bench.</li><li>Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.</li><li>As you breathe in, come down slowly until you feel the bar on your lower chest.</li><li>After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up).</li><li>Repeat the movement for the prescribed amount of repetitions.</li><li>When you are done, place the bar back in the rack.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Decline Barbell Bench Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Decline Barbell Bench Press">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Dumbbell_Bench_Press/0.jpg" alt="Decline Dumbbell Bench Press, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Dumbbell_Bench_Press/1.jpg" alt="Decline Dumbbell Bench Press, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Decline Dumbbell Bench Press</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>chest</dd></div>
+          <div><dt>Equipment</dt><dd>dumbbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Secure your legs at the end of the decline bench and lie down with a dumbbell on each hand on top of your thighs. The palms of your hand will be facing each other.</li><li>Once you are laying down, move the dumbbells in front of you at shoulder width.</li><li>Once at shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. This will be your starting position.</li><li>Bring down the weights slowly to your side as you breathe out. Keep full control of the dumbbells at all times. Tip: Throughout the motion, the forearms should always be perpendicular to the floor.</li><li>As you breathe out, push the dumbbells up using your pectoral muscles. Lock your arms in the contracted position, squeeze your chest, hold for a second and then start coming down slowly. Tip: It should take at least twice as long to go down than to come up..</li><li>Repeat the movement for the prescribed amount of repetitions of your training program.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Decline Dumbbell Bench Press? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Decline Dumbbell Bench Press">Delete</button>
+        </form>
+      </article>
+    
+  </div>
+
+  
+    <nav class="pager" aria-label="Pages">
+      <span></span>
+      <span class="pager-info">Page 1 of 4</span>
+      <a class="btn btn-outline-secondary" href="#" data-demo-off>Next &rarr;</a>
+    </nav>
+  
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

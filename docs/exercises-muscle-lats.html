@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Library · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">873 exercises</p>
+      <h1 class="h3 mb-0">Exercise Library</h1>
+    </div>
+    <a href="exercises-new.html" class="btn btn-primary">+ Add exercise</a>
+  </div>
+
+  <div class="lib-tools">
+    <form method="GET" class="lib-search" role="search">
+      
+      <input type="hidden" name="muscle" value="lats">
+      <input type="text" name="q" class="form-control" placeholder="Search exercises, e.g. squat" value="" aria-label="Search exercises">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <nav class="type-filter" aria-label="Exercise type">
+      <a href="exercises-muscle-lats.html" class="is-active">All types</a>
+      
+        <a href="#" data-demo-off class="">Strength <span>581</span></a>
+      
+        <a href="#" data-demo-off class="">Cardio <span>14</span></a>
+      
+        <a href="#" data-demo-off class="">Stretching <span>123</span></a>
+      
+        <a href="#" data-demo-off class="">Plyometrics <span>61</span></a>
+      
+        <a href="#" data-demo-off class="">Powerlifting <span>38</span></a>
+      
+        <a href="#" data-demo-off class="">Olympic weightlifting <span>35</span></a>
+      
+        <a href="#" data-demo-off class="">Strongman <span>21</span></a>
+      
+    </nav>
+
+    <nav class="muscle-filter" aria-label="Muscle group">
+      <span class="stat-label mb-0">Muscle</span>
+      <a href="exercises.html" class="">Any</a>
+      
+        <a href="exercises-muscle-chest.html" class="">chest</a>
+      
+        <a href="exercises-muscle-shoulders.html" class="">shoulders</a>
+      
+        <a href="exercises-muscle-biceps.html" class="">biceps</a>
+      
+        <a href="exercises-muscle-triceps.html" class="">triceps</a>
+      
+        <a href="exercises-muscle-lats.html" class="is-active">lats</a>
+      
+        <a href="exercises-muscle-middle-back.html" class="">middle back</a>
+      
+        <a href="exercises-muscle-lower-back.html" class="">lower back</a>
+      
+        <a href="exercises-muscle-abdominals.html" class="">abdominals</a>
+      
+        <a href="exercises-muscle-glutes.html" class="">glutes</a>
+      
+        <a href="exercises-muscle-quadriceps.html" class="">quadriceps</a>
+      
+        <a href="exercises-muscle-hamstrings.html" class="">hamstrings</a>
+      
+        <a href="exercises-muscle-calves.html" class="">calves</a>
+      
+    </nav>
+  </div>
+
+  <p class="lib-count">38 exercises</p>
+
+  <div class="ex-grid">
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Assisted_Pull-Up/0.jpg" alt="Band Assisted Pull-Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Band_Assisted_Pull-Up/1.jpg" alt="Band Assisted Pull-Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Band Assisted Pull-Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, forearms, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Choke the band around the center of the pullup bar. You can use different bands to provide varying levels of assistance.</li><li>Pull the end of the band down, and place one bent knee into the loop, ensuring it won&#39;t slip out. Take a medium to wide grip on the bar. This will be your starting position.</li><li>Pull yourself upward by contracting the lats as you flex the elbow. The elbow should be driven to your side. Pull to the front, attempting to get your chin over the bar. Avoid swinging or jerking movements.</li><li>After a brief pause, return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Band Assisted Pull-Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Assisted Pull-Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bent-Arm_Barbell_Pullover/0.jpg" alt="Bent-Arm Barbell Pullover, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bent-Arm_Barbell_Pullover/1.jpg" alt="Bent-Arm Barbell Pullover, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Bent-Arm Barbell Pullover</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>barbell</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>chest, lats, shoulders, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on a flat bench with a barbell using a shoulder grip width.</li><li>Hold the bar straight over your chest with a bend in your arms. This will be your starting position.</li><li>While keeping your arms in the bent arm position, lower the weight slowly in an arc behind your head while breathing in until you feel a stretch on the chest.</li><li>At that point, bring the barbell back to the starting position using the arc through which the weight was lowered and exhale as you perform this movement.</li><li>Hold the weight on the initial position for a second and repeat the motion for the prescribed number of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Bent-Arm Barbell Pullover? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent-Arm Barbell Pullover">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Incline_Pushdown/0.jpg" alt="Cable Incline Pushdown, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Incline_Pushdown/1.jpg" alt="Cable Incline Pushdown, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Cable Incline Pushdown</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Lie on incline an bench facing away from a high pulley machine that has a straight bar attachment on it.</li><li>Grasp the straight bar attachment overhead with a pronated (overhand; palms down) shoulder width grip and extend your arms in front of you. The bar should be around 2 inches away from your upper thighs. This will be your starting position.</li><li>Keeping the upper arms stationary, lift your arms back in a semi circle until the bar is straight over your head. Breathe in during this portion of the movement.</li><li>Slowly go back to the starting position using your lats and hold the contraction once you reach the starting position. Breathe out during the execution of this movement.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Cable Incline Pushdown? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Incline Pushdown">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Catch_and_Overhead_Throw/0.jpg" alt="Catch and Overhead Throw, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Catch_and_Overhead_Throw/1.jpg" alt="Catch and Overhead Throw, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Catch and Overhead Throw</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, chest, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Begin standing while facing a wall or a partner.</li><li>Using both hands, position the ball behind your head, stretching as much as possible, and forcefully throw the ball forward.</li><li>Ensure that you follow your throw through, being prepared to receive your rebound from your throw. If you are throwing against the wall, make sure that you stand close enough to the wall to receive the rebound, and aim a little higher than you would with a partner.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Catch and Overhead Throw? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Catch and Overhead Throw">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chair_Lower_Back_Stretch/0.jpg" alt="Chair Lower Back Stretch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chair_Lower_Back_Stretch/1.jpg" alt="Chair Lower Back Stretch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chair Lower Back Stretch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>lower back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit upright on a chair.</li><li>Bend to one side with your arm over your head. You can hold onto the chair with your free hand.</li><li>Hold for 10 seconds, and repeat for your other side.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chair Lower Back Stretch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chair Lower Back Stretch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chin-Up/0.jpg" alt="Chin-Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chin-Up/1.jpg" alt="Chin-Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Chin-Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, forearms, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grab the pull-up bar with the palms facing your torso and a grip closer than the shoulder width.</li><li>As you have both arms extended in front of you holding the bar at the chosen grip width, keep your torso as straight as possible while creating a curvature on your lower back and sticking your chest out. This is your starting position. Tip: Keeping the torso as straight as possible maximizes biceps stimulation while minimizing back involvement.</li><li>As you breathe out, pull your torso up until your head is around the level of the pull-up bar. Concentrate on using the biceps muscles in order to perform the movement. Keep the elbows close to your body. Tip: The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.</li><li>After a second of squeezing the biceps in the contracted position, slowly lower your torso back to the starting position; when your arms are fully extended. Breathe in as you perform this portion of the movement.</li><li>Repeat this motion for the prescribed amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Chin-Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chin-Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Front_Lat_Pulldown/0.jpg" alt="Close-Grip Front Lat Pulldown, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Close-Grip_Front_Lat_Pulldown/1.jpg" alt="Close-Grip Front Lat Pulldown, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Close-Grip Front Lat Pulldown</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit down on a pull-down machine with a wide bar attached to the top pulley. Make sure that you adjust the knee pad of the machine to fit your height. These pads will prevent your body from being raised by the resistance attached to the bar.</li><li>Grab the bar with the palms facing forward using the prescribed grip. Note on grips: For a wide grip, your hands need to be spaced out at a distance wider than your shoulder width. For a medium grip, your hands need to be spaced out at a distance equal to your shoulder width and for a close grip at a distance smaller than your shoulder width.</li><li>As you have both arms extended in front of you - while holding the bar at the chosen grip width - bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.</li><li>As you breathe out, bring the bar down until it touches your upper chest by drawing the shoulders and the upper arms down and back. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary (only the arms should move). The forearms should do no other work except for holding the bar; therefore do not try to pull the bar down using the forearms.</li><li>After a second in the contracted position, while squeezing your shoulder blades together, slowly raise the bar back to the starting position when your arms are fully extended and the lats are fully stretched. Inhale during this portion of the movement.</li><li>6. Repeat this motion for the prescribed amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Close-Grip Front Lat Pulldown? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip Front Lat Pulldown">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dynamic_Back_Stretch/0.jpg" alt="Dynamic Back Stretch, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dynamic_Back_Stretch/1.jpg" alt="Dynamic Back Stretch, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Dynamic Back Stretch</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Stand with your feet shoulder width apart. This will be your starting position.</li><li>Keeping your arms straight, swing them straight up in front of you 5-10 times, increasing the range of motion each time until your arms are above your head.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Dynamic Back Stretch? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dynamic Back Stretch">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Elevated_Cable_Rows/0.jpg" alt="Elevated Cable Rows, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Elevated_Cable_Rows/1.jpg" alt="Elevated Cable Rows, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Elevated Cable Rows</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>middle back, traps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Get a platform of some sort (it can be an aerobics or calf raise platform) that is around 4-6 inches in height.</li><li>Place it on the seat of the cable row machine.</li><li>Sit down on the machine and place your feet on the front platform or crossbar provided making sure that your knees are slightly bent and not locked.</li><li>Lean over as you keep the natural alignment of your back and grab the V-bar handles.</li><li>With your arms extended pull back until your torso is at a 90-degree angle from your legs. Your back should be slightly arched and your chest should be sticking out. You should be feeling a nice stretch on your lats as you hold the bar in front of you. This is the starting position of the exercise.</li><li>Keeping the torso stationary, pull the handles back towards your torso while keeping the arms close to it until you touch the abdominals. Breathe out as you perform that movement. At that point you should be squeezing your back muscles hard. Hold that contraction for a second and slowly go back to the original position while breathing in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Elevated Cable Rows? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Elevated Cable Rows">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Full_Range-Of-Motion_Lat_Pulldown/0.jpg" alt="Full Range-Of-Motion Lat Pulldown, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Full_Range-Of-Motion_Lat_Pulldown/1.jpg" alt="Full Range-Of-Motion Lat Pulldown, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Full Range-Of-Motion Lat Pulldown</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back, shoulders</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Either standing or seated on a high bench, grasp two stirrup cables that are attached to the high pulleys. Grab with the opposing hand so your arms are crisscrossed about you and your palms are facing forward.</li><li>Keeping your chest up and maintaining a slight arch in your lower back, pull the handles down as if you were doing a regular pulldown. The range of motion will be more of an arc. During the movement, rotate your hands so that in the bottom position your palms face each other rather than forward. Return slowly to the starting position and repeat.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Full Range-Of-Motion Lat Pulldown? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Full Range-Of-Motion Lat Pulldown">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Gironda_Sternum_Chins/0.jpg" alt="Gironda Sternum Chins, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Gironda_Sternum_Chins/1.jpg" alt="Gironda Sternum Chins, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Gironda Sternum Chins</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grasp the pull-up bar with a shoulder width underhand grip.</li><li>Now hang with your arms fully extended and stick your chest out and lean back. Tip: You will be leaning back throughout the entire movement. This will be your starting position.</li><li>Start pulling yourself towards the bar with your spine arched throughout the movement and your head leaning back as far away from the bar as possible. Exhale as you perform this portion of the movement. Tip: At the upper end of the movement, your hips and legs will be at about a 45-degree angle to the floor.</li><li>Keep pulling until your collarbone passes the bar and your lower chest or sternum area touches it. Hold that contraction for a second. Tip: By the time you&#39;ve completed this portion of the movement; your head will be parallel to the floor.</li><li>Slowly start going back to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Gironda Sternum Chins? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Gironda Sternum Chins">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kipping_Muscle_Up/0.jpg" alt="Kipping Muscle Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kipping_Muscle_Up/1.jpg" alt="Kipping Muscle Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Kipping Muscle Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, biceps, forearms, middle back, shoulders, traps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grip the rings using a false grip, with the base of your palms on top of the rings.</li><li>Begin with a movement swinging your legs backward slightly.</li><li>Counter that movement by swinging your legs forward and up, jerking your chin and chest back, pulling yourself up with both arms as you do so. As you reach the top position of the pull-up, pull the rings to your armpits as you roll your shoulders forward, allowing your elbows to move straight back behind you. This puts you into the proper position to continue into the dip portion of the movement.</li><li>Maintaining control and stability, extend through the elbow to complete the motion.</li><li>Use care when lowering yourself to the ground.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Kipping Muscle Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Kipping Muscle Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_High_Pulley_Row/0.jpg" alt="Kneeling High Pulley Row, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_High_Pulley_Row/1.jpg" alt="Kneeling High Pulley Row, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Kneeling High Pulley Row</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Select the appropriate weight using a pulley that is above your head. Attach a rope to the cable and kneel a couple of feet away, holding the rope out in front of you with both arms extended. This will be your starting position.</li><li>Initiate the movement by flexing the elbows and fully retracting your shoulders, pulling the rope toward your upper chest with your elbows out.</li><li>After pausing briefly, slowly return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Kneeling High Pulley Row? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Kneeling High Pulley Row">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_Single-Arm_High_Pulley_Row/0.jpg" alt="Kneeling Single-Arm High Pulley Row, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_Single-Arm_High_Pulley_Row/1.jpg" alt="Kneeling Single-Arm High Pulley Row, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Kneeling Single-Arm High Pulley Row</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Attach a single handle to a high pulley and make your weight selection.</li><li>Kneel in front of the cable tower, taking the cable with one hand with your arm extended. This will be your starting position.</li><li>Starting with your palm facing forward, pull the weight down to your torso by flexing the elbow and retract the shoulder blade. As you do so, rotate the wrist so that at the completion of the movement, your palm is now facing you.</li><li>After a brief pause, return to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Kneeling Single-Arm High Pulley Row? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Kneeling Single-Arm High Pulley Row">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Latissimus_Dorsi-SMR/0.jpg" alt="Latissimus Dorsi-SMR, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Latissimus_Dorsi-SMR/1.jpg" alt="Latissimus Dorsi-SMR, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Latissimus Dorsi-SMR</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>foam roll</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>While lying on the floor, place a foam roll under your back and to one side, just behind your arm pit. This will be your starting position.</li><li>Keep the arm of the side being stretched behind and to the side of you as you shift your weight onto your lats, keeping your upper body off of the ground. Hold for 10-30 seconds, and switch sides.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Latissimus Dorsi-SMR? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Latissimus Dorsi-SMR">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Leverage_Iso_Row/0.jpg" alt="Leverage Iso Row, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Leverage_Iso_Row/1.jpg" alt="Leverage Iso Row, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Leverage Iso Row</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>machine</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Load an appropriate weight onto the pins and adjust the seat height so that the handles are at chest level. Grasp the handles with either a neutral or pronated grip. This will be your starting position.</li><li>Pull the handles towards your torso, retracting your shoulder blades as you flex the elbow.</li><li>Pause at the bottom of the motion, and then slowly return the handles to the starting position. For multiple repetitions, avoid completely returning the weight to the stops to keep tension on the muscles being worked.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Leverage Iso Row? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Leverage Iso Row">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/London_Bridges/0.jpg" alt="London Bridges, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/London_Bridges/1.jpg" alt="London Bridges, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">London Bridges</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, forearms, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Attach a climbing rope to a high beam or cross member. Below it, ensure that the smith machine bar is locked in place with the safeties and cannot move. Alternatively, a secure box could also be utilized.</li><li>Stand on the bar, using the rope to balance yourself. This will be your starting position.</li><li>Keeping your body straight, lean back and lower your body by slowly going hand over hand with the rope. Continue until you are perpendicular to the ground.</li><li>Keeping your body straight, reverse the motion, going hand over hand back to the starting position.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete London Bridges? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete London Bridges">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Muscle_Up/0.jpg" alt="Muscle Up, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Muscle_Up/1.jpg" alt="Muscle Up, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-intermediate">intermediate</span>
+        </div>
+        <h2 class="ex-name">Muscle Up</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>abdominals, biceps, forearms, middle back, shoulders, traps, triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grip the rings using a false grip, with the base of your palms on top of the rings. Initiate a pull up by pulling the elbows down to your side, flexing the elbows.</li><li>As you reach the top position of the pull-up, pull the rings to your armpits as you roll your shoulders forward, allowing your elbows to move straight back behind you. This puts you into the proper position to continue into the dip portion of the movement.</li><li>Maintaining control and stability, extend through the elbow to complete the motion.</li><li>Use care when lowering yourself to the ground.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Muscle Up? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Muscle Up">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Arm_Against_Wall/0.jpg" alt="One Arm Against Wall, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Arm_Against_Wall/1.jpg" alt="One Arm Against Wall, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">One Arm Against Wall</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>From a standing position, place a bent arm against a wall or doorway.</li><li>Slowly lean toward your arm until you feel a stretch in your lats.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete One Arm Against Wall? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One Arm Against Wall">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Arm_Lat_Pulldown/0.jpg" alt="One Arm Lat Pulldown, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Arm_Lat_Pulldown/1.jpg" alt="One Arm Lat Pulldown, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">One Arm Lat Pulldown</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>cable</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Select an appropriate weight and adjust the knee pad to help keep you down. Grasp the handle with a pronated grip. This will be your starting position.</li><li>Pull the handle down, squeezing your elbow to your side as you flex the elbow.</li><li>Pause at the bottom of the motion, and then slowly return the handle to the starting position.</li><li>For multiple repetitions, avoid completely returning the weight to keep tension on the muscles being worked.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete One Arm Lat Pulldown? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One Arm Lat Pulldown">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Handed_Hang/0.jpg" alt="One Handed Hang, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Handed_Hang/1.jpg" alt="One Handed Hang, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">One Handed Hang</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grab onto a chinup bar with one hand, using a pronated grip. Keep your feet on the floor or a step. Allow the majority of your weight to hang from that hand, while keeping your feet on the ground. Hold for 10-20 seconds and switch sides.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete One Handed Hang? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One Handed Hang">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Overhead_Lat/0.jpg" alt="Overhead Lat, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Overhead_Lat/1.jpg" alt="Overhead Lat, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+          <span class="level level-expert">expert</span>
+        </div>
+        <h2 class="ex-name">Overhead Lat</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>other</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>triceps</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Sit upright on the floor with your partner behind you. Raise one arm straight up, and flex the elbow, attempting to touch your hand to your back. Your parner should hold your tricep and wrist. This will be your starting position.</li><li>Attempt to pull your upper arm to your side as your partner prevents you from doing actually doing so.</li><li>After 10-20 seconds, relax the arm and allow your partner to further stretch the lat by applying gentle pressure to the tricep. Hold for 10-20 seconds, and then switch sides.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Overhead Lat? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Overhead Lat">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Overhead_Slam/0.jpg" alt="Overhead Slam, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Overhead_Slam/1.jpg" alt="Overhead Slam, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-plyometrics" style="margin-left:0">plyometrics</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Overhead Slam</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>medicine ball</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>Nothing else</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Hold a medine ball with both hands and stand with your feet at shoulder width. This will be your starting position.</li><li>Initiate the countermovement by raising the ball above your head and fully extending your body.</li><li>Reverse the motion, slamming the ball into the ground directly in front of you as hard as you can.</li><li>Receive the ball with both hands on the bounce and repeat the movement.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Overhead Slam? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Overhead Slam">Delete</button>
+        </form>
+      </article>
+    
+      <article class="ex-card">
+        
+        
+          <figure class="ex-photo has-two">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pullups/0.jpg" alt="Pullups, start position" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pullups/1.jpg" alt="Pullups, end position" loading="lazy" decoding="async">
+          </figure>
+        
+        <div class="ex-top">
+          <span class="type-tag type-strength" style="margin-left:0">strength</span>
+          <span class="level level-beginner">beginner</span>
+        </div>
+        <h2 class="ex-name">Pullups</h2>
+        <dl class="ex-meta">
+          <div><dt>Muscle</dt><dd>lats</dd></div>
+          <div><dt>Equipment</dt><dd>Bodyweight</dd></div>
+          <div class="ex-wide"><dt>Also works</dt><dd>biceps, middle back</dd></div>
+        </dl>
+        
+          <details class="ex-how">
+            <summary>How to do it</summary>
+            <ol><li>Grab the pull-up bar with the palms facing forward using the prescribed grip. Note on grips: For a wide grip, your hands need to be spaced out at a distance wider than your shoulder width. For a medium grip, your hands need to be spaced out at a distance equal to your shoulder width and for a close grip at a distance smaller than your shoulder width.</li><li>As you have both arms extended in front of you holding the bar at the chosen grip width, bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.</li><li>Pull your torso up until the bar touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.</li><li>After a second on the contracted position, start to inhale and slowly lower your torso back to the starting position when your arms are fully extended and the lats are fully stretched.</li><li>Repeat this motion for the prescribed amount of repetitions.</li></ol>
+          </details>
+        
+        <form method="POST" action="#" class="ex-delete"
+              onsubmit="return confirm('Delete Pullups? This removes it from any plans too.');">
+          <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Pullups">Delete</button>
+        </form>
+      </article>
+    
+  </div>
+
+  
+    <nav class="pager" aria-label="Pages">
+      <span></span>
+      <span class="pager-info">Page 1 of 2</span>
+      <a class="btn btn-outline-secondary" href="#" data-demo-off>Next &rarr;</a>
+    </nav>
+  
+  <p class="text-muted small mt-3">Exercise data from the Free Exercise DB (public domain).</p>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

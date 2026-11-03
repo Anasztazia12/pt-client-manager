@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}Calorie calculator{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">Mifflin-St Jeor equation</p>
+      <h1 class="h3 mb-0">Calorie calculator</h1>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-5">
+      <form method="GET" class="panel" id="calcForm" novalidate>
+        {% for e in errors %}<div class="alert alert-danger py-2">{{ e }}</div>{% endfor %}
+        {% set sex = v.get('sex', 'female') %}
+        <div class="sex-toggle mb-3" role="radiogroup" aria-label="Sex">
+          <label><input type="radio" name="sex" value="female" {% if sex == 'female' %}checked{% endif %}> Female</label>
+          <label><input type="radio" name="sex" value="male" {% if sex == 'male' %}checked{% endif %}> Male</label>
+        </div>
+        <div class="row g-2">
+          <div class="col-4"><label class="form-label small" for="age">Age</label><input class="form-control" id="age" name="age" inputmode="numeric" value="{{ v.get('age', '') }}" placeholder="32"></div>
+          <div class="col-4"><label class="form-label small" for="height">Height (cm)</label><input class="form-control" id="height" name="height" inputmode="decimal" value="{{ v.get('height', '') }}" placeholder="168"></div>
+          <div class="col-4"><label class="form-label small" for="weight">Weight (kg)</label><input class="form-control" id="weight" name="weight" inputmode="decimal" value="{{ v.get('weight', '') }}" placeholder="72"></div>
+          <div class="col-12"><label class="form-label small" for="activity">Activity</label>
+            <select class="form-select" id="activity" name="activity">
+              {% for val, label in activity %}<option value="{{ val }}" {% if v.get('activity', '1.55') == val %}selected{% endif %}>{{ label }}</option>{% endfor %}
+            </select></div>
+          <div class="col-12"><label class="form-label small" for="goal">Goal</label>
+            <select class="form-select" id="goal" name="goal">
+              {% for val, label in goals %}<option value="{{ val }}" {% if v.get('goal', '-500') == val %}selected{% endif %}>{{ label }}</option>{% endfor %}
+            </select></div>
+          <p class="small text-muted mt-2 mb-0" id="calcHint">Results update as you type.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="kcal-summary calc-result" id="calcResult" {% if not result %}hidden{% endif %}>
+        <div class="kcal-main">
+          <span class="stat-label">Daily target</span>
+          <span class="kcal-number" data-out="target">{{ result.target if result else "" }}</span>
+          <span class="kcal-of">kcal a day</span>
+          <div class="calc-steps">
+            <span>Resting (BMR) <strong data-out="bmr">{{ result.bmr if result else "" }}</strong></span>
+            <span>With activity <strong data-out="tdee">{{ result.tdee if result else "" }}</strong></span>
+          </div>
+        </div>
+        <div class="macros">
+          <div class="macro macro-p"><span class="stat-label">Protein</span><span class="stat-value"><span data-out="protein">{{ result.protein if result else "" }}</span> g</span></div>
+          <div class="macro macro-c"><span class="stat-label">Carbs</span><span class="stat-value"><span data-out="carbs">{{ result.carbs if result else "" }}</span> g</span></div>
+          <div class="macro macro-f"><span class="stat-label">Fat</span><span class="stat-value"><span data-out="fat">{{ result.fat if result else "" }}</span> g</span></div>
+        </div>
+      </div>
+
+      {% if clients %}
+        <form method="POST" class="panel apply-row mt-3" id="calcSave" {% if not result %}hidden{% endif %}>
+          {% for key in ['sex', 'age', 'height', 'weight', 'activity', 'goal'] %}<input type="hidden" name="{{ key }}" value="{{ v.get(key, '') }}">{% endfor %}
+          <label class="form-label small mb-0" for="client_id">Set as a client's daily target</label>
+          <select class="form-select" id="client_id" name="client_id">
+            {% for c in clients %}<option value="{{ c.id }}">{{ c.name }}{% if c.daily_kcal_target %} (now {{ c.daily_kcal_target }}){% endif %}</option>{% endfor %}
+          </select>
+          <button class="btn btn-outline-primary" type="submit">Save target</button>
+        </form>
+      {% endif %}
+
+      <div class="panel calc-empty" id="calcEmpty" {% if result %}hidden{% endif %}>
+        <h2 class="h5">How it works</h2>
+        <p class="mb-2">Enter age, height and weight, pick how active the client is and what they want to achieve.</p>
+        <p class="mb-0 text-muted small">You get resting calories, daily calories with activity, a daily target and a protein, carbs and fat split, and you can save the target straight onto a client.</p>
+      </div>
+      <p class="small text-muted mt-2">An estimate to start from. Adjust it after two or three weeks of check-ins.</p>
+    </div>
+  </div>
+
+  <script>
+    // Same formula as the server (Mifflin-St Jeor), so the numbers update while typing.
+    (function () {
+      const form = document.getElementById('calcForm');
+      const box = document.getElementById('calcResult');
+      const save = document.getElementById('calcSave');
+      const empty = document.getElementById('calcEmpty');
+      const hint = document.getElementById('calcHint');
+      const num = (id) => parseFloat((form.elements[id].value || '').replace(',', '.'));
+
+      function update() {
+        const sex = form.querySelector('input[name=sex]:checked').value;
+        const age = num('age');
+        let height = num('height');
+        const weight = num('weight');
+        if (height > 0 && height < 3) height *= 100;
+        const ok = age >= 14 && age <= 100 && height >= 120 && height <= 230 && weight >= 30 && weight <= 300;
+        box.hidden = !ok;
+        if (save) save.hidden = !ok;
+        empty.hidden = ok;
+        if (!ok) {
+          hint.textContent = (age || height || weight) ? 'Enter age (14 to 100), height in cm and weight in kg.' : 'Results update as you type.';
+          return;
+        }
+        hint.textContent = 'Results update as you type.';
+        const activity = parseFloat(form.elements.activity.value);
+        const goal = parseInt(form.elements.goal.value, 10);
+        const bmr = 10 * weight + 6.25 * height - 5 * age + (sex === 'male' ? 5 : -161);
+        const tdee = bmr * activity;
+        const target = Math.max(sex === 'female' ? 1200 : 1500, Math.round((tdee + goal) / 10) * 10);
+        const protein = Math.round(weight * (goal < 0 || goal >= 400 ? 2.0 : 1.6));
+        const fat = Math.round(target * 0.25 / 9);
+        const carbs = Math.max(0, Math.round((target - protein * 4 - fat * 9) / 4));
+        const out = { target, bmr: Math.round(bmr), tdee: Math.round(tdee), protein, carbs, fat };
+        Object.entries(out).forEach(([k, val]) => { box.querySelector('[data-out=' + k + ']').textContent = val; });
+        if (save) ['sex', 'age', 'height', 'weight', 'activity', 'goal'].forEach((k) => {
+          save.elements[k].value = k === 'sex' ? sex : form.elements[k].value;
+        });
+      }
+
+      form.addEventListener('input', update);
+      form.addEventListener('change', update);
+      form.addEventListener('submit', (e) => { e.preventDefault(); update(); });
+      update();
+    })();
+  </script>
+{% endblock %}

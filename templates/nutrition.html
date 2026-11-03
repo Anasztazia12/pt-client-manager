@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Nutrition: {{ client.name }}{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow"><a href="{{ url_for('client_detail', client_id=client.id) }}">&larr; {{ client.name }}</a></p>
+      <h1 class="h3 mb-0">Food diary</h1>
+    </div>
+    <div class="day-nav">
+      <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('nutrition', client_id=client.id, day=prev_day.isoformat()) }}" aria-label="Previous day">&larr;</a>
+      <span class="day-label">{{ day.strftime("%a %d %b %Y") }}</span>
+      <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('nutrition', client_id=client.id, day=next_day.isoformat()) }}" aria-label="Next day">&rarr;</a>
+    </div>
+  </div>
+
+  {% set target = client.daily_kcal_target %}
+  <div class="kcal-summary">
+    <div class="kcal-main">
+      <span class="stat-label">Calories</span>
+      <span class="kcal-number">{{ totals.kcal }}</span>
+      <span class="kcal-of">{% if target %}of {{ target }} kcal{% else %}kcal, no daily target set{% endif %}</span>
+      {% if target %}
+        {% set pct = (totals.kcal / target * 100)|round|int %}
+        <div class="kcal-bar" role="img" aria-label="{{ pct }}% of the daily target"><span class="{% if pct > 105 %}over{% endif %}" style="width: {{ [pct, 100]|min }}%"></span></div>
+        <span class="kcal-left">{% if target - totals.kcal >= 0 %}{{ target - totals.kcal }} kcal left{% else %}{{ totals.kcal - target }} kcal over{% endif %}</span>
+      {% endif %}
+    </div>
+    <div class="macros">
+      <div class="macro macro-p"><span class="stat-label">Protein</span><span class="stat-value">{{ totals.protein }} g</span></div>
+      <div class="macro macro-c"><span class="stat-label">Carbs</span><span class="stat-value">{{ totals.carbs }} g</span></div>
+      <div class="macro macro-f"><span class="stat-label">Fat</span><span class="stat-value">{{ totals.fat }} g</span></div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-7">
+      {% for key, label, items in by_meal %}
+        <div class="panel meal-panel mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h5 mb-0">{{ label }}</h2>
+            <span class="chip"><strong>{{ items|sum(attribute='kcal') }}</strong> kcal</span>
+          </div>
+          {% if items %}
+            <ul class="food-list">
+              {% for e in items %}
+                <li>
+                  <span class="food-name">{{ e.food }}</span>
+                  <span class="food-macros">{% if e.protein_g is not none %}P {{ e.protein_g|round|int }} · C {{ (e.carbs_g or 0)|round|int }} · F {{ (e.fat_g or 0)|round|int }}{% endif %}</span>
+                  <span class="food-kcal">{{ e.kcal }} kcal</span>
+                  <form method="POST" action="{{ url_for('food_delete', entry_id=e.id) }}" onsubmit="return confirm('Remove {{ e.food }}?');">
+                    <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Remove {{ e.food }}">&times;</button>
+                  </form>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="text-muted small mb-0">Nothing logged.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="col-lg-5">
+      <div class="panel add-food">
+        <h2 class="h5 mb-3">Add food</h2>
+        <form method="POST" novalidate>
+          {{ form.hidden_tag() }}
+          <div class="row g-2">
+            <div class="col-5">
+              {{ form.meal.label(class="form-label small") }}
+              {{ form.meal(class="form-select") }}
+            </div>
+            <div class="col-7">
+              {{ form.kcal.label(class="form-label small") }}
+              {{ form.kcal(class="form-control" + (" is-invalid" if form.kcal.errors else ""), placeholder="e.g. 450") }}
+              {% for error in form.kcal.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+            </div>
+            <div class="col-12">
+              {{ form.food.label(class="form-label small") }}
+              {{ form.food(class="form-control" + (" is-invalid" if form.food.errors else ""), placeholder="e.g. Porridge with banana") }}
+              {% for error in form.food.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+            </div>
+            <div class="col-4">{{ form.protein_g.label(class="form-label small") }}{{ form.protein_g(class="form-control") }}</div>
+            <div class="col-4">{{ form.carbs_g.label(class="form-label small") }}{{ form.carbs_g(class="form-control") }}</div>
+            <div class="col-4">{{ form.fat_g.label(class="form-label small") }}{{ form.fat_g(class="form-control") }}</div>
+            <div class="col-12 mt-3"><button type="submit" class="btn btn-primary w-100">Add to {{ day.strftime("%d %b") }}</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

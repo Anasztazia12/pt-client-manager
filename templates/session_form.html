@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow back-link"><a href="{{ url_for('client_detail', client_id=client.id) }}">&larr; {{ client.name }}</a></p>
+      <h1 class="h3 mb-0">{{ title }}</h1>
+    </div>
+  </div>
+  <form method="POST" novalidate class="col-lg-7 panel">
+    {{ form.hidden_tag() }}
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        {{ form.date.label(class="form-label") }}
+        {{ form.date(class="form-control" + (" is-invalid" if form.date.errors else ""), type="date") }}
+        {% for error in form.date.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+      </div>
+      <div class="col-md-6 mb-3">
+        {{ form.session_type.label(class="form-label") }}
+        {{ form.session_type(class="form-select") }}
+      </div>
+    </div>
+    <div class="mb-3">
+      {{ form.duration_minutes.label(class="form-label") }}
+      {{ form.duration_minutes(class="form-control" + (" is-invalid" if form.duration_minutes.errors else "")) }}
+      {% for error in form.duration_minutes.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+    </div>
+    <div class="mb-3">
+      {{ form.notes.label(class="form-label") }}
+      {{ form.notes(class="form-control", rows=3) }}
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{{ url_for('client_detail', client_id=client.id) }}" class="btn btn-link">Cancel</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calorie calculator · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="active" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">Mifflin-St Jeor equation</p>
+      <h1 class="h3 mb-0">Calorie calculator</h1>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-5">
+      <form method="GET" class="panel" id="calcForm" novalidate>
+        
+        
+        <div class="sex-toggle mb-3" role="radiogroup" aria-label="Sex">
+          <label><input type="radio" name="sex" value="female" checked> Female</label>
+          <label><input type="radio" name="sex" value="male" > Male</label>
+        </div>
+        <div class="row g-2">
+          <div class="col-4"><label class="form-label small" for="age">Age</label><input class="form-control" id="age" name="age" inputmode="numeric" value="" placeholder="32"></div>
+          <div class="col-4"><label class="form-label small" for="height">Height (cm)</label><input class="form-control" id="height" name="height" inputmode="decimal" value="" placeholder="168"></div>
+          <div class="col-4"><label class="form-label small" for="weight">Weight (kg)</label><input class="form-control" id="weight" name="weight" inputmode="decimal" value="" placeholder="72"></div>
+          <div class="col-12"><label class="form-label small" for="activity">Activity</label>
+            <select class="form-select" id="activity" name="activity">
+              <option value="1.2" >Desk job, little exercise</option><option value="1.375" >Light exercise 1 to 3 days a week</option><option value="1.55" selected>Moderate exercise 3 to 5 days a week</option><option value="1.725" >Hard exercise 6 to 7 days a week</option><option value="1.9" >Very hard training or a physical job</option>
+            </select></div>
+          <div class="col-12"><label class="form-label small" for="goal">Goal</label>
+            <select class="form-select" id="goal" name="goal">
+              <option value="-500" selected>Lose about 0.5 kg a week</option><option value="-250" >Lose slowly</option><option value="0" >Maintain</option><option value="250" >Gain slowly</option><option value="400" >Build muscle</option>
+            </select></div>
+          <p class="small text-muted mt-2 mb-0" id="calcHint">Results update as you type.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="kcal-summary calc-result" id="calcResult" hidden>
+        <div class="kcal-main">
+          <span class="stat-label">Daily target</span>
+          <span class="kcal-number" data-out="target"></span>
+          <span class="kcal-of">kcal a day</span>
+          <div class="calc-steps">
+            <span>Resting (BMR) <strong data-out="bmr"></strong></span>
+            <span>With activity <strong data-out="tdee"></strong></span>
+          </div>
+        </div>
+        <div class="macros">
+          <div class="macro macro-p"><span class="stat-label">Protein</span><span class="stat-value"><span data-out="protein"></span> g</span></div>
+          <div class="macro macro-c"><span class="stat-label">Carbs</span><span class="stat-value"><span data-out="carbs"></span> g</span></div>
+          <div class="macro macro-f"><span class="stat-label">Fat</span><span class="stat-value"><span data-out="fat"></span> g</span></div>
+        </div>
+      </div>
+
+      
+        <form method="POST" class="panel apply-row mt-3" id="calcSave" hidden>
+          <input type="hidden" name="sex" value=""><input type="hidden" name="age" value=""><input type="hidden" name="height" value=""><input type="hidden" name="weight" value=""><input type="hidden" name="activity" value=""><input type="hidden" name="goal" value="">
+          <label class="form-label small mb-0" for="client_id">Set as a client's daily target</label>
+          <select class="form-select" id="client_id" name="client_id">
+            <option value="1">Emma Clarke (now 1800)</option><option value="2">James Patel (now 2400)</option><option value="4">Michael Brown (now 2340)</option><option value="3">Sophie Turner (now 2080)</option>
+          </select>
+          <button class="btn btn-outline-primary" type="submit">Save target</button>
+        </form>
+      
+
+      <div class="panel calc-empty" id="calcEmpty" >
+        <h2 class="h5">How it works</h2>
+        <p class="mb-2">Enter age, height and weight, pick how active the client is and what they want to achieve.</p>
+        <p class="mb-0 text-muted small">You get resting calories, daily calories with activity, a daily target and a protein, carbs and fat split, and you can save the target straight onto a client.</p>
+      </div>
+      <p class="small text-muted mt-2">An estimate to start from. Adjust it after two or three weeks of check-ins.</p>
+    </div>
+  </div>
+
+  <script>
+    // Same formula as the server (Mifflin-St Jeor), so the numbers update while typing.
+    (function () {
+      const form = document.getElementById('calcForm');
+      const box = document.getElementById('calcResult');
+      const save = document.getElementById('calcSave');
+      const empty = document.getElementById('calcEmpty');
+      const hint = document.getElementById('calcHint');
+      const num = (id) => parseFloat((form.elements[id].value || '').replace(',', '.'));
+
+      function update() {
+        const sex = form.querySelector('input[name=sex]:checked').value;
+        const age = num('age');
+        let height = num('height');
+        const weight = num('weight');
+        if (height > 0 && height < 3) height *= 100;
+        const ok = age >= 14 && age <= 100 && height >= 120 && height <= 230 && weight >= 30 && weight <= 300;
+        box.hidden = !ok;
+        if (save) save.hidden = !ok;
+        empty.hidden = ok;
+        if (!ok) {
+          hint.textContent = (age || height || weight) ? 'Enter age (14 to 100), height in cm and weight in kg.' : 'Results update as you type.';
+          return;
+        }
+        hint.textContent = 'Results update as you type.';
+        const activity = parseFloat(form.elements.activity.value);
+        const goal = parseInt(form.elements.goal.value, 10);
+        const bmr = 10 * weight + 6.25 * height - 5 * age + (sex === 'male' ? 5 : -161);
+        const tdee = bmr * activity;
+        const target = Math.max(sex === 'female' ? 1200 : 1500, Math.round((tdee + goal) / 10) * 10);
+        const protein = Math.round(weight * (goal < 0 || goal >= 400 ? 2.0 : 1.6));
+        const fat = Math.round(target * 0.25 / 9);
+        const carbs = Math.max(0, Math.round((target - protein * 4 - fat * 9) / 4));
+        const out = { target, bmr: Math.round(bmr), tdee: Math.round(tdee), protein, carbs, fat };
+        Object.entries(out).forEach(([k, val]) => { box.querySelector('[data-out=' + k + ']').textContent = val; });
+        if (save) ['sex', 'age', 'height', 'weight', 'activity', 'goal'].forEach((k) => {
+          save.elements[k].value = k === 'sex' ? sex : form.elements[k].value;
+        });
+      }
+
+      form.addEventListener('input', update);
+      form.addEventListener('change', update);
+      form.addEventListener('submit', (e) => { e.preventDefault(); update(); });
+      update();
+    })();
+  </script>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

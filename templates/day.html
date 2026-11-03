@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ day.strftime("%a %d %b") }}{% endblock %}
+{% block content %}
+  {% macro initials(name) -%}{% set p = name.split() %}{{ p[0][:1] }}{% if p|length > 1 %}{{ p[-1][:1] }}{% endif %}{%- endmacro %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow"><a href="{{ url_for('overview') }}">&larr; Overview</a></p>
+      <h1 class="h3 mb-0">{% if day == today %}Today, {% endif %}{{ day.strftime("%A %d %B") }}</h1>
+    </div>
+    <div class="day-nav">
+      <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('day_view', day_iso=prev_day.isoformat()) }}" aria-label="Previous day">&larr;</a>
+      <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('day_view', day_iso=next_day.isoformat()) }}" aria-label="Next day">&rarr;</a>
+    </div>
+  </div>
+
+  <div class="stat-grid day-stats">
+    <div class="stat"><span class="stat-label">Sessions</span><span class="stat-value">{{ sessions|length }}</span></div>
+    <div class="stat"><span class="stat-label">Time coached</span><span class="stat-value">{{ minutes }} min</span></div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-7">
+      <h2 class="ov-h2">Sessions</h2>
+      <div class="ov-clients">
+        {% for s in sessions %}
+          <a class="ov-client" href="{{ url_for('client_detail', client_id=s.client.id) }}">
+            <span class="initials" aria-hidden="true">{{ initials(s.client.name) }}</span>
+            <div class="ov-client-main">
+              <h3>{{ s.client.name }}</h3>
+              <div class="ov-facts">
+                {% if s.session_type %}<span class="type-tag type-{{ s.session_type }}" style="margin-left:0">{{ s.session_type }}</span>{% endif %}
+                {% if s.duration_minutes %}<span><b>{{ s.duration_minutes }}</b> min</span>{% endif %}
+              </div>
+              {% if s.notes %}<p class="ov-goal mt-1 mb-0">{{ s.notes }}</p>{% endif %}
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {% else %}
+          <div class="panel calc-empty"><p class="mb-0 text-muted">{% if day > today %}Nothing logged yet for this day.{% else %}No sessions on this day.{% endif %}</p></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <h2 class="ov-h2">{% if day > today %}Clients{% else %}Didn't train this day{% endif %}</h2>
+      <div class="ov-attention">
+        {% for c in not_trained %}
+          <a href="{{ url_for('session_new', client_id=c.id) }}">
+            <span class="initials sm" aria-hidden="true">{{ initials(c.name) }}</span>
+            <span><b>{{ c.name }}</b><small>+ Log a session</small></span>
+          </a>
+        {% else %}
+          <p class="ov-allgood">Every client trained this day.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James Patel · PT Client Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="app">
+  
+  
+
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Main navigation">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg></span>
+      <span><b>PT Client</b><small>Manager</small></span>
+    </a>
+    <nav class="side-nav">
+      <p class="side-label">Workspace</p>
+      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="active" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
+      <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <p class="side-label">Tools</p>
+      <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
+      <a class="" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
+    </nav>
+    <a class="side-cta" href="clients-new.html">+ New client</a>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <form class="topbar-search" method="GET" action="#" role="search">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
+      </form>
+      <span class="topbar-date">Tue 03 Nov 2026</span>
+    </header>
+
+    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+      
+        
+      
+
+      
+  <div class="page-head">
+    <div>
+      <p class="eyebrow back-link"><a href="clients.html">&larr; All clients</a></p>
+      <h1 class="h3 mb-1">James Patel</h1>
+      <p class="text-muted mb-0">james.patel@example.com </p>
+    </div>
+    <div>
+      <a href="clients-2-edit.html" class="btn btn-outline-secondary btn-sm">Edit</a>
+      <form method="POST" action="#" class="d-inline"
+            onsubmit="return confirm('Delete James Patel and all their plans, sessions and logs?');">
+        <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+      </form>
+    </div>
+  </div>
+
+  
+  
+  <div class="stat-grid">
+    <div class="stat"><span class="stat-label">Start weight</span><span class="stat-value">84.0 kg</span></div>
+    <div class="stat"><span class="stat-label">Latest weight</span><span class="stat-value">82.9 kg <span class="delta down">-1.1</span></span></div>
+    <div class="stat"><span class="stat-label">Sessions logged</span><span class="stat-value">2</span></div>
+    <div class="stat"><span class="stat-label">Calories today</span><span class="stat-value">1130<small> / 2400</small></span></div>
+    <div class="stat stat-note"><span class="stat-label">Goal</span><span class="stat-value">First pull-up and better posture</span></div>
+    <div class="stat stat-note warn"><span class="stat-label">Injuries / notes</span><span class="stat-value">Desk job, tight hips</span></div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-lg-7" id="progress">
+      <div class="panel">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 mb-0">Weight progress</h2>
+          
+        </div>
+        
+        
+        
+        
+          
+          
+          
+          <svg class="weight-chart" viewBox="0 0 560 170" role="img" aria-label="Weight from 84.0 kg to 82.9 kg">
+            <line x1="28" x2="532" y1="28.0" y2="28.0" class="grid"/><line x1="28" x2="532" y1="85.0" y2="85.0" class="grid"/><line x1="28" x2="532" y1="142.0" y2="142.0" class="grid"/>
+            
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+            <path d="M28.0 64.8 L196.0 64.8 L364.0 86.8 L532.0 105.2" class="line"/>
+            
+              
+              
+              <circle cx="28.0" cy="64.8" r="5" class="dot"/>
+              <text x="28.0" y="52.8" class="val">84.0</text>
+              <text x="28.0" y="164" class="lbl">15 Sep</text>
+            
+              
+              
+              <circle cx="196.0" cy="64.8" r="5" class="dot"/>
+              <text x="196.0" y="52.8" class="val">84.0</text>
+              <text x="196.0" y="164" class="lbl">13 Oct</text>
+            
+              
+              
+              <circle cx="364.0" cy="86.8" r="5" class="dot"/>
+              <text x="364.0" y="74.8" class="val">83.4</text>
+              <text x="364.0" y="164" class="lbl">24 Oct</text>
+            
+              
+              
+              <circle cx="532.0" cy="105.2" r="5" class="dot"/>
+              <text x="532.0" y="93.2" class="val">82.9</text>
+              <text x="532.0" y="164" class="lbl">01 Nov</text>
+            
+          </svg>
+        
+        <form method="POST" action="#" novalidate class="checkin-row">
+          <input id="csrf_token" name="csrf_token" type="hidden" value="IjY1NDRiOWE4YmNlZTdmMDBkMTk0OTMzZWIyYjI2YWM4ZjgxNWFlMTAi.aun8Cw.0Pt5q0ECF4vqF18XR-uRduA7nXY">
+          <input aria-label="Check-in date" class="form-control" id="date" name="date" required type="date" value="2026-11-03">
+          <input aria-label="Weight in kg" class="form-control" id="weight_kg" max="500" min="20" name="weight_kg" placeholder="Weight kg" required step="any" type="number" value="">
+          <input aria-label="Waist in cm" class="form-control" id="waist_cm" max="300" min="30" name="waist_cm" placeholder="Waist cm" step="any" type="number" value="">
+          <button type="submit" class="btn btn-primary">+ Check-in</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="panel">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 mb-0">Nutrition, last 7 days</h2>
+          <a href="clients-2-nutrition.html" class="btn btn-sm btn-primary">Food diary</a>
+        </div>
+        <div class="week-bars" role="img" aria-label="Calories logged over the last 7 days">
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-10-28.html">
+              <span class="wb-val"></span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
+              </span>
+              <span class="wb-day">Wed</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-10-29.html">
+              <span class="wb-val"></span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
+              </span>
+              <span class="wb-day">Thu</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-10-30.html">
+              <span class="wb-val"></span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
+              </span>
+              <span class="wb-day">Fri</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-10-31.html">
+              <span class="wb-val"></span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
+              </span>
+              <span class="wb-day">Sat</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-11-01.html">
+              <span class="wb-val"></span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
+              </span>
+              <span class="wb-day">Sun</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-11-02.html">
+              <span class="wb-val"></span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
+              </span>
+              <span class="wb-day">Mon</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-2-nutrition-day-2026-11-03.html">
+              <span class="wb-val">1130</span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 47.1%"></span>
+              </span>
+              <span class="wb-day is-today">Tue</span>
+            </a>
+          
+        </div>
+        <p class="small text-muted mb-0 mt-2">Line = daily target of 2400 kcal. Today: 70 g protein, 108 g carbs, 40 g fat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-6">
+      <div class="panel">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h5 mb-0">Workout plans</h2>
+        <a href="clients-2-plans-new.html" class="btn btn-sm btn-primary">+ New plan</a>
+      </div>
+      
+        <p class="text-muted">No plans yet.</p>
+      
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="panel">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h5 mb-0">Sessions</h2>
+        <a href="clients-2-sessions-new.html" class="btn btn-sm btn-primary">+ Log session</a>
+      </div>
+      
+        <ul class="list-group">
+          
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="session-date">Tue 03 Nov
+                  <span class="type-tag type-strength">strength</span>
+                  <span class="chip ms-1">50 min</span></span>
+                <span>
+                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <form method="POST" action="#" class="d-inline"
+                        onsubmit="return confirm('Delete this session?');">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                  </form>
+                </span>
+              </div>
+              <small class="text-muted">Assisted pull-ups, band moved down a level.</small>
+            </li>
+          
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="session-date">Thu 22 Oct
+                  <span class="type-tag type-assessment">assessment</span>
+                  <span class="chip ms-1">45 min</span></span>
+                <span>
+                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <form method="POST" action="#" class="d-inline"
+                        onsubmit="return confirm('Delete this session?');">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                  </form>
+                </span>
+              </div>
+              <small class="text-muted">Posture check and starting numbers.</small>
+            </li>
+          
+        </ul>
+      
+      </div>
+    </div>
+  </div>
+
+    </main>
+
+    <footer class="app-footer">
+      PT Client Manager · Built by <a class="footer-credit" href="https://www.amethyst-nexalune.co.uk/" target="_blank" rel="noopener">Amethyst Nexalune</a>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('submit', function (e) {
+  if (e.target.id === 'calcForm') return;
+  e.preventDefault();
+  var t = document.querySelector('.demo-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
+  t.textContent = 'This is a demo, so nothing is saved.';
+  t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+}, true);
+</script></body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Clients{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div>
+      <p class="eyebrow">{% if q %}{{ clients|length }} result{{ "s" if clients|length != 1 }} for “{{ q }}”{% else %}{{ clients|length }} active client{{ "s" if clients|length != 1 }}{% endif %}</p>
+      <h1 class="h3 mb-0">Clients</h1>
+    </div>
+    <a href="{{ url_for('client_new') }}" class="btn btn-primary">+ Add client</a>
+  </div>
+
+  {% if clients %}
+    <div class="row g-3">
+      {% for client in clients %}
+        {% set parts = client.name.split() %}
+        <div class="col-md-6 col-lg-4">
+          <a class="client-card" href="{{ url_for('client_detail', client_id=client.id) }}">
+            <div class="client-top">
+              <span class="initials" aria-hidden="true">{{ parts[0][:1] }}{% if parts|length > 1 %}{{ parts[-1][:1] }}{% endif %}</span>
+              <h2>{{ client.name }}</h2>
+            </div>
+            <p class="client-goal">{{ client.goal or "No goal set" }}</p>
+            <div class="chips">
+              <span class="chip"><strong>{{ client.plans|length }}</strong> plan{{ "s" if client.plans|length != 1 }}</span>
+              <span class="chip"><strong>{{ client.sessions|length }}</strong> session{{ "s" if client.sessions|length != 1 }}</span>
+              {% if client.start_date %}<span class="chip">Since {{ client.start_date.strftime("%b %Y") }}</span>{% endif %}
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-muted">{% if q %}No clients match “{{ q }}”.{% else %}No clients yet. Add your first client to get started.{% endif %}</p>
+  {% endif %}
+{% endblock %}
