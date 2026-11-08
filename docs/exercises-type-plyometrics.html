@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>Assume a comfortable stance with one foot slightly in front of the other.</li><li>Begin by pushing off with the front leg, driving the opposite knee forward and as high as possible before landing. Attempt to cover as much distance to each side with each bound.</li><li>It may help to use a line on the ground to guage distance from side to side.</li><li>Repeat the sequence with the other leg.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/13/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternate Leg Diagonal Bound? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternate Leg Diagonal Bound">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>This exercise is best done with a partner. If you lack a partner, the ball can be thrown and retrieved or thrown against a wall.</li><li>Begin standing a few meters in front of your partner, both facing the same direction. Begin holding the ball between your legs.</li><li>Squat down and then forcefully reverse direction, coming to full extension and you toss the ball over your head to your partner.</li><li>Your partner can then roll the ball back to you. Repeat for the desired number of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/33/delete" class="ex-delete"
               onsubmit="return confirm('Delete Backward Medicine Ball Throw? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Backward Medicine Ball Throw">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>Begin with a box or bench 1-2 feet in front of you. Stand with your feet shoulder width apart. This will be your starting position.</li><li>Perform a short squat in preparation for the jump; swing your arms behind you.</li><li>Rebound out of this position, extending through the hips, knees, and ankles to jump as high as possible. Swing your arms forward and up.</li><li>Jump over the bench, landing with the knees bent, absorbing the impact through the legs.</li><li>Turn around and face the opposite direction, then jump back over the bench.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/72/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bench Jump? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Jump">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>Stand on the ground with one foot resting on a bench or box with your heel close to the edge.</li><li>Push off with your foot on top of the bench, extending through the hip and knee.</li><li>Land with the opposite foot on top of the box, returning your other foot back to the start position.</li><li>Continue alternating from one foot to another to complete the set.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/76/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bench Sprint? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Sprint">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Assume a relaxed stance facing the box or platform approximately an arm&#39;s length away. Arms should be down at the sides and legs slightly bent.</li><li>Using the arms to aid in the initial burst, jump upward and forward, landing with feet simultaneously on top of the box or platform.</li><li>Immediately drop or jump back down to the original starting place; then repeat the sequence.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/100/delete" class="ex-delete"
               onsubmit="return confirm('Delete Box Jump (Multiple Response)? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Box Jump (Multiple Response)">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>You will need several boxes lined up about 8 feet apart.</li><li>Begin facing the first box with one leg slightly behind the other.</li><li>Drive off the back leg, attempting to gain as much height with the hips as possible.</li><li>Immediately upon landing on the box, drive the other leg forward and upward to gain height and distance, leaping from the box. Land between the first two boxes with the same leg that landed on the first box.</li><li>Then, step to the next box and repeat.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/101/delete" class="ex-delete"
               onsubmit="return confirm('Delete Box Skip? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Box Skip">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>Begin with your feet a few inches apart and your left arm up in a relaxed, athletic position.</li><li>With your right foot, quick step behind and pull the knee up.</li><li>Fire your arms back up when you pull the right knee, being sure that your knee goes straight up and down. Avoid turning your feet as you move and continue to look forward as you move to the side.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/144/delete" class="ex-delete"
               onsubmit="return confirm('Delete Carioca Quick Step? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Carioca Quick Step">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>Begin standing while facing a wall or a partner.</li><li>Using both hands, position the ball behind your head, stretching as much as possible, and forcefully throw the ball forward.</li><li>Ensure that you follow your throw through, being prepared to receive your rebound from your throw. If you are throwing against the wall, make sure that you stand close enough to the wall to receive the rebound, and aim a little higher than you would with a partner.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/146/delete" class="ex-delete"
               onsubmit="return confirm('Delete Catch and Overhead Throw? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Catch and Overhead Throw">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>Begin in a kneeling position facing a wall or utilize a partner. Hold the ball with both hands tight into the chest.</li><li>Execute the pass by exploding forward and outward with the hips while pushing the ball as hard as possible.</li><li>Follow through by falling forward, catching yourself with your hands.</li><li>Immediately return to an upright position. Repeat for the desired number of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/155/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chest Push (multiple response)? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push (multiple response)">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>Begin in a kneeling position holding the medicine ball with both hands tightly into the chest.</li><li>Execute the pass by exploding forward and outward with the hips while pushing the ball as far as possible.</li><li>Follow through by falling forward, catching yourself with your hands.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/156/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chest Push (single response)? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push (single response)">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>Begin in a three point stance, squatted down with your back flat and one hand on the ground. Place the medicine ball directly in front of you.</li><li>To begin, take your first step as you pull the ball to your chest, positioning both hands to prepare for the throw.</li><li>As you execute the second step, explosively release the ball forward as hard as possible.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/154/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chest Push from 3 point stance? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push from 3 point stance">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>Begin in an athletic stance with the knees bent, hips back, and back flat. Hold the medicine ball near your legs. This will be your starting position.</li><li>While taking your first step draw the medicine ball into your chest.</li><li>As you take the second step, explosively push the ball forward, immediately sprinting for 10 yards after the release. If you are really fast, you can catch your own pass!</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/157/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chest Push with Run Release? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chest Push with Run Release">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>For this drill you will need two boxes or benches, one 12 to 16 inches high and the other 22 to 26 inches high.</li><li>Stand on one of the two boxes with arms at the sides; feet should be together and slightly off the edge as in the depth jump. Place the other box approximately two or three feet in front of and facing the performer.</li><li>Begin by dropping off the initial box, landing and simultaneously taking off with both feet.</li><li>Rebound by driving upward and outward as intensely as possible, using the arms and full extension of the body to jump onto the higher box. Again, allow the legs to absorb the impact.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/207/delete" class="ex-delete"
               onsubmit="return confirm('Delete Depth Jump Leap? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Depth Jump Leap">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>Begin standing with your knees slightly bent.</li><li>Quickly squat a short distance, flexing the hips and knees, and immediately extend to jump for maximum vertical height.</li><li>As you go up, tuck your heels by flexing the knees, attempting to touch the buttocks.</li><li>Finish the motion by landing with the knees only partially bent, using your legs to absorb the impact.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/217/delete" class="ex-delete"
               onsubmit="return confirm('Delete Double Leg Butt Kick? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Double Leg Butt Kick">Delete</button>
         </form>
@@ -562,7 +567,7 @@
             <ol><li>Position low boxes or other platforms 2-3 feet apart.</li><li>Move to a pushup position between them, supporting yourself by placing your hands on the boxes.</li><li>With good posture, drop from the platforms by pressing up and moving your hands to shoulder width, cushioning your landing by absorbing the impact through the arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/220/delete" class="ex-delete"
               onsubmit="return confirm('Delete Drop Push? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Drop Push">Delete</button>
         </form>
@@ -592,7 +597,7 @@
             <ol><li>Position a box a couple feet to the side of a bench. Hold a dumbbell to your chest with both hands and seat yourself on the bench facing the box. This will be your starting position.</li><li>Plant your feet firmly on the ground as you lean forward, extending through the hips and knees to jump up and forward.</li><li>Land on the box with both feet, absorbing the impact by allowing the hips and knees to bend.</li><li>Step down and return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/242/delete" class="ex-delete"
               onsubmit="return confirm('Delete Dumbbell Seated Box Jump? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Seated Box Jump">Delete</button>
         </form>
@@ -622,7 +627,7 @@
             <ol><li>Start in a relaxed position with one leg slightly forward. This will be your starting position.</li><li>Skip by executing a step-hop pattern of right-right-step to left-left-step, and so on, alternating back and forth.</li><li>Perform fast skips by maintaining close contact with the ground and reduce air time, moving as quickly as possible.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/269/delete" class="ex-delete"
               onsubmit="return confirm('Delete Fast Skipping? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Fast Skipping">Delete</button>
         </form>
@@ -652,7 +657,7 @@
             <ol><li>Begin with a box of an appropriate height 1-2 feet in front of you. Stand with your feet should width apart. This will be your starting position.</li><li>Perform a short squat in preparation for jumping, swinging your arms behind you.</li><li>Rebound out of this position, extending through the hips, knees, and ankles to jump as high as possible. Swing your arms forward and up.</li><li>Land on the box with the knees bent, absorbing the impact through the legs. You can jump from the box back to the ground, or preferably step down one leg at a time.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/287/delete" class="ex-delete"
               onsubmit="return confirm('Delete Front Box Jump? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Front Box Jump">Delete</button>
         </form>
@@ -682,7 +687,7 @@
             <ol><li>Set up a row of cones or other small barriers, placing them a few feet apart.</li><li>Stand in front of the first cone with your feet shoulder width apart. This will be your starting position.</li><li>Begin by jumping with both feet over the first cone, swinging both arms as you jump.</li><li>Absorb the impact of landing by bending the knees, rebounding out of the first leap by jumping over the next cone.</li><li>Continue until you have jumped over all of the cones.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/289/delete" class="ex-delete"
               onsubmit="return confirm('Delete Front Cone Hops (or hurdle hops)? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Front Cone Hops (or hurdle hops)">Delete</button>
         </form>
@@ -712,7 +717,7 @@
             <ol><li>Utilize a heavy bag for this exercise. Assume an upright stance next to the bag, with your feet staggered, fairly wide apart. Place your hand on the bag at about chest height. This will be your starting position.</li><li>Begin by twisting at the waist, pushing the bag forward as hard as possible. Perform this move quickly, pushing the bag away from your body.</li><li>Receive the bag as it swings back by reversing these steps.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/322/delete" class="ex-delete"
               onsubmit="return confirm('Delete Heavy Bag Thrust? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Heavy Bag Thrust">Delete</button>
         </form>
@@ -742,7 +747,7 @@
             <ol><li>Set up a row of hurdles or other small barriers, placing them a few feet apart.</li><li>Stand in front of the first hurdle with your feet shoulder width apart. This will be your starting position.</li><li>Begin by jumping with both feet over the first hurdle, swinging both arms as you jump.</li><li>Absorb the impact of landing by bending the knees, rebounding out of the first leap by jumping over the next hurdle. Continue until you have jumped over all of the hurdles.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/330/delete" class="ex-delete"
               onsubmit="return confirm('Delete Hurdle Hops? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hurdle Hops">Delete</button>
         </form>
@@ -772,7 +777,7 @@
             <ol><li>For this drill you will need a box about 12 inches high, and two thick mats or aerobics steps.</li><li>Place the steps just outside of your shoulders, and place your feet on top of the box so that you are in an incline pushup position, your hands just inside the steps. This will be your starting position.</li><li>Begin by bending at the elbows to lower your body, quickly reversing position to push your body off of the ground. As you leave the ground, move your hands onto the steps, bending your elbows to absorb the impact.</li><li>Repeat the motion to return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/349/delete" class="ex-delete"
               onsubmit="return confirm('Delete Incline Push-Up Depth Jump? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Incline Push-Up Depth Jump">Delete</button>
         </form>
@@ -802,7 +807,7 @@
             <ol><li>While either seating or standing, bend your arms at a 90-degree angle and place the palms of your hands together in front of your chest. Tip: Your hands should be open with the palms together and fingers facing forward (perpendicular to your torso).</li><li>Push both hands against each other as you contract your chest. Start with slow tension and increase slowly. Keep breathing normally as you execute this contraction.</li><li>Hold for the recommended number of seconds.</li><li>Now release the tension slowly.</li><li>Rest for the recommended amount of time and repeat.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/360/delete" class="ex-delete"
               onsubmit="return confirm('Delete Isometric Chest Squeezes? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Isometric Chest Squeezes">Delete</button>
         </form>
@@ -832,7 +837,7 @@
             <ol><li>Begin in a comfortable standing position with your knees slightly bent. Hold your hands in front of you, palms down with your fingertips together at chest height. This will be your starting position.</li><li>Rapidly dip down into a quarter squat and immediately explode upward. Drive the knees towards the chest, attempting to touch them to the palms of the hands.</li><li>Jump as high as you can, raising your knees up, and then ensure a good land be re-extending your legs, absorbing impact through be allowing the knees to rebend.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/391/delete" class="ex-delete"
               onsubmit="return confirm('Delete Knee Tuck Jump? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Knee Tuck Jump">Delete</button>
         </form>
@@ -857,15 +862,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

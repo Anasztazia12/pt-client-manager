@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Payments{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div>
+      <h1 class="h3 mb-0">Payments</h1>
+    </div>
+  </div>
+
+  {% if not stripe_enabled %}
+    <p class="alert alert-warning">Stripe is not set up yet, so new payment links are switched off. Add STRIPE_SECRET_KEY to turn them on.</p>
+  {% endif %}
+
+  <div class="stat-grid day-stats">
+    <div class="stat"><span class="stat-label">Collected</span><span class="stat-value">{{ collected|money(currency) }}</span></div>
+    <div class="stat"><span class="stat-label">Awaiting payment</span><span class="stat-value">{{ outstanding|money(currency) }}</span></div>
+  </div>
+
+  {% if payments %}
+    {% set show_client = true %}
+    {% include "_payment_rows.html" %}
+  {% else %}
+    <p class="text-muted">No payments yet. Open a client to create a payment link.</p>
+  {% endif %}
+{% endblock %}

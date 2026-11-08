@@ -1,0 +1,20 @@
+# Free public try-out copy on Render: sample data and Stripe test mode, no real money.
+# The disk is temporary, so the data resets to the samples whenever the service restarts.
+services:
+  - type: web
+    name: pt-client-manager-demo
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DEMO_MODE
+        value: "1"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: STRIPE_CURRENCY
+        value: gbp
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false

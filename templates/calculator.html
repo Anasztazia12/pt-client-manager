@@ -18,9 +18,9 @@
           <label><input type="radio" name="sex" value="male" {% if sex == 'male' %}checked{% endif %}> Male</label>
         </div>
         <div class="row g-2">
-          <div class="col-4"><label class="form-label small" for="age">Age</label><input class="form-control" id="age" name="age" inputmode="numeric" value="{{ v.get('age', '') }}" placeholder="32"></div>
-          <div class="col-4"><label class="form-label small" for="height">Height (cm)</label><input class="form-control" id="height" name="height" inputmode="decimal" value="{{ v.get('height', '') }}" placeholder="168"></div>
-          <div class="col-4"><label class="form-label small" for="weight">Weight (kg)</label><input class="form-control" id="weight" name="weight" inputmode="decimal" value="{{ v.get('weight', '') }}" placeholder="72"></div>
+          <div class="col-4"><label class="form-label small" for="age">Age</label><input class="form-control" id="age" name="age" inputmode="numeric" value="{{ v.get('age', '32' if demo_mode else '') }}" placeholder="e.g. 32"></div>
+          <div class="col-4"><label class="form-label small" for="height">Height (cm)</label><input class="form-control" id="height" name="height" inputmode="decimal" value="{{ v.get('height', '168' if demo_mode else '') }}" placeholder="e.g. 168"></div>
+          <div class="col-4"><label class="form-label small" for="weight">Weight (kg)</label><input class="form-control" id="weight" name="weight" inputmode="decimal" value="{{ v.get('weight', '72' if demo_mode else '') }}" placeholder="e.g. 72"></div>
           <div class="col-12"><label class="form-label small" for="activity">Activity</label>
             <select class="form-select" id="activity" name="activity">
               {% for val, label in activity %}<option value="{{ val }}" {% if v.get('activity', '1.55') == val %}selected{% endif %}>{{ label }}</option>{% endfor %}
@@ -29,6 +29,7 @@
             <select class="form-select" id="goal" name="goal">
               {% for val, label in goals %}<option value="{{ val }}" {% if v.get('goal', '-500') == val %}selected{% endif %}>{{ label }}</option>{% endfor %}
             </select></div>
+          <div class="col-12 mt-3"><button type="submit" class="btn btn-primary w-100">Calculate</button></div>
           <p class="small text-muted mt-2 mb-0" id="calcHint">Results update as you type.</p>
         </div>
       </form>
@@ -114,7 +115,15 @@
 
       form.addEventListener('input', update);
       form.addEventListener('change', update);
-      form.addEventListener('submit', (e) => { e.preventDefault(); update(); });
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        update();
+        if (box.hidden) {
+          const missing = ['age', 'height', 'weight'].find((id) => !form.elements[id].value.trim()) || 'age';
+          form.elements[missing].focus();
+          hint.textContent = 'Enter age (14 to 100), height in cm and weight in kg.';
+        }
+      });
       update();
     })();
   </script>

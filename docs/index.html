@@ -24,6 +24,7 @@
       <a class="active" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -50,173 +55,443 @@
   
 
   <section class="ov-hero">
-    <div class="ov-hero-text">
-      <p class="ov-date">Tuesday 03 November</p>
-      <h1 class="ov-title">Your clients this week</h1>
-      <p class="ov-sub"><strong>4</strong> sessions · <strong>3.3</strong> hours coached · <strong>4</strong> active clients</p>
+    <div>
+      <p class="ov-date">Sunday 08 November</p>
+      <h1 class="h3 ov-title">Your clients this week</h1>
+      <p class="ov-sub"><strong>16</strong> sessions · <strong>15.4</strong> hours coached · <strong>7</strong> active clients · <strong>£1,250</strong> collected this month</p>
     </div>
-    <div class="ov-week" aria-label="Sessions per day this week">
+    <nav class="week" aria-label="Sessions per day this week">
       
-        <a class="ov-day" href="day-2026-11-02.html" aria-label="Monday 02 November, 2 sessions">
-          <span class="ov-day-name">Mon</span>
-          <span class="ov-day-num">2</span>
-          <span class="ov-dots">
-            <i class="dot-strength" title="Emma Clarke, strength"></i><i class="dot-strength" title="Michael Brown, strength"></i>
+        <a class="week-day" href="day-2026-11-02.html" aria-label="Monday 02 November, 2 sessions">
+          <span class="week-name">Mon</span>
+          <span class="week-num">2</span>
+          <span class="week-dots">
+            <i class="dot-mobility" title="Amara Osei, mobility"></i><i class="dot-strength" title="Lucy Hart, strength"></i>
           </span>
         </a>
       
-        <a class="ov-day is-today" href="day-2026-11-03.html" aria-label="Tuesday 03 November, 2 sessions">
-          <span class="ov-day-name">Tue</span>
-          <span class="ov-day-num">3</span>
-          <span class="ov-dots">
-            <i class="dot-mobility" title="Emma Clarke, mobility"></i><i class="dot-strength" title="James Patel, strength"></i>
+        <a class="week-day" href="day-2026-11-03.html" aria-label="Tuesday 03 November, 2 sessions">
+          <span class="week-name">Tue</span>
+          <span class="week-num">3</span>
+          <span class="week-dots">
+            <i class="dot-cardio" title="Emma Clarke, cardio"></i><i class="dot-powerlifting" title="Daniel Novak, powerlifting"></i>
           </span>
         </a>
       
-        <a class="ov-day is-future" href="day-2026-11-04.html" aria-label="Wednesday 04 November, 0 sessions">
-          <span class="ov-day-name">Wed</span>
-          <span class="ov-day-num">4</span>
-          <span class="ov-dots">
-            
+        <a class="week-day" href="day-2026-11-04.html" aria-label="Wednesday 04 November, 2 sessions">
+          <span class="week-name">Wed</span>
+          <span class="week-num">4</span>
+          <span class="week-dots">
+            <i class="dot-strength" title="James Patel, strength"></i><i class="dot-strength" title="Michael Brown, strength"></i>
           </span>
         </a>
       
-        <a class="ov-day is-future" href="day-2026-11-05.html" aria-label="Thursday 05 November, 0 sessions">
-          <span class="ov-day-name">Thu</span>
-          <span class="ov-day-num">5</span>
-          <span class="ov-dots">
-            
+        <a class="week-day" href="day-2026-11-05.html" aria-label="Thursday 05 November, 2 sessions">
+          <span class="week-name">Thu</span>
+          <span class="week-num">5</span>
+          <span class="week-dots">
+            <i class="dot-strength" title="Emma Clarke, strength"></i><i class="dot-strength" title="Amara Osei, strength"></i>
           </span>
         </a>
       
-        <a class="ov-day is-future" href="day-2026-11-06.html" aria-label="Friday 06 November, 0 sessions">
-          <span class="ov-day-name">Fri</span>
-          <span class="ov-day-num">6</span>
-          <span class="ov-dots">
-            
+        <a class="week-day" href="day-2026-11-06.html" aria-label="Friday 06 November, 3 sessions">
+          <span class="week-name">Fri</span>
+          <span class="week-num">6</span>
+          <span class="week-dots">
+            <i class="dot-mobility" title="James Patel, mobility"></i><i class="dot-strength" title="Michael Brown, strength"></i><i class="dot-strength" title="Lucy Hart, strength"></i>
           </span>
         </a>
       
-        <a class="ov-day is-future" href="day-2026-11-07.html" aria-label="Saturday 07 November, 0 sessions">
-          <span class="ov-day-name">Sat</span>
-          <span class="ov-day-num">7</span>
-          <span class="ov-dots">
-            
+        <a class="week-day" href="day-2026-11-07.html" aria-label="Saturday 07 November, 2 sessions">
+          <span class="week-name">Sat</span>
+          <span class="week-num">7</span>
+          <span class="week-dots">
+            <i class="dot-strength" title="Emma Clarke, strength"></i><i class="dot-powerlifting" title="Daniel Novak, powerlifting"></i>
           </span>
         </a>
       
-        <a class="ov-day is-future" href="day-2026-11-08.html" aria-label="Sunday 08 November, 0 sessions">
-          <span class="ov-day-name">Sun</span>
-          <span class="ov-day-num">8</span>
-          <span class="ov-dots">
-            
+        <a class="week-day is-today" href="day-2026-11-08.html" aria-label="Sunday 08 November, 3 sessions">
+          <span class="week-name">Sun</span>
+          <span class="week-num">8</span>
+          <span class="week-dots">
+            <i class="dot-strength" title="Michael Brown, strength"></i><i class="dot-cardio" title="Amara Osei, cardio"></i><i class="dot-stretching" title="Lucy Hart, stretching"></i>
           </span>
         </a>
       
-    </div>
+    </nav>
     <a href="clients-new.html" class="btn btn-primary ov-add">+ Add client</a>
   </section>
 
-  <div class="row g-3">
+  <div class="row g-4">
     <div class="col-lg-8">
-      <h2 class="ov-h2">Today, client by client</h2>
-      <div class="ov-clients">
+      <h2 class="section-title">Today, client by client</h2>
+      <div class="ov-clients mb-4">
+        
+          
+          
+          <a class="ov-client" href="clients-5.html">
+            <span class="ring" style="--p: 55" role="img" aria-label="1160 kcal of 2100"><img class="avatar " src="static/avatars/amara-osei.jpg" alt="" width="44" height="44"></span>
+            <div class="ov-client-main">
+              <h3>Amara Osei</h3>
+              <p class="ov-goal">Fitter for a two-week hiking trip</p>
+              <div class="ov-facts">
+                <span><b>1160</b> / 2100 kcal</span>
+                <span class="good">-1.1 kg</span>
+                <span>Trained today</span>
+              </div>
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+          </a>
+        
+          
+          
+          <a class="ov-client" href="clients-6.html">
+            <span class="ring" style="--p: 34" role="img" aria-label="960 kcal of 2800"><img class="avatar " src="static/avatars/daniel-novak.jpg" alt="" width="44" height="44"></span>
+            <div class="ov-client-main">
+              <h3>Daniel Novak</h3>
+              <p class="ov-goal">Deadlift 180 kg by spring</p>
+              <div class="ov-facts">
+                <span><b>960</b> / 2800 kcal</span>
+                <span class="warn">+0.4 kg</span>
+                <span>Trained yesterday</span>
+              </div>
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+          </a>
         
           
           
           <a class="ov-client" href="clients-1.html">
-            <div class="ring" style="--p: 59" role="img" aria-label="1070 kcal of 1800">
-              <span class="ring-inner">EC</span>
-            </div>
+            <span class="ring" style="--p: 58" role="img" aria-label="1040 kcal of 1800"><img class="avatar " src="static/avatars/emma-clarke.jpg" alt="" width="44" height="44"></span>
             <div class="ov-client-main">
               <h3>Emma Clarke</h3>
               <p class="ov-goal">Lose 6 kg and build strength</p>
               <div class="ov-facts">
-                <span><b>1070</b> / 1800 kcal</span>
-                <span class="good"><b>-2.9</b> kg</span>
-                <span>Trained today</span>
+                <span><b>1040</b> / 1800 kcal</span>
+                <span class="good">-2.1 kg</span>
+                <span>Trained yesterday</span>
               </div>
             </div>
-            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
           </a>
         
           
           
           <a class="ov-client" href="clients-2.html">
-            <div class="ring" style="--p: 47" role="img" aria-label="1130 kcal of 2400">
-              <span class="ring-inner">JP</span>
-            </div>
+            <span class="ring" style="--p: 0" role="img" aria-label="0 kcal of 2300"><img class="avatar " src="static/avatars/james-patel.jpg" alt="" width="44" height="44"></span>
             <div class="ov-client-main">
               <h3>James Patel</h3>
               <p class="ov-goal">First pull-up and better posture</p>
               <div class="ov-facts">
-                <span><b>1130</b> / 2400 kcal</span>
-                <span class="good"><b>-1.1</b> kg</span>
-                <span>Trained today</span>
+                <span><b>0</b> / 2300 kcal</span>
+                <span class="good">-1.1 kg</span>
+                <span>Trained 2 days ago</span>
               </div>
             </div>
-            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
           </a>
         
           
           
-          <a class="ov-client" href="clients-4.html">
-            <div class="ring" style="--p: 76" role="img" aria-label="1780 kcal of 2340">
-              <span class="ring-inner">MB</span>
-            </div>
+          <a class="ov-client" href="clients-7.html">
+            <span class="ring" style="--p: 80" role="img" aria-label="1520 kcal of 1900"><img class="avatar " src="static/avatars/lucy-hart.jpg" alt="" width="44" height="44"></span>
             <div class="ov-client-main">
-              <h3>Michael Brown</h3>
-              <p class="ov-goal">Build muscle, 3 sessions a week</p>
+              <h3>Lucy Hart</h3>
+              <p class="ov-goal">Back to running after a knee injury</p>
               <div class="ov-facts">
-                <span><b>1780</b> / 2340 kcal</span>
-                <span class="warn"><b>+0.9</b> kg</span>
-                <span>Trained yesterday</span>
+                <span><b>1520</b> / 1900 kcal</span>
+                <span class="good">-0.3 kg</span>
+                <span>Trained today</span>
               </div>
             </div>
-            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
           </a>
         
           
           
           <a class="ov-client" href="clients-3.html">
-            <div class="ring" style="--p: 20" role="img" aria-label="410 kcal of 2080">
-              <span class="ring-inner">ST</span>
+            <span class="ring over" style="--p: 100" role="img" aria-label="2840 kcal of 2500"><img class="avatar " src="static/avatars/michael-brown.jpg" alt="" width="44" height="44"></span>
+            <div class="ov-client-main">
+              <h3>Michael Brown</h3>
+              <p class="ov-goal">Build muscle, 3 sessions a week</p>
+              <div class="ov-facts">
+                <span><b>2840</b> / 2500 kcal</span>
+                <span class="warn">+1.9 kg</span>
+                <span>Trained today</span>
+              </div>
             </div>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+          </a>
+        
+          
+          
+          <a class="ov-client" href="clients-4.html">
+            <span class="ring" style="--p: 50" role="img" aria-label="1000 kcal of 2000"><img class="avatar " src="static/avatars/sophie-turner.jpg" alt="" width="44" height="44"></span>
             <div class="ov-client-main">
               <h3>Sophie Turner</h3>
               <p class="ov-goal">Run a 10k in under an hour</p>
               <div class="ov-facts">
-                <span><b>410</b> / 2080 kcal</span>
-                
-                <span>No sessions yet</span>
+                <span><b>1000</b> / 2000 kcal</span>
+                <span class="good">-0.5 kg</span>
+                <span>Trained 9 days ago</span>
               </div>
             </div>
-            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+            <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
           </a>
+        
+      </div>
+
+      <h2 class="section-title">Sessions this week</h2>
+      <div class="ov-clients agenda">
+        
+          <h3 class="agenda-day">08 November, Sunday · Today</h3>
+          
+            <a class="ov-client" href="clients-3.html">
+              <img class="avatar " src="static/avatars/michael-brown.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Michael Brown</h4>
+                <div class="ov-facts">
+                  <span>75 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-5.html">
+              <img class="avatar " src="static/avatars/amara-osei.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Amara Osei</h4>
+                <div class="ov-facts">
+                  <span>45 mins</span>
+                  <span class="type-tag type-cardio">cardio</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-7.html">
+              <img class="avatar " src="static/avatars/lucy-hart.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Lucy Hart</h4>
+                <div class="ov-facts">
+                  <span>40 mins</span>
+                  <span class="type-tag type-stretching">stretching</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+        
+          <h3 class="agenda-day">07 November, Saturday</h3>
+          
+            <a class="ov-client" href="clients-1.html">
+              <img class="avatar " src="static/avatars/emma-clarke.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Emma Clarke</h4>
+                <div class="ov-facts">
+                  <span>60 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-6.html">
+              <img class="avatar " src="static/avatars/daniel-novak.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Daniel Novak</h4>
+                <div class="ov-facts">
+                  <span>80 mins</span>
+                  <span class="type-tag type-powerlifting">powerlifting</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+        
+          <h3 class="agenda-day">06 November, Friday</h3>
+          
+            <a class="ov-client" href="clients-2.html">
+              <img class="avatar " src="static/avatars/james-patel.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>James Patel</h4>
+                <div class="ov-facts">
+                  <span>45 mins</span>
+                  <span class="type-tag type-mobility">mobility</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-3.html">
+              <img class="avatar " src="static/avatars/michael-brown.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Michael Brown</h4>
+                <div class="ov-facts">
+                  <span>75 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-7.html">
+              <img class="avatar " src="static/avatars/lucy-hart.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Lucy Hart</h4>
+                <div class="ov-facts">
+                  <span>50 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+        
+          <h3 class="agenda-day">05 November, Thursday</h3>
+          
+            <a class="ov-client" href="clients-1.html">
+              <img class="avatar " src="static/avatars/emma-clarke.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Emma Clarke</h4>
+                <div class="ov-facts">
+                  <span>60 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-5.html">
+              <img class="avatar " src="static/avatars/amara-osei.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Amara Osei</h4>
+                <div class="ov-facts">
+                  <span>60 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+        
+          <h3 class="agenda-day">04 November, Wednesday</h3>
+          
+            <a class="ov-client" href="clients-2.html">
+              <img class="avatar " src="static/avatars/james-patel.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>James Patel</h4>
+                <div class="ov-facts">
+                  <span>60 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-3.html">
+              <img class="avatar " src="static/avatars/michael-brown.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Michael Brown</h4>
+                <div class="ov-facts">
+                  <span>75 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+        
+          <h3 class="agenda-day">03 November, Tuesday</h3>
+          
+            <a class="ov-client" href="clients-1.html">
+              <img class="avatar " src="static/avatars/emma-clarke.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Emma Clarke</h4>
+                <div class="ov-facts">
+                  <span>40 mins</span>
+                  <span class="type-tag type-cardio">cardio</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-6.html">
+              <img class="avatar " src="static/avatars/daniel-novak.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Daniel Novak</h4>
+                <div class="ov-facts">
+                  <span>80 mins</span>
+                  <span class="type-tag type-powerlifting">powerlifting</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+        
+          <h3 class="agenda-day">02 November, Monday</h3>
+          
+            <a class="ov-client" href="clients-5.html">
+              <img class="avatar " src="static/avatars/amara-osei.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Amara Osei</h4>
+                <div class="ov-facts">
+                  <span>30 mins</span>
+                  <span class="type-tag type-mobility">mobility</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
+            <a class="ov-client" href="clients-7.html">
+              <img class="avatar " src="static/avatars/lucy-hart.jpg" alt="" width="44" height="44">
+              <div class="ov-client-main">
+                <h4>Lucy Hart</h4>
+                <div class="ov-facts">
+                  <span>50 mins</span>
+                  <span class="type-tag type-strength">strength</span>
+                </div>
+              </div>
+              <span class="ov-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          
         
       </div>
     </div>
 
     <div class="col-lg-4">
-      <h2 class="ov-h2">Needs a message</h2>
-      <div class="ov-attention">
+      <h2 class="section-title">Needs a message</h2>
+      <div class="ov-attention mb-4">
+        
+          <a href="clients-2.html">
+            <img class="avatar sm" src="static/avatars/james-patel.jpg" alt="" width="44" height="44">
+            <span><b>James Patel</b><small>No food logged today</small></span>
+            <span class="ov-arrow ms-auto" aria-hidden="true">&rsaquo;</span>
+          </a>
         
           <a href="clients-3.html">
-            <span class="initials sm" aria-hidden="true">ST</span>
-            <span><b>Sophie Turner</b><small>No session booked yet</small></span>
+            <img class="avatar sm" src="static/avatars/michael-brown.jpg" alt="" width="44" height="44">
+            <span><b>Michael Brown</b><small>Over today&#39;s calories</small></span>
+            <span class="ov-arrow ms-auto" aria-hidden="true">&rsaquo;</span>
+          </a>
+        
+          <a href="clients-4.html">
+            <img class="avatar sm" src="static/avatars/sophie-turner.jpg" alt="" width="44" height="44">
+            <span><b>Sophie Turner</b><small>No session for 9 days</small></span>
+            <span class="ov-arrow ms-auto" aria-hidden="true">&rsaquo;</span>
           </a>
         
       </div>
 
-      <h2 class="ov-h2 mt-4">This week's training</h2>
+      <h2 class="section-title">This week's training</h2>
       <div class="ov-mix">
         
-        
           <div class="mix-bar">
-            <span class="dot-strength" style="flex: 3" title="strength 3"></span><span class="dot-mobility" style="flex: 1" title="mobility 1"></span>
+            <span class="dot-strength" style="flex: 9" title="strength 9"></span><span class="dot-cardio" style="flex: 2" title="cardio 2"></span><span class="dot-powerlifting" style="flex: 2" title="powerlifting 2"></span><span class="dot-mobility" style="flex: 2" title="mobility 2"></span><span class="dot-stretching" style="flex: 1" title="stretching 1"></span>
           </div>
           <ul class="mix-legend">
-            <li><i class="dot-strength"></i>Strength <b>3</b></li><li><i class="dot-mobility"></i>Mobility <b>1</b></li>
+            <li><i class="dot-strength"></i>Strength <b>9</b></li><li><i class="dot-cardio"></i>Cardio <b>2</b></li><li><i class="dot-powerlifting"></i>Powerlifting <b>2</b></li><li><i class="dot-mobility"></i>Mobility <b>2</b></li><li><i class="dot-stretching"></i>Stretching <b>1</b></li>
           </ul>
         
       </div>
@@ -231,15 +506,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

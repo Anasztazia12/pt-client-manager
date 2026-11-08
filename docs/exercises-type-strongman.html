@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>This trainer is effective for developing Atlas Stone strength for those who don&#39;t have access to stones, and are typically made from bar ends or heavy pipe.</li><li>Begin by loading the desired weight onto the bar. Straddle the weight, wrapping your arms around the implement, bending at the hips.</li><li>Begin by pulling the weight up past the knees, extending through the hips. As the weight clears the knees, it can be lapped by resting it on your thighs and sitting back, hugging it tightly to your chest.</li><li>Finish the movement by extending through your hips and knees to raise the weight as high as possible. The weight can be returned to the lap or to the ground for successive repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/28/delete" class="ex-delete"
               onsubmit="return confirm('Delete Atlas Stone Trainer? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Atlas Stone Trainer">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>Begin with the atlas stone between your feet. Bend at the hips to wrap your arms vertically around the Atlas Stone, attempting to get your fingers underneath the stone. Many stones will have a small flat portion on the bottom, which will make the stone easier to hold.</li><li>Pulling the stone into your torso, drive through the back half of your feet to pull the stone from the ground.</li><li>As the stone passes the knees, lap it by sitting backward, pulling the stone on top of your thighs.</li><li>Sit low, getting the stone high onto your chest as you change your grip to reach over the stone. Stand, driving through with your hips. Close distance to the loading platform, and lean back, extending the hips to get the stone as high as possible.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/29/delete" class="ex-delete"
               onsubmit="return confirm('Delete Atlas Stones? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Atlas Stones">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an over/under grip.</li><li>With your feet and your grip set, take a big breath and then lower your hips and flex the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward.</li><li>After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/30/delete" class="ex-delete"
               onsubmit="return confirm('Delete Axle Deadlift? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Axle Deadlift">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>Load a sled with the desired weight, attaching a rope or straps to the sled that you can hold onto.</li><li>Begin the exercise by moving backwards for a given distance. Leaning back, extend through the legs for short steps to move as quickly as possible.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/32/delete" class="ex-delete"
               onsubmit="return confirm('Delete Backward Drag? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Backward Drag">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Wearing either a harness or a loose weight belt, attach the chain to the back so that you will be facing away from the sled. Bend down so that your hands are on the ground. Your back should be flat and knees bent. This is your starting position.</li><li>Begin by driving with legs, alternating left and right. Use your hands to maintain balance and to help pull. Try to keep your back flat as you move over a given distance.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/69/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bear Crawl Sled Drags? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bear Crawl Sled Drags">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>This event apparatus typically has neutral grip handles, however some have a straight bar that you can approach like a normal deadlift. The apparatus can be loaded with a vehicle or other heavy objects such as tractor tires or kegs.</li><li>Center yourself between the handles if you are a strong squatter, or back a couple inches if you are a strong deadlifter. You feet should be about hip width apart. Bend at the hip to grip the handles. With your feet and your grip set, take a big breath and then lower your hips and flex the knees.</li><li>Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. As the weight comes up, pull your shoulder blades together as you drive your hips forward.</li><li>Lower the weight by bending at the hips and guiding it to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/142/delete" class="ex-delete"
               onsubmit="return confirm('Delete Car Deadlift? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Car Deadlift">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>The circus bell is an oversized dumbbell with a thick handle. Begin with the dumbbell between your feet, and grip the handle with both hands.</li><li>Clean the dumbbell by extending through your hips and knees to deliver the implement to the desired shoulder, letting go with the extra hand.</li><li>Ensure that you get one of the dumbbell heads behind the shoulder to keep from being thrown off balance. To raise it overhead, dip by flexing the knees, and the drive upwards as you extend the dumbbell overhead, leaning slightly away from it as you do so.</li><li>Carefully guide the bell back to the floor, keeping it under control as much as possible. It is best to perform this event on a thick rubber mat to prevent damage to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/162/delete" class="ex-delete"
               onsubmit="return confirm('Delete Circus Bell? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Circus Bell">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>With the weight loaded, take a zurcher hold on the end of the implement. Place the bar in the crook of the elbow and hold onto your wrist. Try to keep the weight off of the forearms.</li><li>Begin by lifting the weight from the ground. Keep a tight, upright posture as you being to walk, taking short, fast steps. Look up and away as you turn in a circle. Do not hold your breath during the event. Continue walking until you complete one or more complete turns.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/180/delete" class="ex-delete"
               onsubmit="return confirm('Delete Conan&#39;s Wheel? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Conan&#39;s Wheel">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>In the crucifix, you statically hold weights out to the side for time. While the event can be practiced using dumbbells, it is best to practice with one of the various implements used, such as axes and hammers, as it feels different.</li><li>Begin standing, and raise your arms out to the side holding the implements. Your arms should be parallel to the ground. In competition, judges or sensors are used to let you know when you break parallel. Hold for as long as you can. Typically, the weights should be heavy enough that you fail in 30-60 seconds.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/186/delete" class="ex-delete"
               onsubmit="return confirm('Delete Crucifix? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Crucifix">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>There are various implements that can be used for the farmers walk. These can also be performed with heavy dumbbells or short bars if these implements aren&#39;t available. Begin by standing between the implements.</li><li>After gripping the handles, lift them up by driving through your heels, keeping your back straight and your head up.</li><li>Walk taking short, quick steps, and don&#39;t forget to breathe. Move for a given distance, typically 50-100 feet, as fast as possible.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/268/delete" class="ex-delete"
               onsubmit="return confirm('Delete Farmer&#39;s Walk? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Farmer&#39;s Walk">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>Attach a dual handled chain or rope attachment to the sled. You should be facing away from the sled, holding a handle in each hand.</li><li>Begin the movement by moving forward for one step. Leaning forward, extend through the legs and hips to move, pausing with each step to extend through the elbows, pressing your hands forward. Step forward until you return to the start position prepared to press.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/280/delete" class="ex-delete"
               onsubmit="return confirm('Delete Forward Drag with Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Forward Drag with Press">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>To load kegs, place the desired number a distance from the loading platform, typically 30-50 feet.</li><li>Begin by grabbing the close handle of the first keg, tilting it onto its side to grab the opposite edge of the bottom of the keg. Lift the keg up to your chest.</li><li>The higher you can place the keg, the faster you should be able to move to the platform. Shouldering is usually not allowed. Be sure to keep a firm hold on the keg. Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible.</li><li>Return to the starting position to retrieve the next keg, and repeat until the event is completed.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/371/delete" class="ex-delete"
               onsubmit="return confirm('Delete Keg Load? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Keg Load">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>Begin standing with the log in front of you. Grasp the handles, and begin to clean the log. As you are bent over to start the clean, attempt to get the log as high as possible, pulling it into your chest. Extend through the hips and knees to bring it up to complete the clean.</li><li>Push your head back and look up, creating a shelf on your chest to rest the log. Begin the press by dipping, flexing slightly through the knees and reversing the motion. This push press will generate momentum to start the log moving vertically. Continue by extending through the elbows to press the log above your head. There are no strict rules on form, so use whatever techniques you are most efficient with. As the log is pressed, ensure that you push your head through on each repetition, looking forward.</li><li>Repeat as many times as possible. Attempt to control the descent of the log as it is returned to the ground.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/425/delete" class="ex-delete"
               onsubmit="return confirm('Delete Log Lift? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Log Lift">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>In the power stairs, implements are moved up a staircase. For training purposes, these can be performed with a tire or box.</li><li>Begin by taking the implement with both hands. Set your feet wide, with your head and chest up. Drive through the ground with your heels, extending your knees and hips to raise the weight from the ground.</li><li>As you lean back, attempt to swing the weight onto the stairs, which are usually around 16-18&#34; high. You can use your legs to help push the weight onto the stair.</li><li>Repeat for 3-5 repetitions, and continue with a heavier weight, moving as fast as possible.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/553/delete" class="ex-delete"
               onsubmit="return confirm('Delete Power Stairs? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Power Stairs">Delete</button>
         </form>
@@ -562,7 +567,7 @@
             <ol><li>Position the frame at the starting point, and load with the appropriate weight. Standing in the center of the frame, begin by gripping the handles and driving through your heels to lift the frame. Ensure your chest and head are up and your back is straight.</li><li>Immediately begin walking briskly with quick, controlled steps. Keep your chest up and head forward, and make sure you continue breathing. Bring the frame to the ground after you have reached the end point.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/598/delete" class="ex-delete"
               onsubmit="return confirm('Delete Rickshaw Carry? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rickshaw Carry">Delete</button>
         </form>
@@ -592,7 +597,7 @@
             <ol><li>Load the frame with the desired weight. Center yourself between the handles. You feet should be about hip width apart. Bend at the hips to grip the handles, allowing your shoulder blades to protract.</li><li>With your feet and your grip set, take a big breath and then lower your hips and flex the knees. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. As the weight comes up, pull your shoulder blades together as you drive your hips forward.</li><li>Lower the weight by bending at the hips and guiding it to the ground.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/599/delete" class="ex-delete"
               onsubmit="return confirm('Delete Rickshaw Deadlift? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rickshaw Deadlift">Delete</button>
         </form>
@@ -622,7 +627,7 @@
             <ol><li>To load sandbags or other objects, begin with the implements placed a distance from the loading platform, typically 50 feet.</li><li>Begin by lifting the sandbag. Sandbags are extremely awkward, and the manner of lifting them can vary depending on the particular sandbag used. Reach as far around it as possible, extending through the hips and knees to pull it up high. Shouldering is usually not allowed.</li><li>Move as quickly as possible to the platform, and load it, extending through your hips, knees, and ankles to get it as high as possible. Place it onto the platform, ensuring it doesn&#39;t fall off.</li><li>Return to the starting position to retrieve the next sandbag, and repeat until the event is completed.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/615/delete" class="ex-delete"
               onsubmit="return confirm('Delete Sandbag Load? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Sandbag Load">Delete</button>
         </form>
@@ -652,7 +657,7 @@
             <ol><li>To begin, load the sled with the desired weight and attach the pulling strap. You can pull with handles, use a harness, or attach the pulling strap to a weight belt.</li><li>Whether pulling forwards or backwards, lean in the direction of travel and progress by extending through the hips and knees.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/690/delete" class="ex-delete"
               onsubmit="return confirm('Delete Sled Drag - Harness? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Sled Drag - Harness">Delete</button>
         </form>
@@ -682,7 +687,7 @@
             <ol><li>Load your pushing sled with the desired weight.</li><li>Take an athletic posture, leaning into the sled with your arms fully extended, grasping the handles. Push the sled as fast as possible, focusing on extending your hips and knees to strengthen your posterior chain.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/693/delete" class="ex-delete"
               onsubmit="return confirm('Delete Sled Push? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Sled Push">Delete</button>
         </form>
@@ -712,7 +717,7 @@
             <ol><li>Begin by gripping the bottom of the tire on the tread, and position your feet back a bit. Your chest should be driving into the tire.</li><li>To lift the tire, extend through the hips, knees, and ankles, driving into the tire and up.</li><li>As the tire reaches a 45 degree angle, step forward and drive a knee into the tire. As you do so adjust your grip to the upper portion of the tire and push it forward as hard as possible to complete the turn. Repeat as necessary.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/817/delete" class="ex-delete"
               onsubmit="return confirm('Delete Tire Flip? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Tire Flip">Delete</button>
         </form>
@@ -742,7 +747,7 @@
             <ol><li>The yoke is usually done with a yoke apparatus, but is sometimes seen with refrigerators or other heavy objects.</li><li>Begin by racking the apparatus across the back of the shoulders. With your head looking forward and back arched, lift the yoke by driving through the heels.</li><li>Begin walking as quickly as possible using short, quick steps. You may hold the side posts of the yoke to help steady it and hold it in position. Continue for the given distance as fast as possible, usually 75-100 feet.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/870/delete" class="ex-delete"
               onsubmit="return confirm('Delete Yoke Walk? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Yoke Walk">Delete</button>
         </form>
@@ -761,15 +766,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

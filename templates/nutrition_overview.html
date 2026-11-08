@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Nutrition{% endblock %}
 {% block content %}
+  {% from "_macros.html" import avatar %}
   <div class="page-head">
     <div>
       <p class="eyebrow">{{ today.strftime("%A %d %B") }}</p>
@@ -9,32 +10,47 @@
     <a href="{{ url_for('calculator') }}" class="btn btn-outline-primary">Calorie calculator</a>
   </div>
 
-  <div class="row g-3">
-    {% for r in rows %}
-      {% set t = r.client.daily_kcal_target %}
-      {% set pct = (r.totals.kcal / t * 100)|round|int if t else 0 %}
-      <div class="col-md-6 col-lg-4">
-        <a class="client-card" href="{{ url_for('nutrition', client_id=r.client.id) }}">
-          <div class="client-top">
-            {% set parts = r.client.name.split() %}
-            <span class="initials" aria-hidden="true">{{ parts[0][:1] }}{% if parts|length > 1 %}{{ parts[-1][:1] }}{% endif %}</span>
-            <h2>{{ r.client.name }}</h2>
-          </div>
-          <p class="nut-kcal"><strong>{{ r.totals.kcal }}</strong>{% if t %} / {{ t }} kcal{% else %} kcal, no target{% endif %}</p>
-          <div class="kcal-bar light"><span class="{% if pct > 105 %}over{% endif %}" style="width: {{ [pct, 100]|min }}%"></span></div>
-          <div class="chips mt-2">
-            {% if r.logged %}
-              <span class="chip">P <strong>{{ r.totals.protein }}</strong> g</span>
-              <span class="chip">C <strong>{{ r.totals.carbs }}</strong> g</span>
-              <span class="chip">F <strong>{{ r.totals.fat }}</strong> g</span>
-            {% else %}
-              <span class="chip">Nothing logged today</span>
-            {% endif %}
-          </div>
-        </a>
+  {% if rows %}
+    <div class="table-wrap">
+      <div class="table-responsive border-0">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Calories</th>
+              <th class="d-none d-md-table-cell text-end">Protein</th>
+              <th class="d-none d-md-table-cell text-end">Carbs</th>
+              <th class="d-none d-md-table-cell text-end">Fat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in rows %}
+              {% set t = r.client.daily_kcal_target %}
+              {% set pct = (r.totals.kcal / t * 100)|round|int if t else 0 %}
+              {% set parts = r.client.name.split() %}
+              <tr class="row-link">
+                <td>
+                  <div class="who">
+                    {{ avatar(r.client.name) }}
+                    <span><a class="stretched-link" href="{{ url_for('nutrition', client_id=r.client.id) }}"><b>{{ r.client.name }}</b></a>{% if not r.logged %}<small>Nothing logged today</small>{% endif %}</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="meter">
+                    <span class="meter-text"><b>{{ r.totals.kcal }}</b> <span>{% if t %}/ {{ t }} kcal{% else %}kcal, no target{% endif %}</span></span>
+                    {% if t %}<span class="kcal-bar"><span class="{% if pct > 105 %}over{% endif %}" style="width: {{ [pct, 100]|min }}%"></span></span>{% endif %}
+                  </div>
+                </td>
+                <td class="d-none d-md-table-cell text-end">{{ r.totals.protein }} g</td>
+                <td class="d-none d-md-table-cell text-end">{{ r.totals.carbs }} g</td>
+                <td class="d-none d-md-table-cell text-end">{{ r.totals.fat }} g</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
-    {% else %}
-      <p class="text-muted">No clients yet.</p>
-    {% endfor %}
-  </div>
+    </div>
+  {% else %}
+    <p class="text-muted">No clients yet.</p>
+  {% endif %}
 {% endblock %}

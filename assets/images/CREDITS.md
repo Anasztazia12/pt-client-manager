@@ -1,5 +1,8 @@
 ﻿# Image credits
 
+Demo client portraits in static/avatars are cropped from Unsplash photos kept in this folder (Unsplash License).
+Photographers, from the file names: Batel Studio, Charles Etoroma, Christopher Campbell, Craig McKay, Jake Nackos, Kelly Sikkema, Sergio de Paula.
+
 Pixabay images (Pixabay Content License, free for commercial use, no attribution required).
 Original file names kept here for reference.
 

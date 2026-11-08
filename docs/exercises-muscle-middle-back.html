@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>Place two kettlebells in front of your feet. Bend your knees slightly and push your butt out as much as possible. As you bend over to get into the starting position grab both kettlebells by the handles.</li><li>Pull one kettlebell off of the floor while holding on to the other kettlebell. Retract the shoulder blade of the working side, as you flex the elbow, drawing the kettlebell towards your stomach or rib cage.</li><li>Lower the kettlebell in the working arm and repeat with your other arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/19/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternating Kettlebell Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternating Kettlebell Row">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>Place two kettlebells on the floor about shoulder width apart. Position yourself on your toes and your hands as though you were doing a pushup, with the body straight and extended. Use the handles of the kettlebells to support your upper body. You may need to position your feet wide for support.</li><li>Push one kettlebell into the floor and row the other kettlebell, retracting the shoulder blade of the working side as you flex the elbow, pulling it to your side.</li><li>Then lower the kettlebell to the floor and begin the kettlebell in the opposite hand. Repeat for several reps.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/20/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternating Renegade Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternating Renegade Row">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.</li><li>Now, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause.</li><li>Then inhale and slowly lower the barbell back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/80/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over Barbell Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over Barbell Row">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>Put weight on one of the ends of an Olympic barbell. Make sure that you either place the other end of the barbell in the corner of two walls; or put a heavy object on the ground so the barbell cannot slide backward.</li><li>Bend forward until your torso is as close to parallel with the floor as you can and keep your knees slightly bent.</li><li>Now grab the bar with one arm just behind the plates on the side where the weight was placed and put your other hand on your knee. This will be your starting position.</li><li>Pull the bar straight up with your elbow in (to maximize back stimulation) until the plates touch your lower chest. Squeeze the back muscles as you lift the weight up and hold for a second at the top of the movement. Breathe out as you lift the weight. Tip: Do not allow for any swinging of the torso. Only the arm should move.</li><li>Slowly lower the bar to the starting position getting a nice stretch on the lats. Tip: Do not let the plates touch the floor. To ensure the best range of motion, I recommend using small plates (25-lb ones) as opposed to larger plates (like 35-45lb ones).</li><li>Repeat for the recommended amount of repetitions and switch arms.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/83/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over One-Arm Long Bar Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over One-Arm Long Bar Row">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Put weight on one of the ends of an Olympic barbell. Make sure that you either place the other end of the barbell in the corner of two walls; or put a heavy object on the ground so the barbell cannot slide backward.</li><li>Bend forward until your torso is as close to parallel with the floor as you can and keep your knees slightly bent.</li><li>Now grab the bar with both arms just behind the plates on the side where the weight was placed and put your other hand on your knee. This will be your starting position.</li><li>Pull the bar straight up with your elbows in (to maximize back stimulation) until the plates touch your lower chest. Squeeze the back muscles as you lift the weight up and hold for a second at the top of the movement. Breathe out as you lift the weight. Tip: Use a stirrup or double handle cable attachment by hooking it under the end of the bar.</li><li>Slowly lower the bar to the starting position getting a nice stretch on the lats. Tip: Do not let the plates touch the floor. To ensure the best range of motion, I recommend using small plates (25-lb ones) as opposed to larger plates (like 35-45lb ones).</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/84/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over Two-Arm Long Bar Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over Two-Arm Long Bar Row">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>With a dumbbell in each hand (palms facing your torso), bend your knees slightly and bring your torso forward by bending at the waist; as you bend make sure to keep your back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The weights should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.</li><li>While keeping the torso stationary, lift the dumbbells to your side (as you breathe out), keeping the elbows close to the body (do not exert any force with the forearm other than holding the weights). On the top contracted position, squeeze the back muscles and hold for a second.</li><li>Slowly lower the weight again to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/85/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over Two-Dumbbell Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over Two-Dumbbell Row">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>With a dumbbell in each hand (palms facing each other), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The weights should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.</li><li>While keeping the torso stationary, lift the dumbbells to your side as you breathe out, squeezing your shoulder blades together. On the top contracted position, squeeze the back muscles and hold for a second.</li><li>Slowly lower the weight again to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/86/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over Two-Dumbbell Row With Palms In? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over Two-Dumbbell Row With Palms In">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>Begin by taking a medium to wide grip on a pull-up apparatus with your palms facing away from you. From a hanging position, tuck your knees to your chest, leaning back and getting your legs over your side of the pull-up apparatus. This will be your starting position.</li><li>Beginning with your arms straight, flex the elbows and retract the shoulder blades to raise your body up until your legs contact the pull-up apparatus.</li><li>After a brief pause, return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/94/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bodyweight Mid Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bodyweight Mid Row">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>Using a neutral grip, lean into an incline bench.</li><li>Take a dumbbell in each hand with a neutral grip, beginning with the arms straight. This will be your starting position.</li><li>Retract the shoulder blades and flex the elbows to row the dumbbells to your side.</li><li>Pause at the top of the motion, and then return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/228/delete" class="ex-delete"
               onsubmit="return confirm('Delete Dumbbell Incline Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Incline Row">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>Grab a dumbbell in each hand and lie face down on an incline bench that is set to an incline that is approximately 30 degrees.</li><li>Let the arms hang to your sides fully extended as they point to the floor.</li><li>Turn the wrists until your hands have a pronated (palms down) grip.</li><li>Now flare the elbows out. This will be your starting position.</li><li>As you breathe out, start to pull the dumbbells up as if you are doing a reverse bench press. You will do this by bending at the elbows and bringing the upper arms up as you let the forearms hang. Continue this motion until the upper arms are at the same level as your back. Tip: The elbows will come out to the side and your upper arms and torso should make the letter &#34;T&#34; at the top of the movement. Hold the contraction at the top for a second.</li><li>Slowly go back down to the starting position as you breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/337/delete" class="ex-delete"
               onsubmit="return confirm('Delete Incline Bench Pull? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Incline Bench Pull">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>Position a bar in a rack to about waist height. You can also use a smith machine.</li><li>Take a wider than shoulder width grip on the bar and position yourself hanging underneath the bar. Your body should be straight with your heels on the ground with your arms fully extended. This will be your starting position.</li><li>Begin by flexing the elbow, pulling your chest towards the bar. Retract your shoulder blades as you perform the movement.</li><li>Pause at the top of the motion, and return yourself to the start position.</li><li>Repeat for the desired number of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/356/delete" class="ex-delete"
               onsubmit="return confirm('Delete Inverted Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Inverted Row">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>Hang a rope or suspension straps from a rack or other stable object. Grasp the ends and position yourself in a supine position hanging from the ropes. Your body should be straight with your heels on the ground with your arms fully extended. This will be your starting position.</li><li>Begin by flexing the elbow, pulling your chest to your hands. Retract your shoulder blades as you perform the movement.</li><li>Pause at the top of the motion, and return yourself to the start position.</li><li>Repeat for the desired number of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/357/delete" class="ex-delete"
               onsubmit="return confirm('Delete Inverted Row with Straps? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Inverted Row with Straps">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>Load an appropriate weight onto the pins and adjust the seat height so that you can just reach the handles above you. Adjust the knee pad to help keep you down. Grasp the handles with a pronated grip. This will be your starting position.</li><li>Pull the handles towards your torso, retracting your shoulder blades as you flex the elbow.</li><li>Pause at the bottom of the motion, and then slowly return the handles to the starting position.</li><li>For multiple repetitions, avoid completely returning the weight to the stops to keep tension on the muscles being worked.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/417/delete" class="ex-delete"
               onsubmit="return confirm('Delete Leverage High Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Leverage High Row">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>Place a cambered bar underneath an exercise bench.</li><li>Lie face down on the exercise bench and grab the bar using a palms down (pronated grip) that is wider than shoulder width. This will be your starting position.</li><li>As you exhale row the bar up as you keep the elbows close to your body to either your chest, in order to target the upper mid back, or to your stomach if targeting the lats is your goal.</li><li>After a second hold at the top, lower back down to the starting position slowly as you inhale.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/437/delete" class="ex-delete"
               onsubmit="return confirm('Delete Lying Cambered Barbell Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Lying Cambered Barbell Row">Delete</button>
         </form>
@@ -562,7 +567,7 @@
             <ol><li>Load up the T-bar Row Machine with the desired weight and adjust the leg height so that your upper chest is at the top of the pad. Tip: In some machines all you can do is stand on the appropriate step that allows you to be at a height that has the upper chest at the top of the pad.</li><li>Lay face down on the pad and grab the handles. You can either use a palms down, palms up, or palms in position depending on what part of your back you want to emphasize.</li><li>Lift the bar off the rack and extend your arms in front of you. This will be your starting position.</li><li>As you exhale slowly pull the weight up and squeeze your back at the top of the movement. Tip: Keep the upper arms as close to the torso as possible throughout the movement in order to better engage the back muscles. Also, do not lift your body off of the pad at any time and refrain from using the biceps to lift the weight.</li><li>After a second contraction at the top of the movement, as you inhale, slowly go back down to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/454/delete" class="ex-delete"
               onsubmit="return confirm('Delete Lying T-Bar Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Lying T-Bar Row">Delete</button>
         </form>
@@ -592,7 +597,7 @@
             <ol><li>Lie facedown on an incline bench while holding a dumbbell in each hand. Your arms should be fully extended hanging down and pointing towards the floor. The palms of your hands should be facing each other. This will be your starting position.</li><li>As you exhale, squeeze your shoulder blades together and hold the contraction for a full second. Tip: This movement is just like the reverse action of a hug, or trying to perform rear laterals as if you had no arms.</li><li>As you inhale go back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/464/delete" class="ex-delete"
               onsubmit="return confirm('Delete Middle Back Shrug? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Middle Back Shrug">Delete</button>
         </form>
@@ -622,7 +627,7 @@
             <ol><li>Stand so your feet are shoulder width apart and your hands are on your hips.</li><li>Twist at your waist until you feel a stretch. Hold for 10 to 15 seconds, then twist to the other side.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/465/delete" class="ex-delete"
               onsubmit="return confirm('Delete Middle Back Stretch? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Middle Back Stretch">Delete</button>
         </form>
@@ -652,7 +657,7 @@
             <ol><li>Using a spacing that is just about 1 inch wider than shoulder width, grab a pull-up bar with the palms of one hand facing forward and the palms of the other hand facing towards you. This will be your starting position.</li><li>Now start to pull yourself up as you exhale. Tip: With the arm that has the palms facing up concentrate on using the back muscles in order to perform the movement. The elbow of that arm should remain close to the torso. With the other arm that has the palms facing forward, the elbows will be away but in line with the torso. You will concentrate on using the lats to pull your body up.</li><li>After a second contraction at the top, start to slowly come down as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li><li>On the following set, switch grips; so if you had the right hand with the palms facing you and the left one with the palms facing forward, on the next set you will have the palms facing forward for the right hand and facing you for the left.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/466/delete" class="ex-delete"
               onsubmit="return confirm('Delete Mixed Grip Chin? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Mixed Grip Chin">Delete</button>
         </form>
@@ -682,7 +687,7 @@
             <ol><li>For this exercise, start out by placing a towel around a chin up bar.</li><li>Grab the chin-up bar with your palm facing you. One hand will be grabbing the chin-up bar and the other will be grabbing the towel.</li><li>Bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.v</li><li>Pull your torso up until the bar touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.</li><li>After a second on the contracted position, start to inhale and slowly lower your torso back to the starting position when your arms are fully extended and the lats are fully stretched.</li><li>Repeat this motion for the prescribed amount of repetitions.</li><li>Switch arms and repeat the movement.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/507/delete" class="ex-delete"
               onsubmit="return confirm('Delete One Arm Chin-Up? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One Arm Chin-Up">Delete</button>
         </form>
@@ -712,7 +717,7 @@
             <ol><li>Choose a flat bench and place a dumbbell on each side of it.</li><li>Place the right leg on top of the end of the bench, bend your torso forward from the waist until your upper body is parallel to the floor, and place your right hand on the other end of the bench for support.</li><li>Use the left hand to pick up the dumbbell on the floor and hold the weight while keeping your lower back straight. The palm of the hand should be facing your torso. This will be your starting position.</li><li>Pull the resistance straight up to the side of your chest, keeping your upper arm close to your side and keeping the torso stationary. Breathe out as you perform this step. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. Also, make sure that the force is performed with the back muscles and not the arms. Finally, the upper torso should remain stationary and only the arms should move. The forearms should do no other work except for holding the dumbbell; therefore do not try to pull the dumbbell up using the forearms.</li><li>Lower the resistance straight down to the starting position. Breathe in as you perform this step.</li><li>Repeat the movement for the specified amount of repetitions.</li><li>Switch sides and repeat again with the other arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/483/delete" class="ex-delete"
               onsubmit="return confirm('Delete One-Arm Dumbbell Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One-Arm Dumbbell Row">Delete</button>
         </form>
@@ -742,7 +747,7 @@
             <ol><li>Place a kettlebell in front of your feet. Bend your knees slightly and then push your butt out as much as possible as you bend over to get in the starting position. Grab the kettlebell and pull it to your stomach, retracting your shoulder blade and flexing the elbow. Keep your back straight. Lower and repeat.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/494/delete" class="ex-delete"
               onsubmit="return confirm('Delete One-Arm Kettlebell Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One-Arm Kettlebell Row">Delete</button>
         </form>
@@ -772,7 +777,7 @@
             <ol><li>Position a bar into a landmine or in a corner to keep it from moving. Load an appropriate weight onto your end.</li><li>Stand next to the bar, and take a grip with one hand close to the collar. Using your hips and legs, rise to a standing position.</li><li>Assume a bent-knee stance with your hips back and your chest up. Your arm should be extended. This will be your starting position.</li><li>Pull the weight to your side by retracting the shoulder and flexing the elbow. Do not jerk the weight or cheat during the movement.</li><li>After a brief pause, return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/499/delete" class="ex-delete"
               onsubmit="return confirm('Delete One-Arm Long Bar Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete One-Arm Long Bar Row">Delete</button>
         </form>
@@ -802,7 +807,7 @@
             <ol><li>Stand erect while holding a barbell with a supinated grip (palms facing up).</li><li>Bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.</li><li>While keeping the torso stationary, lift the barbell as you breathe out, keeping the elbows close to the body and not doing any force with the forearm other than holding the weights. On the top contracted position, squeeze the back muscles and hold for a second.</li><li>Slowly lower the weight again to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/591/delete" class="ex-delete"
               onsubmit="return confirm('Delete Reverse Grip Bent-Over Rows? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Reverse Grip Bent-Over Rows">Delete</button>
         </form>
@@ -832,7 +837,7 @@
             <ol><li>Lay down with your back on the floor. Place a foam roll underneath your upper back, and cross your arms in front of you, protracting your shoulders. This will be your starting position.</li><li>Raise your hips off of the ground, placing your weight onto the foam roll. Shift your weight to one side at a time, rolling over your middle and upper back. Pause at points of tension for 10-30 seconds.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/597/delete" class="ex-delete"
               onsubmit="return confirm('Delete Rhomboids-SMR? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rhomboids-SMR">Delete</button>
         </form>
@@ -857,15 +862,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

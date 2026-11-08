@@ -1,0 +1,52 @@
+{# Shared table of payments. Set show_client to name the client on each row. #}
+{% from "_macros.html" import avatar %}
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Payment</th>
+        <th class="text-end">Amount</th>
+        <th>Status</th>
+        <th class="d-none d-md-table-cell"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in payments %}
+        {% set status = p.current_status %}
+        <tr>
+          <td>
+            <div class="who">
+              {% if show_client %}{{ avatar(p.client.name, "sm") }}{% endif %}
+              <span>
+                <b>{{ p.description }}</b>
+                <small>{% if show_client %}<a href="{{ url_for('client_detail', client_id=p.client_id) }}#payments">{{ p.client.name }}</a> · {% endif %}{{ (p.paid_at or p.created_at).strftime("%d %b %Y") }}</small>
+              </span>
+            </div>
+          </td>
+          <td class="text-end pay-amount">{{ p.amount_minor|money(p.currency) }}</td>
+          <td><span class="pay-status pay-{{ status }}">{{ {"pending": "Awaiting", "paid": "Paid", "failed": "Failed", "expired": "Expired"}[status] }}</span></td>
+          <td class="text-end text-nowrap d-none d-md-table-cell">
+            {% if status == "pending" %}
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy="{{ p.checkout_url }}">Copy link</button>
+              <form method="POST" action="{{ url_for('payment_cancel', payment_id=p.id) }}" class="d-inline"
+                    onsubmit="return confirm('Cancel this payment link?');">
+                <button type="submit" class="btn btn-sm btn-outline-danger">Cancel</button>
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+        {% if status == "pending" %}
+          <tr class="d-md-none">
+            <td colspan="3" class="text-end">
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy="{{ p.checkout_url }}">Copy link</button>
+              <form method="POST" action="{{ url_for('payment_cancel', payment_id=p.id) }}" class="d-inline"
+                    onsubmit="return confirm('Cancel this payment link?');">
+                <button type="submit" class="btn btn-sm btn-outline-danger">Cancel</button>
+              </form>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

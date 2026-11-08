@@ -1,12 +1,14 @@
 import json
 import os
-from datetime import date, timedelta
-from flask import Flask, render_template, redirect, url_for, flash, request
+import re
+from datetime import date, datetime, timedelta, timezone
+from flask import Flask, abort, current_app, render_template, redirect, url_for, flash, request
+import stripe
 from sqlalchemy import inspect, text
 from sqlalchemy.exc import SQLAlchemyError
 
 from config import Config
-from models import db, Client, WorkoutPlan, Exercise, PlanExercise, Session, FoodEntry, CheckIn
+from models import db, Client, WorkoutPlan, Exercise, PlanExercise, Session, FoodEntry, CheckIn, Payment
 from forms import (
     ClientForm,
     WorkoutPlanForm,
@@ -15,26 +17,45 @@ from forms import (
     SessionForm,
     FoodEntryForm,
     CheckInForm,
+    PaymentForm,
     EXERCISE_CATEGORIES,
     MEALS,
 )
 
 SEED_FILE = os.path.join(os.path.dirname(__file__), "data", "exercises_seed.json")
 
+# Currencies the amount form can charge in. Each one is sent to Stripe as amount x 100, which is
+# what Stripe expects for these; a zero-decimal currency such as JPY would charge 100 times too much.
+CURRENCY_FORMATS = {"gbp": "£{}", "eur": "€{}", "usd": "${}", "huf": "{} Ft"}
+
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+    if app.config["STRIPE_CURRENCY"] not in CURRENCY_FORMATS:
+        raise RuntimeError(f"STRIPE_CURRENCY must be one of: {', '.join(CURRENCY_FORMATS)}")
+    if app.config["DEMO_MODE"] and app.config["STRIPE_SECRET_KEY"].startswith(("sk_live_", "rk_live_")):
+        raise RuntimeError("DEMO_MODE is public and has no login: use a Stripe test key (sk_test_).")
     db.init_app(app)
 
     with app.app_context():
         db.create_all()
         _add_missing_columns()
         _seed_exercises()
+        if app.config["DEMO_MODE"]:
+            _seed_demo()
 
     @app.context_processor
     def inject_today():
-        return {"now_date": date.today()}
+        return {
+            "now_date": date.today(),
+            "demo_mode": app.config["DEMO_MODE"],
+            "stripe_enabled": bool(app.config["STRIPE_SECRET_KEY"]),
+            "currency": app.config["STRIPE_CURRENCY"],
+        }
+
+    app.add_template_filter(_money, "money")
+    app.add_template_filter(_client_photo, "client_photo")
 
     register_routes(app)
     register_error_handlers(app)
@@ -66,6 +87,180 @@ def _day_totals(entries):
         "carbs": round(sum(e.carbs_g or 0 for e in entries)),
         "fat": round(sum(e.fat_g or 0 for e in entries)),
     }
+
+
+def _money(amount_minor, currency):
+    """1250, "gbp" -> "£12.50"; whole amounts drop the decimals."""
+    value = amount_minor / 100
+    number = f"{value:,.0f}" if value == int(value) else f"{value:,.2f}"
+    return CURRENCY_FORMATS.get(currency, "{} " + currency.upper()).format(number)
+
+
+def _client_photo(name):
+    """URL of static/avatars/<name-as-slug>.jpg, or an empty string when there is no such photo."""
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    filename = f"avatars/{slug}.jpg"
+    if os.path.exists(os.path.join(current_app.static_folder, filename)):
+        return url_for("static", filename=filename)
+    return ""
+
+
+def _utc_now():
+    return datetime.now(timezone.utc).replace(tzinfo=None)
+
+
+def _apply_stripe_event(event_type, session):
+    """Update our payment from a Checkout Session. Safe to run twice for the same event."""
+    payment = Payment.query.filter_by(stripe_session_id=session["id"]).first()
+    if payment is None or payment.status == "paid":
+        return
+    if event_type == "checkout.session.async_payment_succeeded" or (
+        event_type == "checkout.session.completed" and session.get("payment_status") == "paid"
+    ):
+        payment.status = "paid"
+        payment.paid_at = _utc_now()
+    elif event_type == "checkout.session.async_payment_failed":
+        payment.status = "failed"
+    elif event_type == "checkout.session.expired":
+        payment.status = "expired"
+    db.session.commit()
+
+
+def _seed_demo():
+    """Sample clients for the public try-out copy, only when the database has no clients."""
+    if Client.query.first():
+        return
+    today = date.today()
+    # Each client shows something different on the overview: on track, nothing logged today,
+    # over their calories, and not seen for over a week.
+    samples = [
+        {
+            "name": "Emma Clarke", "goal": "Lose 6 kg and build strength", "phone": "07700 900142",
+            "start": 72.5, "target": 1800, "scale": 0.9, "checkins": [71.8, 71.1, 70.6, 70.4],
+            "meals_today": ("breakfast", "lunch", "snack"),
+            "sessions": [(1, "strength", 60), (3, "strength", 60), (5, "cardio", 40), (8, "strength", 60), (10, "strength", 60)],
+            "note": "Squat depth much better. Add 2.5 kg next time.",
+            "plan": ("Strength base", "Three full-body sessions a week"),
+            "paid": [(2, "Monthly coaching", 24000), (33, "Monthly coaching", 24000)],
+        },
+        {
+            "name": "James Patel", "goal": "First pull-up and better posture", "phone": "07700 900318",
+            "injuries": "Old left shoulder strain. Avoid heavy overhead pressing.",
+            "start": 84.0, "target": 2300, "scale": 1.1, "checkins": [83.6, 83.1, 82.9],
+            "meals_today": (),
+            "sessions": [(2, "mobility", 45), (4, "strength", 60), (7, "strength", 60), (11, "assessment", 30)],
+            "note": "Shoulder pain free. Band-assisted pull-ups, 3 sets of 5.",
+            "plan": ("Pull-up progression", "Back and shoulder strength, twice a week"),
+            "paid": [(6, "Personal training, 8 sessions", 32000)],
+        },
+        {
+            "name": "Michael Brown", "goal": "Build muscle, 3 sessions a week", "phone": "07700 900527",
+            "start": 76.0, "target": 2500, "scale": 1.32, "scale_today": 1.8, "checkins": [76.6, 77.3, 77.6, 77.9],
+            "meals_today": ("breakfast", "lunch", "dinner", "snack"),
+            "sessions": [(0, "strength", 75), (2, "strength", 75), (4, "strength", 75), (7, "hiit", 30), (9, "strength", 75)],
+            "note": "New best on bench press. Keep rest at 2 minutes.",
+            "plan": ("Hypertrophy block", "Push, pull and legs across three days"),
+            "paid": [(1, "Personal training, 12 sessions", 45000)],
+        },
+        {
+            "name": "Sophie Turner", "goal": "Run a 10k in under an hour", "phone": "07700 900864",
+            "start": 63.0, "target": 2000, "scale": 1.0, "checkins": [62.8, 62.5],
+            "meals_today": ("breakfast", "lunch"),
+            "sessions": [(9, "cardio", 45), (12, "cardio", 50), (14, "mobility", 30)],
+            "note": "5 km in 29 minutes, comfortable pace.",
+            "plan": ("10k build", "Running support and leg strength"),
+            "paid": [(12, "Personal training, 4 sessions", 18000)],
+        },
+        {
+            "name": "Amara Osei", "goal": "Fitter for a two-week hiking trip", "phone": "07700 900236",
+            "start": 68.0, "target": 2100, "scale": 1.0, "checkins": [67.6, 67.2, 66.9],
+            "meals_today": ("breakfast", "lunch", "snack"),
+            "sessions": [(0, "cardio", 45), (3, "strength", 60), (6, "mobility", 30), (10, "strength", 60)],
+            "note": "Weighted step-ups went well. Longer walk this weekend.",
+            "plan": ("Trail ready", "Legs, core and long easy cardio"),
+            "paid": [(4, "Monthly coaching", 24000)],
+        },
+        {
+            "name": "Daniel Novak", "goal": "Deadlift 180 kg by spring", "phone": "07700 900671",
+            "start": 91.0, "target": 2800, "scale": 1.15, "checkins": [91.2, 91.5, 91.4],
+            "meals_today": ("breakfast", "lunch"),
+            "sessions": [(1, "powerlifting", 80), (5, "powerlifting", 80), (8, "strength", 70)],
+            "note": "155 kg for a clean triple. Hold the same weight next week.",
+            "plan": ("Deadlift cycle", "Heavy pulls, accessories and bracing work"),
+            "paid": [(9, "Personal training, 8 sessions", 32000)],
+        },
+        {
+            "name": "Lucy Hart", "goal": "Back to running after a knee injury", "phone": "07700 900493",
+            "injuries": "Right knee, cleared by her physio. No jumping for now.",
+            "start": 59.5, "target": 1900, "scale": 0.95, "checkins": [59.4, 59.2],
+            "meals_today": ("breakfast", "lunch", "dinner"),
+            "sessions": [(0, "stretching", 40), (2, "strength", 50), (6, "strength", 50)],
+            "note": "No knee pain on split squats. Start walk-run intervals.",
+            "plan": ("Knee rebuild", "Single-leg strength and gradual running"),
+            "paid": [(15, "Personal training, 4 sessions", 18000)],
+        },
+    ]
+    menu = {
+        "breakfast": [("Porridge with berries", 420, 16, 68, 9), ("Eggs on wholemeal toast", 460, 26, 34, 22), ("Greek yoghurt and granola", 390, 24, 48, 11)],
+        "lunch": [("Chicken and rice bowl", 620, 46, 72, 14), ("Tuna salad wrap", 510, 34, 48, 18), ("Lentil soup with bread", 480, 22, 70, 10)],
+        "dinner": [("Salmon, potatoes and greens", 640, 42, 48, 28), ("Turkey chilli with rice", 680, 48, 76, 16), ("Tofu and vegetable stir fry", 560, 28, 62, 20)],
+        "snack": [("Protein shake", 170, 28, 6, 3), ("Apple and peanut butter", 240, 7, 26, 13), ("Cottage cheese", 150, 20, 6, 4)],
+    }
+    weights = {"Barbell Squat": 60, "Pushups": None, "Bent Over Barbell Row": 40, "Romanian Deadlift": 50, "Plank": None}
+    exercises = Exercise.query.filter(Exercise.name.in_(weights)).all()
+    for number, sample in enumerate(samples):
+        client = Client(
+            name=sample["name"],
+            email=f"{sample['name'].split()[0].lower()}@example.com",
+            phone=sample["phone"],
+            goal=sample["goal"],
+            injuries_notes=sample.get("injuries"),
+            start_weight_kg=sample["start"],
+            start_date=today - timedelta(days=70),
+            daily_kcal_target=sample["target"],
+        )
+        db.session.add(client)
+        for weeks_ago, kg in zip(range(len(sample["checkins"]), 0, -1), sample["checkins"]):
+            client.checkins.append(CheckIn(date=today - timedelta(weeks=weeks_ago, days=number), weight_kg=kg))
+        for position, (days_ago, kind, minutes) in enumerate(sample["sessions"]):
+            client.sessions.append(Session(
+                date=today - timedelta(days=days_ago), session_type=kind, duration_minutes=minutes,
+                notes=sample["note"] if position == 0 else None,
+            ))
+        for days_ago in range(14):
+            if days_ago and (days_ago + number) % 6 == 5:
+                continue  # a realistic gap in the diary
+            for meal, options in menu.items():
+                if days_ago == 0 and meal not in sample["meals_today"]:
+                    continue
+                food, kcal, protein, carbs, fat = options[(number + days_ago) % len(options)]
+                scale = sample["scale"] + (days_ago % 3 - 1) * 0.04
+                if days_ago == 0:
+                    scale = sample.get("scale_today", scale)
+                client.food_entries.append(FoodEntry(
+                    date=today - timedelta(days=days_ago), meal=meal, food=food,
+                    kcal=round(kcal * scale / 10) * 10,
+                    protein_g=round(protein * scale), carbs_g=round(carbs * scale), fat_g=round(fat * scale),
+                ))
+        plan_name, plan_description = sample["plan"]
+        plan = WorkoutPlan(name=plan_name, description=plan_description)
+        for position, exercise in enumerate(exercises):
+            plan.plan_exercises.append(PlanExercise(
+                exercise_id=exercise.id, sets=3 + position % 2, reps=8 + 2 * (position % 3),
+                target_weight_kg=weights[exercise.name],
+            ))
+        client.plans.append(plan)
+        for days_ago, description, amount in sample["paid"]:
+            paid_at = _utc_now() - timedelta(days=days_ago)
+            client.payments.append(Payment(
+                description=description,
+                amount_minor=amount,
+                currency=current_app.config["STRIPE_CURRENCY"],
+                status="paid",
+                created_at=paid_at,
+                paid_at=paid_at,
+            ))
+    db.session.commit()
 
 
 def _seed_exercises():
@@ -186,6 +381,8 @@ def register_routes(app):
             week_max=max([d["kcal"] for d in week] + [client.daily_kcal_target or 0, 1]),
             checkins=checkins,
             checkin_form=checkin_form,
+            payment_form=PaymentForm(),
+            payments=sorted(client.payments, key=lambda p: p.created_at, reverse=True),
         )
 
     # ---------- OVERVIEW ----------
@@ -245,6 +442,11 @@ def register_routes(app):
             attention=attention,
             week=week,
             by_type=sorted(by_type.items(), key=lambda kv: -kv[1]),
+            collected_month=sum(
+                p.amount_minor
+                for p in Payment.query.filter_by(status="paid", currency=app.config["STRIPE_CURRENCY"])
+                if p.paid_at and (p.paid_at.year, p.paid_at.month) == (today.year, today.month)
+            ),
         )
 
     @app.route("/day/<day_iso>")
@@ -399,6 +601,121 @@ def register_routes(app):
         db.session.commit()
         flash("Check-in removed.", "success")
         return redirect(url_for("client_detail", client_id=client_id) + "#progress")
+
+    # ---------- PAYMENTS (STRIPE CHECKOUT) ----------
+    @app.route("/payments")
+    def payment_list():
+        currency = app.config["STRIPE_CURRENCY"]
+        payments = Payment.query.order_by(Payment.created_at.desc()).all()
+        in_currency = [p for p in payments if p.currency == currency]
+        return render_template(
+            "payments.html",
+            payments=payments,
+            collected=sum(p.amount_minor for p in in_currency if p.current_status == "paid"),
+            outstanding=sum(p.amount_minor for p in in_currency if p.current_status == "pending"),
+        )
+
+    @app.route("/clients/<int:client_id>/payments", methods=["POST"])
+    def payment_new(client_id):
+        client = Client.query.get_or_404(client_id)
+        back = redirect(url_for("client_detail", client_id=client.id) + "#payments")
+        secret_key = app.config["STRIPE_SECRET_KEY"]
+        if not secret_key:
+            flash("Stripe is not set up yet: add STRIPE_SECRET_KEY first.", "danger")
+            return back
+        form = PaymentForm()
+        if not form.validate_on_submit():
+            flash("Could not create the link. Please check the description and amount.", "danger")
+            return back
+
+        currency = app.config["STRIPE_CURRENCY"]
+        amount_minor = int(form.amount.data * 100)
+        base_url = (app.config["PUBLIC_URL"] or request.host_url).rstrip("/")
+        params = {
+            "mode": "payment",
+            "line_items": [{
+                "quantity": 1,
+                "price_data": {
+                    "currency": currency,
+                    "unit_amount": amount_minor,
+                    "product_data": {"name": form.description.data},
+                },
+            }],
+            # {CHECKOUT_SESSION_ID} is filled in by Stripe, so it has to stay unencoded
+            "success_url": base_url + url_for("payment_result") + "?session_id={CHECKOUT_SESSION_ID}",
+            "cancel_url": base_url + url_for("payment_cancelled"),
+        }
+        if client.email:
+            params["customer_email"] = client.email
+        try:
+            session = stripe.checkout.Session.create(api_key=secret_key, **params)
+        except stripe.StripeError as error:
+            flash(f"Stripe could not create the link: {error.user_message or 'please try again.'}", "danger")
+            return back
+
+        db.session.add(Payment(
+            client_id=client.id,
+            description=form.description.data,
+            amount_minor=amount_minor,
+            currency=currency,
+            stripe_session_id=session.id,
+            checkout_url=session.url,
+            expires_at=datetime.fromtimestamp(session.expires_at, timezone.utc).replace(tzinfo=None),
+        ))
+        db.session.commit()
+        flash("Payment link created. Copy it and send it to your client.", "success")
+        return back
+
+    @app.route("/payments/<int:payment_id>/cancel", methods=["POST"])
+    def payment_cancel(payment_id):
+        payment = Payment.query.get_or_404(payment_id)
+        if payment.current_status == "pending":
+            try:
+                stripe.checkout.Session.expire(payment.stripe_session_id, api_key=app.config["STRIPE_SECRET_KEY"])
+                payment.status = "expired"
+                db.session.commit()
+                flash("Payment link cancelled.", "success")
+            except stripe.StripeError:
+                flash("Stripe could not cancel this link. It may already be paid.", "danger")
+        return redirect(url_for("client_detail", client_id=payment.client_id) + "#payments")
+
+    # The next two pages are what a paying client lands on, so they stand alone, without the trainer's menu.
+    @app.route("/payments/result")
+    def payment_result():
+        payment = Payment.query.filter_by(stripe_session_id=request.args.get("session_id", "")).first_or_404()
+        if payment.status != "paid":
+            # The client can get here before the webhook arrives, so ask Stripe directly
+            try:
+                session = stripe.checkout.Session.retrieve(
+                    payment.stripe_session_id, api_key=app.config["STRIPE_SECRET_KEY"]
+                )
+                _apply_stripe_event(
+                    "checkout.session.completed",
+                    {"id": session.id, "payment_status": session.payment_status},
+                )
+            except stripe.StripeError:
+                pass  # shown as "processing"; the webhook will still update it
+        return render_template("payment_result.html", payment=payment)
+
+    @app.route("/payments/cancelled")
+    def payment_cancelled():
+        return render_template("payment_result.html", payment=None)
+
+    @app.route("/stripe/webhook", methods=["POST"])
+    def stripe_webhook():
+        secret = app.config["STRIPE_WEBHOOK_SECRET"]
+        if not secret:
+            abort(503)
+        payload = request.get_data()
+        try:
+            # Only used to check the signature; the event is then read from the verified payload
+            stripe.Webhook.construct_event(payload, request.headers.get("Stripe-Signature", ""), secret)
+        except (ValueError, stripe.SignatureVerificationError):
+            abort(400)
+        event = json.loads(payload)
+        if event["type"].startswith("checkout.session."):
+            _apply_stripe_event(event["type"], event["data"]["object"])
+        return "", 200
 
     @app.route("/clients/<int:client_id>/edit", methods=["GET", "POST"])
     def client_edit(client_id):

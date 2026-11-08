@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="active" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,31 +33,43 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
 
       
+  
+  
+  
   <div class="page-head">
     <div>
       <p class="eyebrow back-link"><a href="clients.html">&larr; All clients</a></p>
-      <h1 class="h3 mb-1">Emma Clarke</h1>
-      <p class="text-muted mb-0">emma.clarke@example.com </p>
+      <div class="client-head">
+        <img class="avatar lg" src="static/avatars/emma-clarke.jpg" alt="" width="44" height="44">
+        <div>
+          <h1 class="h3 mb-0">Emma Clarke</h1>
+          <p class="client-sub">emma@example.com · 07700 900142</p>
+        </div>
+      </div>
     </div>
     <div>
       <a href="clients-1-edit.html" class="btn btn-outline-secondary btn-sm">Edit</a>
-      <form method="POST" action="#" class="d-inline"
-            onsubmit="return confirm('Delete Emma Clarke and all their plans, sessions and logs?');">
+      <form method="POST" action="/clients/1/delete" class="d-inline"
+            onsubmit="return confirm('Delete Emma Clarke and all their plans, sessions, payments and logs?');">
         <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
       </form>
     </div>
@@ -66,19 +79,20 @@
   
   <div class="stat-grid">
     <div class="stat"><span class="stat-label">Start weight</span><span class="stat-value">72.5 kg</span></div>
-    <div class="stat"><span class="stat-label">Latest weight</span><span class="stat-value">69.6 kg <span class="delta down">-2.9</span></span></div>
+    <div class="stat"><span class="stat-label">Latest weight</span><span class="stat-value">70.4 kg <span class="delta down">-2.1</span></span></div>
     <div class="stat"><span class="stat-label">Sessions logged</span><span class="stat-value">5</span></div>
-    <div class="stat"><span class="stat-label">Calories today</span><span class="stat-value">1070<small> / 1800</small></span></div>
+    <div class="stat"><span class="stat-label">Calories today</span><span class="stat-value">1040<small> / 1800</small></span></div>
     <div class="stat stat-note"><span class="stat-label">Goal</span><span class="stat-value">Lose 6 kg and build strength</span></div>
-    <div class="stat stat-note warn"><span class="stat-label">Injuries / notes</span><span class="stat-value">Old knee injury, avoid deep lunges</span></div>
+    <div class="stat stat-note"><span class="stat-label">Injuries / notes</span><span class="stat-value">None</span></div>
   </div>
 
+
   <div class="row g-3 mb-3">
-    <div class="col-lg-7" id="progress">
+    <div class="col-xl-7" id="progress">
       <div class="panel">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h5 mb-0">Weight progress</h2>
-          <span class="chip">Waist <strong>80.5 cm</strong></span>
+        <div class="panel-head">
+          <h2 class="h5">Weight progress</h2>
+          
         </div>
         
         
@@ -87,281 +101,370 @@
           
           
           
-          <svg class="weight-chart" viewBox="0 0 560 170" role="img" aria-label="Weight from 72.5 kg to 69.6 kg">
-            <line x1="28" x2="532" y1="28.0" y2="28.0" class="grid"/><line x1="28" x2="532" y1="85.0" y2="85.0" class="grid"/><line x1="28" x2="532" y1="142.0" y2="142.0" class="grid"/>
-            
-            
-              
-              
-              
+          
+          
+          
+          <svg class="weight-chart" viewBox="0 0 640 220" role="img" aria-label="Weight from 72.5 kg to 70.4 kg">
             
               
-              
-              
+              <line x1="52" x2="624" y1="22.0" y2="22.0" class="grid"/>
+              <text x="44" y="26.0" class="tick">73.0</text>
             
               
-              
-              
+              <line x1="52" x2="624" y1="107.0" y2="107.0" class="grid"/>
+              <text x="44" y="111.0" class="tick">71.0</text>
             
               
-              
-              
+              <line x1="52" x2="624" y1="192.0" y2="192.0" class="grid"/>
+              <text x="44" y="196.0" class="tick">69.0</text>
             
-              
-              
-              
+            
             
               
               
               
             
-            <path d="M28.0 51.3 L128.8 65.2 L229.6 81.5 L330.4 90.8 L431.2 107.1 L532.0 118.7" class="line"/>
+              
+              
+              
             
               
               
-              <circle cx="28.0" cy="51.3" r="5" class="dot"/>
-              <text x="28.0" y="39.3" class="val">72.5</text>
-              <text x="28.0" y="164" class="lbl">01 Sep</text>
+              
             
               
               
-              <circle cx="128.8" cy="65.2" r="5" class="dot"/>
-              <text x="128.8" y="53.2" class="val">71.9</text>
-              <text x="128.8" y="164" class="lbl">06 Oct</text>
+              
             
               
               
-              <circle cx="229.6" cy="81.5" r="5" class="dot"/>
-              <text x="229.6" y="69.5" class="val">71.2</text>
-              <text x="229.6" y="164" class="lbl">13 Oct</text>
+              
+            
+            <path d="M52.0 43.2 L433.3 73.0 L496.9 102.8 L560.4 124.0 L624.0 132.5 L624.0 192 L52 192 Z" class="area"/>
+            <path d="M52.0 43.2 L433.3 73.0 L496.9 102.8 L560.4 124.0 L624.0 132.5" class="line"/>
             
               
               
-              <circle cx="330.4" cy="90.8" r="5" class="dot"/>
-              <text x="330.4" y="78.8" class="val">70.8</text>
-              <text x="330.4" y="164" class="lbl">20 Oct</text>
+              <circle cx="52.0" cy="43.2" r="3.5" class="dot"/>
+              
+                
+                <text x="52.0" y="33.2" class="val start">72.5</text>
+                <text x="52.0" y="212" class="lbl start">30 Aug</text>
+              
             
               
               
-              <circle cx="431.2" cy="107.1" r="5" class="dot"/>
-              <text x="431.2" y="95.1" class="val">70.1</text>
-              <text x="431.2" y="164" class="lbl">27 Oct</text>
+              <circle cx="433.3" cy="73.0" r="3.5" class="dot"/>
+              
             
               
               
-              <circle cx="532.0" cy="118.7" r="5" class="dot"/>
-              <text x="532.0" y="106.7" class="val">69.6</text>
-              <text x="532.0" y="164" class="lbl">03 Nov</text>
+              <circle cx="496.9" cy="102.8" r="3.5" class="dot"/>
+              
+            
+              
+              
+              <circle cx="560.4" cy="124.0" r="3.5" class="dot"/>
+              
+            
+              
+              
+              <circle cx="624.0" cy="132.5" r="3.5" class="dot"/>
+              
+                
+                <text x="624.0" y="160.5" class="val end">70.4</text>
+                <text x="624.0" y="212" class="lbl end">01 Nov</text>
+              
             
           </svg>
         
-        <form method="POST" action="#" novalidate class="checkin-row">
-          <input id="csrf_token" name="csrf_token" type="hidden" value="IjBjZjg3YjdiYTM0YWY2OGU1MDY2ZjQ5MTVkZDA2NWZmYzhiZDU4ODki.aun8Cw.ieeoLng3cdGWxFfLsI_Nltu25XQ">
-          <input aria-label="Check-in date" class="form-control" id="date" name="date" required type="date" value="2026-11-03">
-          <input aria-label="Weight in kg" class="form-control" id="weight_kg" max="500" min="20" name="weight_kg" placeholder="Weight kg" required step="any" type="number" value="">
-          <input aria-label="Waist in cm" class="form-control" id="waist_cm" max="300" min="30" name="waist_cm" placeholder="Waist cm" step="any" type="number" value="">
-          <button type="submit" class="btn btn-primary">+ Check-in</button>
+        <form method="POST" action="/clients/1/checkins" novalidate class="checkin-row">
+          
+          <input aria-label="Check-in date" class="form-control" id="date" name="date" required type="date" value="2026-11-08">
+          <input aria-label="Weight in kg" class="form-control" id="weight_kg" name="weight_kg" placeholder="Weight kg" required type="text" value="">
+          <input aria-label="Waist in cm" class="form-control" id="waist_cm" name="waist_cm" placeholder="Waist cm" type="text" value="">
+          <button type="submit" class="btn btn-outline-secondary">Add check-in</button>
         </form>
       </div>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-xl-5">
       <div class="panel">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h5 mb-0">Nutrition, last 7 days</h2>
-          <a href="clients-1-nutrition.html" class="btn btn-sm btn-primary">Food diary</a>
+        <div class="panel-head">
+          <h2 class="h5">Calories, last 7 days</h2>
+          <a href="clients-1-nutrition.html" class="btn btn-sm btn-outline-secondary">Food diary</a>
         </div>
         <div class="week-bars" role="img" aria-label="Calories logged over the last 7 days">
           
             
-            <a class="wb" href="clients-1-nutrition-day-2026-10-28.html">
-              <span class="wb-val">1818</span>
-              <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill" style="height: 93.4%"></span>
-              </span>
-              <span class="wb-day">Wed</span>
-            </a>
-          
-            
-            <a class="wb" href="clients-1-nutrition-day-2026-10-29.html">
-              <span class="wb-val">1670</span>
-              <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill" style="height: 85.8%"></span>
-              </span>
-              <span class="wb-day">Thu</span>
-            </a>
-          
-            
-            <a class="wb" href="clients-1-nutrition-day-2026-10-30.html">
-              <span class="wb-val">1882</span>
-              <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill" style="height: 96.7%"></span>
-              </span>
-              <span class="wb-day">Fri</span>
-            </a>
-          
-            
-            <a class="wb" href="clients-1-nutrition-day-2026-10-31.html">
-              <span class="wb-val">1734</span>
-              <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill" style="height: 89.1%"></span>
-              </span>
-              <span class="wb-day">Sat</span>
-            </a>
-          
-            
-            <a class="wb" href="clients-1-nutrition-day-2026-11-01.html">
-              <span class="wb-val">1946</span>
-              <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill over" style="height: 100.0%"></span>
-              </span>
-              <span class="wb-day">Sun</span>
-            </a>
-          
-            
             <a class="wb" href="clients-1-nutrition-day-2026-11-02.html">
-              <span class="wb-val">1798</span>
+              <span class="wb-val">1590</span>
               <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill" style="height: 92.4%"></span>
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 88.3%"></span>
               </span>
               <span class="wb-day">Mon</span>
             </a>
           
             
             <a class="wb" href="clients-1-nutrition-day-2026-11-03.html">
-              <span class="wb-val">1070</span>
+              <span class="wb-val"></span>
               <span class="wb-track">
-                <span class="wb-target" style="bottom: 92.5%"></span>
-                <span class="wb-fill" style="height: 55.0%"></span>
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 0.0%"></span>
               </span>
-              <span class="wb-day is-today">Tue</span>
+              <span class="wb-day">Tue</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-1-nutrition-day-2026-11-04.html">
+              <span class="wb-val">1700</span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 94.4%"></span>
+              </span>
+              <span class="wb-day">Wed</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-1-nutrition-day-2026-11-05.html">
+              <span class="wb-val">1590</span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 88.3%"></span>
+              </span>
+              <span class="wb-day">Thu</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-1-nutrition-day-2026-11-06.html">
+              <span class="wb-val">1490</span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 82.8%"></span>
+              </span>
+              <span class="wb-day">Fri</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-1-nutrition-day-2026-11-07.html">
+              <span class="wb-val">1700</span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 94.4%"></span>
+              </span>
+              <span class="wb-day">Sat</span>
+            </a>
+          
+            
+            <a class="wb" href="clients-1-nutrition-day-2026-11-08.html">
+              <span class="wb-val">1040</span>
+              <span class="wb-track">
+                <span class="wb-target" style="bottom: 100.0%"></span>
+                <span class="wb-fill" style="height: 57.8%"></span>
+              </span>
+              <span class="wb-day is-today">Sun</span>
             </a>
           
         </div>
-        <p class="small text-muted mb-0 mt-2">Line = daily target of 1800 kcal. Today: 65 g protein, 135 g carbs, 34 g fat.</p>
+        <p class="small text-muted mb-0 mt-2">Dashed line: daily target of 1800 kcal. Today: 78 g protein, 125 g carbs, 23 g fat.</p>
       </div>
     </div>
   </div>
 
-  <div class="row g-3">
-    <div class="col-lg-6">
+  <div class="row g-3 mb-3">
+    <div class="col-xl-6">
       <div class="panel">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Workout plans</h2>
-        <a href="clients-1-plans-new.html" class="btn btn-sm btn-primary">+ New plan</a>
-      </div>
-      
-        <ul class="list-group">
-          
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="plans-1.html">Full body strength, phase 1</a>
-              <span class="badge bg-secondary rounded-pill">6 exercises</span>
-            </li>
-          
-        </ul>
-      
+        <div class="panel-head">
+          <h2 class="h5">Workout plans</h2>
+          <a href="clients-1-plans-new.html" class="btn btn-sm btn-outline-secondary">+ New plan</a>
+        </div>
+        
+          <ul class="list-group">
+            
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="plans-1.html">Strength base</a>
+                <span class="badge bg-secondary">5 exercises</span>
+              </li>
+            
+          </ul>
+        
       </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <div class="panel">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Sessions</h2>
-        <a href="clients-1-sessions-new.html" class="btn btn-sm btn-primary">+ Log session</a>
-      </div>
-      
-        <ul class="list-group">
-          
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="session-date">Tue 03 Nov
-                  <span class="type-tag type-mobility">mobility</span>
-                  <span class="chip ms-1">30 min</span></span>
-                <span>
-                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <form method="POST" action="#" class="d-inline"
-                        onsubmit="return confirm('Delete this session?');">
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                  </form>
-                </span>
-              </div>
-              <small class="text-muted">Hip and ankle mobility, light day.</small>
-            </li>
-          
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="session-date">Mon 02 Nov
-                  <span class="type-tag type-strength">strength</span>
-                  <span class="chip ms-1">60 min</span></span>
-                <span>
-                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <form method="POST" action="#" class="d-inline"
-                        onsubmit="return confirm('Delete this session?');">
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                  </form>
-                </span>
-              </div>
-              <small class="text-muted">Added 2 kg to goblet squat.</small>
-            </li>
-          
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="session-date">Fri 30 Oct
-                  <span class="type-tag type-cardio">cardio</span>
-                  <span class="chip ms-1">40 min</span></span>
-                <span>
-                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <form method="POST" action="#" class="d-inline"
-                        onsubmit="return confirm('Delete this session?');">
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                  </form>
-                </span>
-              </div>
-              <small class="text-muted">Intervals on the bike, knee felt fine.</small>
-            </li>
-          
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="session-date">Wed 28 Oct
-                  <span class="type-tag type-strength">strength</span>
-                  <span class="chip ms-1">60 min</span></span>
-                <span>
-                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <form method="POST" action="#" class="d-inline"
-                        onsubmit="return confirm('Delete this session?');">
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                  </form>
-                </span>
-              </div>
-              <small class="text-muted">Good energy, squat form much better.</small>
-            </li>
-          
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="session-date">Sun 25 Oct
-                  <span class="type-tag type-assessment">assessment</span>
-                  <span class="chip ms-1">45 min</span></span>
-                <span>
-                  <a href="#" data-demo-off class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <form method="POST" action="#" class="d-inline"
-                        onsubmit="return confirm('Delete this session?');">
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                  </form>
-                </span>
-              </div>
-              <small class="text-muted">Starting measurements and movement screen.</small>
-            </li>
-          
-        </ul>
-      
+        <div class="panel-head">
+          <h2 class="h5">Sessions</h2>
+          <a href="clients-1-sessions-new.html" class="btn btn-sm btn-outline-secondary">+ Log session</a>
+        </div>
+        
+          <ul class="list-group">
+            
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                  <span class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="session-date">Sat 07 Nov</span>
+                    <span class="type-tag type-strength">strength</span>
+                    <span class="text-muted small">60 min</span>
+                  </span>
+                  <span>
+                    <a href="sessions-1-edit.html" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <form method="POST" action="/sessions/1/delete" class="d-inline"
+                          onsubmit="return confirm('Delete this session?');">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </span>
+                </div>
+                <small class="text-muted">Squat depth much better. Add 2.5 kg next time.</small>
+              </li>
+            
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                  <span class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="session-date">Thu 05 Nov</span>
+                    <span class="type-tag type-strength">strength</span>
+                    <span class="text-muted small">60 min</span>
+                  </span>
+                  <span>
+                    <a href="sessions-2-edit.html" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <form method="POST" action="/sessions/2/delete" class="d-inline"
+                          onsubmit="return confirm('Delete this session?');">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </span>
+                </div>
+                
+              </li>
+            
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                  <span class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="session-date">Tue 03 Nov</span>
+                    <span class="type-tag type-cardio">cardio</span>
+                    <span class="text-muted small">40 min</span>
+                  </span>
+                  <span>
+                    <a href="sessions-3-edit.html" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <form method="POST" action="/sessions/3/delete" class="d-inline"
+                          onsubmit="return confirm('Delete this session?');">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </span>
+                </div>
+                
+              </li>
+            
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                  <span class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="session-date">Sat 31 Oct</span>
+                    <span class="type-tag type-strength">strength</span>
+                    <span class="text-muted small">60 min</span>
+                  </span>
+                  <span>
+                    <a href="sessions-4-edit.html" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <form method="POST" action="/sessions/4/delete" class="d-inline"
+                          onsubmit="return confirm('Delete this session?');">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </span>
+                </div>
+                
+              </li>
+            
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                  <span class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="session-date">Thu 29 Oct</span>
+                    <span class="type-tag type-strength">strength</span>
+                    <span class="text-muted small">60 min</span>
+                  </span>
+                  <span>
+                    <a href="sessions-5-edit.html" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <form method="POST" action="/sessions/5/delete" class="d-inline"
+                          onsubmit="return confirm('Delete this session?');">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </span>
+                </div>
+                
+              </li>
+            
+          </ul>
+        
       </div>
     </div>
+  </div>
+
+  <div class="panel payments-panel" id="payments">
+    <div class="panel-head"><h2 class="h5">Payments</h2></div>
+    
+      <form method="POST" action="/clients/1/payments" novalidate class="payment-row mb-3">
+        
+        <input aria-label="What the payment is for" class="form-control" id="description" maxlength="120" name="description" placeholder="What it&#39;s for, e.g. 4 sessions" required type="text" value="">
+        <input aria-label="Amount in GBP" class="form-control" id="amount" inputmode="decimal" max="999999" min="1" name="amount" placeholder="Amount (GBP)" required step="any" type="number" value="">
+        <button type="submit" class="btn btn-primary">Create payment link</button>
+      </form>
+    
+    
+      
+      
+
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Payment</th>
+        <th class="text-end">Amount</th>
+        <th>Status</th>
+        <th class="d-none d-md-table-cell"></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        
+        <tr>
+          <td>
+            <div class="who">
+              
+              <span>
+                <b>Monthly coaching</b>
+                <small>06 Nov 2026</small>
+              </span>
+            </div>
+          </td>
+          <td class="text-end pay-amount">£240</td>
+          <td><span class="pay-status pay-paid">Paid</span></td>
+          <td class="text-end text-nowrap d-none d-md-table-cell">
+            
+          </td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>
+            <div class="who">
+              
+              <span>
+                <b>Monthly coaching</b>
+                <small>06 Oct 2026</small>
+              </span>
+            </div>
+          </td>
+          <td class="text-end pay-amount">£240</td>
+          <td><span class="pay-status pay-paid">Paid</span></td>
+          <td class="text-end text-nowrap d-none d-md-table-cell">
+            
+          </td>
+        </tr>
+        
+      
+    </tbody>
+  </table>
+</div>
+    
   </div>
 
     </main>
@@ -372,15 +475,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>To begin, seat yourself on the bike and adjust the seat to your height.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/88/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bicycling? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bicycling">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>To begin, seat yourself on the bike and adjust the seat to your height.</li><li>Select the desired option from the menu. You may have to start pedaling to turn it on. You can use the manual setting, or you can select a program to use. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. The level of resistance can be changed throughout the workout. The handles can be used to monitor your heart rate to help you stay at an appropriate intensity.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/89/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bicycling, Stationary? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bicycling, Stationary">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>To begin, step onto the elliptical and select the desired option from the menu. Most ellipticals have a manual setting, or you can select a program to run. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. Elevation can be adjusted to change the intensity of the workout.</li><li>The handles can be used to monitor your heart rate to help you stay at an appropriate intensity.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/260/delete" class="ex-delete"
               onsubmit="return confirm('Delete Elliptical Trainer? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Elliptical Trainer">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>To begin, step onto the treadmill and select the desired option from the menu. Most treadmills have a manual setting, or you can select a program to run. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. Elevation can be adjusted to change the intensity of the workout.</li><li>Treadmills offer convenience, cardiovascular benefits, and usually have less impact than jogging outside. A 150 lb person will burn almost 250 calories jogging for 30 minutes, compared to more than 450 calories running. Maintain proper posture as you jog, and only hold onto the handles when necessary, such as when dismounting or checking your heart rate.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/370/delete" class="ex-delete"
               onsubmit="return confirm('Delete Jogging, Treadmill? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Jogging, Treadmill">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Place your sled on an appropriate surface, loaded to a suitable weight. The sled should provide enough resistance to require effort, but not so heavy that you are significantly slowed down.</li><li>You may use the upright or the low handles for this exercise. Place your hands on the handles with your arms extended, leaning into the implement.</li><li>With good posture, drive through the ground with alternating, short steps. Move as fast as you can for a short distance.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/558/delete" class="ex-delete"
               onsubmit="return confirm('Delete Prowler Sprint? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Prowler Sprint">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>To begin, seat yourself on the bike and adjust the seat to your height.</li><li>Select the desired option from the menu. You may have to start pedaling to turn it on. You can use the manual setting, or you can select a program to use. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. The level of resistance can be changed throughout the workout. The handles can be used to monitor your heart rate to help you stay at an appropriate intensity.</li><li>Recumbent bikes offer convenience, cardiovascular benefits, and have less impact than other activities. A 150 lb person will burn about 230 calories cycling at a moderate rate for 30 minutes, compared to 450 calories or more running.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/578/delete" class="ex-delete"
               onsubmit="return confirm('Delete Recumbent Bike? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Recumbent Bike">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>Hold an end of the rope in each hand. Position the rope behind you on the ground. Raise your arms up and turn the rope over your head bringing it down in front of you. When it reaches the ground, jump over it. Find a good turning pace that can be maintained. Different speeds and techniques can be used to introduce variation.</li><li>Rope jumping is exciting, challenges your coordination, and requires a lot of energy. A 150 lb person will burn about 350 calories jumping rope for 30 minutes, compared to over 450 calories running.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/608/delete" class="ex-delete"
               onsubmit="return confirm('Delete Rope Jumping? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rope Jumping">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>To begin, seat yourself on the rower. Make sure that your heels are resting comfortably against the base of the foot pedals and that the straps are secured. Select the program that you wish to use, if applicable. Sit up straight and bend forward at the hips.</li><li>There are three phases of movement when using a rower. The first phase is when you come forward on the rower. Your knees are bent and against your chest. Your upper body is leaning slightly forward while still maintaining good posture. Next, push against the foot pedals and extend your legs while bringing your hands to your upper abdominal area, squeezing your shoulders back as you do so. To avoid straining your back, use primarily your leg and hip muscles.</li><li>The recovery phase simply involves straightening your arms, bending the knees, and bringing your body forward again as you transition back into the first phase.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/611/delete" class="ex-delete"
               onsubmit="return confirm('Delete Rowing, Stationary? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Rowing, Stationary">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>To begin, step onto the treadmill and select the desired option from the menu. Most treadmills have a manual setting, or you can select a program to run. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. Elevation can be adjusted to change the intensity of the workout.</li><li>Treadmills offer convenience, cardiovascular benefits, and usually have less impact than running outside. A 150 lb person will burn over 450 calories running 8 miles per hour for 30 minutes. Maintain proper posture as you run, and only hold onto the handles when necessary, such as when dismounting or checking your heart rate.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/613/delete" class="ex-delete"
               onsubmit="return confirm('Delete Running, Treadmill? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Running, Treadmill">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>Roller skating is a fun activity which can be effective in improving cardiorespiratory fitness and muscular endurance. It requires relatively good balance and coordination. It is necessary to learn the basics of skating including turning and stopping and to wear protective gear to avoid possible injury.</li><li>You can skate at a comfortable pace for 30 minutes straight. If you want a cardio challenge, do interval skating — speed skate two minutes of every five minutes, using the remaining three minutes to recover. A 150 lb person will typically burn about 175 calories in 30 minutes skating at a comfortable pace, similar to brisk walking.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/689/delete" class="ex-delete"
               onsubmit="return confirm('Delete Skating? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Skating">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>To begin, step onto the stairmaster and select the desired option from the menu. You can choose a manual setting, or you can select a program to run. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise.</li><li>Pump your legs up and down in an established rhythm, driving the pedals down but not all the way to the floor. It is recommended that you maintain your grip on the handles so that you don&#39;t fall. The handles can be used to monitor your heart rate to help you stay at an appropriate intensity.</li><li>Stairmasters offer convenience, cardiovascular benefits, and usually have less impact than running outside. They are typically much harder than other cardio equipment. A 150 lb person will typically burn over 300 calories in 30 minutes, compared to about 175 calories walking.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/740/delete" class="ex-delete"
               onsubmit="return confirm('Delete Stairmaster? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Stairmaster">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>To begin, step onto the stepmill and select the desired option from the menu. You can choose a manual setting, or you can select a program to run. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. Use caution so that you don&#39;t trip as you climb the stairs. It is recommended that you maintain your grip on the handles so that you don&#39;t fall.</li><li>Stepmills offer convenience, cardiovascular benefits, and usually have less impact than running outside while offering a similar rate of calories burned. They are typically much harder than other cardio equipment. A 150 lb person will typically burn over 300 calories in 30 minutes, compared to about 175 calories walking.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/789/delete" class="ex-delete"
               onsubmit="return confirm('Delete Step Mill? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Step Mill">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>Running or hiking on trails will get the blood pumping and heart beating almost immediately. Make sure you have good shoes. While you use the muscles in your calves and buttocks to pull yourself up a hill, the knees, joints and ankles absorb the bulk of the pounding coming back down. Take smaller steps as you walk downhill, keep your knees bent to reduce the impact and slow down to avoid falling.</li><li>A 150 lb person can burn over 200 calories for 30 minutes walking uphill, compared to 175 on a flat surface. If running the trail, a 150 lb person can burn well over 500 calories in 30 minutes.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/820/delete" class="ex-delete"
               onsubmit="return confirm('Delete Trail Running/Walking? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Trail Running/Walking">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>To begin, step onto the treadmill and select the desired option from the menu. Most treadmills have a manual setting, or you can select a program to run. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. Elevation can be adjusted to change the intensity of the workout.</li><li>Treadmills offer convenience, cardiovascular benefits, and usually have less impact than walking outside. When walking, you should move at a moderate to fast pace, not a leisurely one. Being an activity of lower intensity, walking doesn&#39;t burn as many calories as some other activities, but still provides great benefit. A 150 lb person will burn about 175 calories walking 4 miles per hour for 30 minutes, compared to 450 calories running twice as fast. Maintain proper posture as you walk, and only hold onto the handles when necessary, such as when dismounting or checking your heart rate.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/845/delete" class="ex-delete"
               onsubmit="return confirm('Delete Walking, Treadmill? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Walking, Treadmill">Delete</button>
         </form>
@@ -551,15 +556,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

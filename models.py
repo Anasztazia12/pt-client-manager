@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -29,6 +29,9 @@ class Client(db.Model):
     )
     checkins = db.relationship(
         "CheckIn", backref="client", cascade="all, delete-orphan", lazy=True
+    )
+    payments = db.relationship(
+        "Payment", backref="client", cascade="all, delete-orphan", lazy=True
     )
 
     def __repr__(self):
@@ -130,3 +133,29 @@ class CheckIn(db.Model):
     date = db.Column(db.Date, default=datetime.utcnow, nullable=False)
     weight_kg = db.Column(db.Float, nullable=False)
     waist_cm = db.Column(db.Float)
+
+
+class Payment(db.Model):
+    """A charge to a client, paid through a Stripe Checkout link."""
+
+    __tablename__ = "payments"
+
+    id = db.Column(db.Integer, primary_key=True)
+    client_id = db.Column(db.Integer, db.ForeignKey("clients.id"), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
+    amount_minor = db.Column(db.Integer, nullable=False)  # pence, cents...
+    currency = db.Column(db.String(3), nullable=False)
+    status = db.Column(db.String(20), nullable=False, default="pending")  # pending / paid / failed / expired
+    stripe_session_id = db.Column(db.String(255), unique=True)
+    checkout_url = db.Column(db.Text)
+    expires_at = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    paid_at = db.Column(db.DateTime)
+
+    @property
+    def current_status(self):
+        """Like status, but a link past its expiry counts as expired before Stripe's webhook arrives."""
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
+        if self.status == "pending" and self.expires_at and self.expires_at < now:
+            return "expired"
+        return self.status

@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>Using a 41 inch band, stand on one end, spreading your feet a small amount. Bend at the hips to loop the end of the band behind your neck. This will be your starting position.</li><li>Keeping your legs straight, extend through the hips to come to a near vertical position.</li><li>Ensure that you do not round your back as you go down back to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/37/delete" class="ex-delete"
               onsubmit="return confirm('Delete Band Good Morning? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Good Morning">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>Loop the band around a post. Standing a little ways away, loop the opposite end around the neck. Your hands can help hold the band in position.</li><li>Begin by bending at the hips, getting your butt back as far as possible. Keep your back flat and bend forward to about 90 degrees. Your knees should be only slightly bent.</li><li>Return to the starting position be driving through with the hips to come back to a standing position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/38/delete" class="ex-delete"
               onsubmit="return confirm('Delete Band Good Morning (Pull Through)? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Good Morning (Pull Through)">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>Begin seated on the ground with a loaded barbell over your legs. Using a fat bar or having a pad on the bar can greatly reduce the discomfort caused by this exercise. Roll the bar so that it is directly above your hips, and lay down flat on the floor.</li><li>Begin the movement by driving through with your heels, extending your hips vertically through the bar. Your weight should be supported by your upper back and the heels of your feet.</li><li>Extend as far as possible, then reverse the motion to return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/49/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Glute Bridge? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Glute Bridge">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>Begin seated on the ground with a bench directly behind you. Have a loaded barbell over your legs. Using a fat bar or having a pad on the bar can greatly reduce the discomfort caused by this exercise.</li><li>Roll the bar so that it is directly above your hips, and lean back against the bench so that your shoulder blades are near the top of it.</li><li>Begin the movement by driving through your feet, extending your hips vertically through the bar. Your weight should be supported by your shoulder blades and your feet. Extend as far as possible, then reverse the motion to return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/52/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Hip Thrust? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Hip Thrust">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Begin by lying on the bench, getting your head beyond the bar if possible. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.</li><li>However wide your grip, it should cover the ring on the bar. Pull the bar out of the rack without protracting your shoulders. Focus on squeezing the bar and trying to pull it apart.</li><li>Lower the bar to your lower chest or upper stomach. The bar, wrist, and elbow should stay in line at all times.</li><li>Pause when the barbell touches your torso, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/73/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bench Press - Powerlifting? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Press - Powerlifting">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>Adjust the leader chain, shortening it to the desired length.Place the chains on the sleeves of the bar.</li><li>Lying on the bench, get your head beyond the bar if possible. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement. However wide your grip, it should cover the ring on the bar.</li><li>Pull the bar out of the rack without protracting your shoulders. Focus on squeezing the bar and trying to pull it apart. Lower the bar to your lower chest or upper stomach. The bar, wrist, and elbow should stay in line at all times.</li><li>Pause when the barbell touches your torso, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/75/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bench Press with Chains? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bench Press with Chains">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>Begin by lying on the bench, getting your head beyond the bar if possible. One to five boards, made out of 2x6&#39;s, can be screwed together and held in place by a training partner, bands, or just tucked under your shirt.</li><li>Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.</li><li>You can take a standard bench grip, or shoulder width to focus on the triceps. Pull the bar out of the rack without protracting your shoulders. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.</li><li>Lower the bar to the boards, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/90/delete" class="ex-delete"
               onsubmit="return confirm('Delete Board Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Board Press">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>The box squat allows you to squat to desired depth and develop explosive strength in the squat movement. Begin in a power rack with a box at the appropriate height behind you. Typically, you would aim for a box height that brings you to a parallel squat, but you can train higher or lower if desired.</li><li>Begin by stepping under the bar and placing it across the back of the shoulders. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders. Remove the bar from the rack, creating a tight arch in your lower back, and step back into position. Place your feet wider for more emphasis on the back, glutes, adductors, and hamstrings, or closer together for more quad development. Keep your head facing forward.</li><li>With your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips until you are seated on the box. Ideally, your shins should be perpendicular to the ground. Pause when you reach the box, and relax the hip flexors. Never bounce off of a box.</li><li>Keeping the weight on your heels and pushing your feet and knees out, drive upward off of the box as you lead the movement with your head. Continue upward, maintaining tightness head to toe.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/102/delete" class="ex-delete"
               onsubmit="return confirm('Delete Box Squat? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Box Squat">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>Begin in a power rack with a box at the appropriate height behind you. Set up the bands on the sleeves, secured to either band pegs, the rack, or dumbbells so that there is appropriate tension. If dumbbells are used, secure them so that they don&#39;t move. Also, ensure that the dumbbells you are using are heavy enough for the bands that you are using. Additional plates can be used to hold the dumbbells down. If more tension is needed, you can either widen the base on the floor or choke the bands. Typically, you would aim for a box height that brings you to a parallel squat, but you can train higher or lower if desired.</li><li>Begin by stepping under the bar and placing it across the back of the shoulders. Squeeze your shoulder blades together and rotate your elbows forward, attempting to bend the bar across your shoulders. Remove the bar from the rack, creating a tight arch in your lower back, and step back into position. Place your feet wider for more emphasis on the back, glutes, adductors, and hamstrings, or closer together for more quad development. Keep your head facing forward.</li><li>With your back, shoulders, and core tight, push your knees and butt out and you begin your descent. Sit back with your hips until you are seated on the box. Ideally, your shins should be perpendicular to the ground. Pause when you reach the box, and relax the hip flexors. Never bounce off of a box.</li><li>Keeping the weight on your heels and pushing your feet and knees out, drive upward off of the box as you lead the movement with your head. Continue upward, maintaining tightness head to toe. Use care to return the barbell to the rack.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/103/delete" class="ex-delete"
               onsubmit="return confirm('Delete Box Squat with Bands? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Box Squat with Bands">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.</li><li>Begin by extending through the elbow, keeping your upper arm still, with your wrists pronated.</li><li>Pause at the lockout, and reverse the motion to return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/147/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chain Handle Extension? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chain Handle Extension">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>Begin by connecting the chains to the cable handle attachments. Position yourself on the flat bench in the same position as for a dumbbell press. Your wrists should be pronated and arms perpendicular to the floor. This will be your starting position.</li><li>Lower the chains by flexing the elbows, unloading some of the chain onto the floor.</li><li>Continue until your elbow forms a 90 degree angle, and then reverse the motion by extending through the elbow to lockout.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/148/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chain Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chain Press">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>To deadlift with short bands, simply loop them over the bar before you start, and step into them to set up. For long bands, they will need to be anchored to a secure base, such as heavy dumbbells or a rack.</li><li>With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/193/delete" class="ex-delete"
               onsubmit="return confirm('Delete Deadlift with Bands? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Deadlift with Bands">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>You can attach the chains to the sleeves of the bar, or just drape the middle over the bar so there is a greater weight increase as you lift.</li><li>Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets. With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar.</li><li>Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/194/delete" class="ex-delete"
               onsubmit="return confirm('Delete Deadlift with Chains? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Deadlift with Chains">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>Begin by having a platform or weight plates that you can stand on, usually 1-3 inches in height. Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets.</li><li>With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li><li>Lower the bar by bending at the hips and guiding it to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/206/delete" class="ex-delete"
               onsubmit="return confirm('Delete Deficit Deadlift? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Deficit Deadlift">Delete</button>
         </form>
@@ -562,7 +567,7 @@
             <ol><li>Lay on the floor holding dumbbells in your hands. Your knees can be bent. Begin with the weights fully extended above you.</li><li>Lower the weights until your upper arm comes in contact with the floor. You can tuck your elbows to emphasize triceps size and strength, or to focus on your chest angle your arms to the side.</li><li>Pause at the bottom, and then bring the weight together at the top by extending through the elbows.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/226/delete" class="ex-delete"
               onsubmit="return confirm('Delete Dumbbell Floor Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Floor Press">Delete</button>
         </form>
@@ -592,7 +597,7 @@
             <ol><li>Adjust the j-hooks so they are at the appropriate height to rack the bar. Begin lying on the floor with your head near the end of a power rack. Keeping your shoulder blades pulled together; pull the bar off of the hooks.</li><li>Lower the bar towards the bottom of your chest or upper stomach, squeezing the bar and attempting to pull it apart as you do so. Ensure that you tuck your elbows throughout the movement. Lower the bar until your upper arm contacts the ground and pause, preventing any slamming or bouncing of the weight.</li><li>Press the bar back up as fast as you can, keeping the bar, your wrists, and elbows in line as you do so.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/276/delete" class="ex-delete"
               onsubmit="return confirm('Delete Floor Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Floor Press">Delete</button>
         </form>
@@ -622,7 +627,7 @@
             <ol><li>Adjust the j-hooks so they are at the appropriate height to rack the bar. For this exercise, drape the chains directly over the end of the bar, trying to keep the ends away from the plates.</li><li>Begin lying on the floor with your head near the end of a power rack. Keeping your shoulder blades pulled together, pull the bar off of the hooks.</li><li>Lower the bar towards the bottom of your chest or upper stomach, squeezing the bar and attempting to pull it apart as you do so. Ensure that you tuck your elbows throughout the movement. Lower the bar until your upper arm contacts the ground and pause, preventing any slamming or bouncing of the weight.</li><li>Press the bar back up as fast as you can, keeping the bar, your wrists, and elbows in line as you do so.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/277/delete" class="ex-delete"
               onsubmit="return confirm('Delete Floor Press with Chains? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Floor Press with Chains">Delete</button>
         </form>
@@ -652,7 +657,7 @@
             <ol><li>Begin by adjusting the equipment to fit your body. Place your feet against the footplate in between the rollers as you lie facedown. Your knees should be just behind the pad.</li><li>Start from the bottom of the movement. Keep your back arched as you begin the movement by flexing the knees. Drive your toes into the foot plate as you do so. Keep your upper body straight, and continue until your body is upright.</li><li>Return to the starting position, keeping your descent under control.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/300/delete" class="ex-delete"
               onsubmit="return confirm('Delete Glute Ham Raise? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Glute Ham Raise">Delete</button>
         </form>
@@ -682,7 +687,7 @@
             <ol><li>Begin with a bar on a rack at shoulder height. Rack the bar across the rear of your shoulders as you would a power squat, not on top of your shoulders. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Step back from the rack.</li><li>Begin by bending at the hips, moving them back as you bend over to near parallel. Keep your back arched and your cervical spine in proper alignment.</li><li>Reverse the motion by extending through the hips with your glutes and hamstrings. Continue until you have returned to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/303/delete" class="ex-delete"
               onsubmit="return confirm('Delete Good Morning? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Good Morning">Delete</button>
         </form>
@@ -712,7 +717,7 @@
             <ol><li>Begin with a bar on a rack at about the same height as your stomach. Bend over underneath the bar and rack the bar across the rear of your shoulders as you would a power squat, not on top of your shoulders. At the proper height, you should be near parallel to the floor when bent over. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Keep your back arched and your cervical spine in proper alignment.</li><li>Begin the motion by extending through the hips with your glutes and hamstrings, and you are standing with the weight. Slowly lower the weight back to the pins returning to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/304/delete" class="ex-delete"
               onsubmit="return confirm('Delete Good Morning off Pins? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Good Morning off Pins">Delete</button>
         </form>
@@ -742,7 +747,7 @@
             <ol><li>Begin with a bar on a rack at about the same height as your stomach. Suspend the bar using chains or suspension straps.</li><li>Bend over underneath the bar and rack the bar across the rear of your shoulders as you would a power squat, not on top of your traps. At the proper height, you should be near parallel to the floor when bent over. Keep your back tight, shoulder blades pinched together, and your knees slightly bent. Keep your back arched and your cervical spine in proper alignment.</li><li>Begin the motion by extending through the hips with your glutes and hamstrings, and you are standing with the weight.</li><li>Slowly lower the weight back to the starting position, where it is supported by the chains.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/318/delete" class="ex-delete"
               onsubmit="return confirm('Delete Hanging Bar Good Morning? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hanging Bar Good Morning">Delete</button>
         </form>
@@ -772,7 +777,7 @@
             <ol><li>After choosing a suitable band, lay down in the middle of the rack, after securing the band on either side of you. If your rack doesn&#39;t have pegs, the band can be secured using heavy dumbbells or similar objects, just ensure they won&#39;t move.</li><li>Adjust your position so that the band is directly over your hips. Bend your knees and place your feet flat on the floor. Your hands can be on the floor or holding the band in position.</li><li>Keeping your shoulders on the ground, drive through your heels to raise your hips, pushing into the band as high as you can.</li><li>Pause at the top of the motion, and return to the starting position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/327/delete" class="ex-delete"
               onsubmit="return confirm('Delete Hip Lift with Band? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hip Lift with Band">Delete</button>
         </form>
@@ -802,7 +807,7 @@
             <ol><li>Set the bar to the proper height in a power rack. Kneel behind the bar; it may be beneficial to put a mat down to pad your knees. Slide under the bar, racking it across the back of your shoulders. Your shoulder blades should be retracted and the bar tight across your back. Unrack the weight.</li><li>With your head looking forward, sit back with your butt until you touch your calves.</li><li>Reverse the motion, returning the torso to an upright position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/400/delete" class="ex-delete"
               onsubmit="return confirm('Delete Kneeling Squat? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Kneeling Squat">Delete</button>
         </form>
@@ -832,7 +837,7 @@
             <ol><li>Pin presses remove the eccentric phase of the bench press, developing starting strength. They also allow you to train a desired range of motion.</li><li>The bench should be set up in a power rack. Set the pins to the desired point in your range of motion, whether it just be lockout or an inch off of your chest. The bar should be moved to the pins and prepared for lifting.</li><li>Begin by lying on the bench, with the bar directly above the contact point during your regular bench. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.</li><li>You can take a standard bench grip, or shoulder width to focus on the triceps. The bar, wrist, and elbow should stay in line at all times. Focus on squeezing the bar and trying to pull it apart.</li><li>Drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li><li>Return the bar to the pins, pausing before beginning the next repetition.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/537/delete" class="ex-delete"
               onsubmit="return confirm('Delete Pin Presses? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Pin Presses">Delete</button>
         </form>
@@ -857,15 +862,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

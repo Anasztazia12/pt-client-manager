@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
     TextAreaField,
+    DecimalField,
     FloatField,
     IntegerField,
     DateField,
@@ -95,6 +96,11 @@ class FoodEntryForm(FlaskForm):
     protein_g = FloatField("Protein (g)", validators=[Optional(), NumberRange(min=0, max=500)])
     carbs_g = FloatField("Carbs (g)", validators=[Optional(), NumberRange(min=0, max=1000)])
     fat_g = FloatField("Fat (g)", validators=[Optional(), NumberRange(min=0, max=500)])
+
+
+class PaymentForm(FlaskForm):
+    description = StringField("What it's for", validators=[DataRequired(), Length(max=120)])
+    amount = DecimalField("Amount", places=2, validators=[DataRequired(), NumberRange(min=1, max=999999)])
 
 
 class CheckInForm(FlaskForm):

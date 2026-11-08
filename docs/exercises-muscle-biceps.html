@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>Stand up with your torso upright and a dumbbell in each hand being held at arms length. The elbows should be close to the torso.</li><li>The palms of the hands should be facing your torso. This will be your starting position.</li><li>While holding the upper arm stationary, curl the right weight forward while contracting the biceps as you breathe out. Continue the movement until your biceps is fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the biceps. Tip: Only the forearms should move.</li><li>Slowly begin to bring the dumbbells back to starting position as your breathe in.</li><li>Repeat the movement with the left hand. This equals one repetition.</li><li>Continue alternating in this manner for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/10/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternate Hammer Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternate Hammer Curl">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>Sit down on an incline bench with a dumbbell in each hand being held at arms length. Tip: Keep the elbows close to the torso.This will be your starting position.</li><li>While holding the upper arm stationary, curl the right weight forward while contracting the biceps as you breathe out. As you do so, rotate the hand so that the palm is facing up. Continue the movement until your biceps is fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the biceps. Tip: Only the forearms should move.</li><li>Slowly begin to bring the dumbbell back to starting position as your breathe in.</li><li>Repeat the movement with the left hand. This equals one repetition.</li><li>Continue alternating in this manner for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/12/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternate Incline Dumbbell Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternate Incline Dumbbell Curl">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>Stand up with your torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting position.</li><li>While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out. Tip: Only the forearms should move.</li><li>Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard.</li><li>Slowly begin to bring the bar back to starting position as your breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/45/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Curl">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>Lie against an incline bench, with your arms holding a barbell and hanging down in a horizontal line. This will be your starting position.</li><li>While keeping the upper arms stationary, curl the weight up as high as you can while squeezing the biceps. Breathe out as you perform this portion of the movement. Tip: Only the forearms should move. Do not swing the arms.</li><li>After a second contraction, slowly go back to the starting position as you inhale. Tip: Make sure that you go all of the way down.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/46/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Curls Lying Against An Incline? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Curls Lying Against An Incline">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Lie on your side, with your upper arm against the foam roller. The upper arm should be more or less aligned with your body, with the outside of the bicep pressed against the foam roller.</li><li>Raise your hips off of the floor, supporting your weight on your arm and on your feet. Hold for 10-30 seconds, and then switch sides.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/105/delete" class="ex-delete"
               onsubmit="return confirm('Delete Brachialis-SMR? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Brachialis-SMR">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>Attach a rope attachment to a low pulley and stand facing the machine about 12 inches away from it.</li><li>Grasp the rope with a neutral (palms-in) grip and stand straight up keeping the natural arch of the back and your torso stationary.</li><li>Put your elbows in by your side and keep them there stationary during the entire movement. Tip: Only the forearms should move; not your upper arms. This will be your starting position.</li><li>Using your biceps, pull your arms up as you exhale until your biceps touch your forearms. Tip: Remember to keep the elbows in and your upper arms stationary.</li><li>After a 1 second contraction where you squeeze your biceps, slowly start to bring the weight back to the original position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/114/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Hammer Curls - Rope Attachment? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Hammer Curls - Rope Attachment">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>Place a preacher bench about 2 feet in front of a pulley machine.</li><li>Attach a straight bar to the low pulley.</li><li>Sit at the preacher bench with your elbow and upper arms firmly on top of the bench pad and have someone hand you the bar from the low pulley.</li><li>Grab the bar and fully extend your arms on top of the preacher bench pad. This will be your starting position.</li><li>Now start pilling the weight up towards your shoulders and squeeze the biceps hard at the top of the movement. Exhale as you perform this motion. Also, hold for a second at the top.</li><li>Now slowly lower the weight to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/123/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Preacher Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Preacher Curl">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>Stand up with your torso upright while holding an E-Z Curl Bar at the closer inner handle. The palm of your hands should be facing forward and they should be slightly tilted inwards due to the shape of the bar. The elbows should be close to the torso. This will be your starting position.</li><li>While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out. Tip: Only the forearms should move.</li><li>Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard.</li><li>Slowly begin to bring the bar back to starting position as your breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/175/delete" class="ex-delete"
               onsubmit="return confirm('Delete Close-Grip EZ Bar Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip EZ Bar Curl">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>Attach a band to each end of the bar. Take the bar, placing a foot on the middle of the band. Stand upright with a narrow, supinated grip on the EZ bar. The elbows should be close to the torso. This will be your starting position.</li><li>While keeping the upper arms in place, flex the elbows to execute the curl. Exhale as the weight is lifted.</li><li>Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard.</li><li>Slowly begin to bring the bar back to starting position as your breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/173/delete" class="ex-delete"
               onsubmit="return confirm('Delete Close-Grip EZ-Bar Curl with Band? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip EZ-Bar Curl with Band">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>Hold a barbell with both hands, palms up and a few inches apart.</li><li>Stand with your torso straight and your head up. Your feet should be about shoulder width and your elbows close to your torso. This will be your starting position. Tip: You will keep your upper arms and elbows stationary throughout the movement.</li><li>Curl the bar up in a semicircular motion until the forearms touch your biceps. Exhale as you perform this portion of the movement and contract your biceps hard for a second at the top. Tip: Avoid bending the back or using swinging motions as you lift the weight. Only the forearms should move.</li><li>Slowly go back down to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/178/delete" class="ex-delete"
               onsubmit="return confirm('Delete Close-Grip Standing Barbell Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Close-Grip Standing Barbell Curl">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>Sit down on a flat bench with one dumbbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor.</li><li>Use your right arm to pick the dumbbell up. Place the back of your right upper arm on the top of your inner right thigh. Rotate the palm of your hand until it is facing forward away from your thigh. Tip: Your arm should be extended and the dumbbell should be above the floor. This will be your starting position.</li><li>While holding the upper arm stationary, curl the weights forward while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Tip: At the top of the movement make sure that the little finger of your arm is higher than your thumb. This guarantees a good contraction. Hold the contracted position for a second as you squeeze the biceps.</li><li>Slowly begin to bring the dumbbells back to starting position as your breathe in. Caution: Avoid swinging motions at any time.</li><li>Repeat for the recommended amount of repetitions. Then repeat the movement with the left arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/181/delete" class="ex-delete"
               onsubmit="return confirm('Delete Concentration Curls? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Concentration Curls">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>Stand up straight with a dumbbell in each hand. Your hands should be down at your side with your palms facing in.</li><li>While keeping your palms facing in and without twisting your arm, curl the dumbbell of the right arm up towards your left shoulder as you exhale. Touch the top of the dumbbell to your shoulder and hold the contraction for a second.</li><li>Slowly lower the dumbbell along the same path as you inhale and then repeat the same movement for the left arm.</li><li>Continue alternating in this fashion until the recommended amount of repetitions is performed for each arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/183/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cross Body Hammer Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cross Body Hammer Curl">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>Grab a barbell with a supinated grip (palms facing forward) and get your elbows close to your torso and back. This will be your starting position.</li><li>As you exhale, curl the bar up while keeping the elbows to the back as you &#34;Drag&#34; the bar up by keeping it in contact with your torso. Tip: As you can see, you will not be keeping the elbows pinned to your sides, but instead you will be bringing them back. Also, do not lift your shoulders.</li><li>Slowly go back to the starting position as you keep the bar in contact with the torso at all times.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/219/delete" class="ex-delete"
               onsubmit="return confirm('Delete Drag Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Drag Curl">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>Stand (torso upright) with a dumbbell in each hand held at arms length. The elbows should be close to the torso and the palms of your hand should be facing your thighs.</li><li>While holding the upper arm stationary, curl the right weight as you rotate the palm of the hands until they are facing forward. At this point continue contracting the biceps as you breathe out until your biceps is fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the biceps. Tip: Only the forearms should move.</li><li>Slowly begin to bring the dumbbell back to the starting position as your breathe in. Tip: Remember to twist the palms back to the starting position (facing your thighs) as you come down.</li><li>Repeat the movement with the left hand. This equals one repetition.</li><li>Continue alternating in this manner for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/221/delete" class="ex-delete"
               onsubmit="return confirm('Delete Dumbbell Alternate Bicep Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Alternate Bicep Curl">Delete</button>
         </form>
@@ -562,7 +567,7 @@
             <ol><li>Stand up straight with a dumbbell in each hand at arm&#39;s length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position.</li><li>Now, keeping the upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps.</li><li>Then, inhale and slowly begin to lower the dumbbells back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/224/delete" class="ex-delete"
               onsubmit="return confirm('Delete Dumbbell Bicep Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Bicep Curl">Delete</button>
         </form>
@@ -592,7 +597,7 @@
             <ol><li>Grab a dumbbell on each hand and lie face down on an incline bench with your shoulders near top of the incline. Your knees can rest on the seat or your legs can be straddled to the sides (my preferred way).</li><li>Let your arms extend and hang naturally in front of you so that they are perpendicular to the floor.</li><li>Now keep your elbows in by your side and face the palms forward. This will be your starting position.</li><li>Raise the dumbbells by contracting the biceps until your arms are fully flexed. Exhale as you perform this portion of the movement and ensure that only the forearms move. The upper arms should remain stationary at all times.</li><li>Lower the dumbbells until your arms are fully extended.</li><li>Repeat for the recommended amount of times.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/238/delete" class="ex-delete"
               onsubmit="return confirm('Delete Dumbbell Prone Incline Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Dumbbell Prone Incline Curl">Delete</button>
         </form>
@@ -622,7 +627,7 @@
             <ol><li>Stand up straight while holding an EZ curl bar at the wide outer handle. The palms of your hands should be facing forward and slightly tilted inward due to the shape of the bar. Keep your elbows close to your torso. This will be your starting position.</li><li>Now, while keeping your upper arms stationary, exhale and curl the weights forward while contracting the biceps. Focus on only moving your forearms.</li><li>Continue to raise the weight until your biceps are fully contracted and the bar is at shoulder level. Hold the top contracted position for a moment and squeeze the biceps.</li><li>Then inhale and slowly lower the bar back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/253/delete" class="ex-delete"
               onsubmit="return confirm('Delete EZ-Bar Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete EZ-Bar Curl">Delete</button>
         </form>
@@ -652,7 +657,7 @@
             <ol><li>Hold the dumbbell towards the side farther from you so that you have more weight on the side closest to you. (This can be done for a good effect on all bicep dumbbell exercises). Now do a normal incline dumbbell curl, but keep your wrists as far back as possible so as to neutralize any stress that is placed on them.</li><li>Sit on an incline bench that is angled at 45-degrees while holding a dumbbell on each hand.</li><li>Let your arms hang down on your sides, with the elbows in, and turn the palms of your hands forward with the thumbs pointing away from the body. Tip: You will keep this hand position throughout the movement as there should not be any twisting of the hands as they come up. This will be your starting position.</li><li>Curl up the two dumbbells at the same time until your biceps are fully contracted and exhale. Tip: Do not swing the arms or use momentum. Keep a controlled motion at all times. Hold the contracted position for a second at the top.</li><li>As you inhale, slowly go back to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/274/delete" class="ex-delete"
               onsubmit="return confirm('Delete Flexor Incline Dumbbell Curls? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Flexor Incline Dumbbell Curls">Delete</button>
         </form>
@@ -682,7 +687,7 @@
             <ol><li>Stand up with your torso upright and a dumbbell on each hand being held at arms length. The elbows should be close to the torso.</li><li>The palms of the hands should be facing your torso. This will be your starting position.</li><li>Now, while holding your upper arm stationary, exhale and curl the weight forward while contracting the biceps. Continue to raise the weight until the biceps are fully contracted and the dumbbell is at shoulder level. Hold the contracted position for a brief moment as you squeeze the biceps. Tip: Focus on keeping the elbow stationary and only moving your forearm.</li><li>After the brief pause, inhale and slowly begin the lower the dumbbells back down to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/309/delete" class="ex-delete"
               onsubmit="return confirm('Delete Hammer Curls? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Hammer Curls">Delete</button>
         </form>
@@ -712,7 +717,7 @@
             <ol><li>Stand between a couple of high pulleys and grab a handle in each arm. Position your upper arms in a way that they are parallel to the floor with the palms of your hands facing you. This will be your starting position.</li><li>Curl the handles towards you until they are next to your ears. Make sure that as you do so you flex your biceps and exhale. The upper arms should remain stationary and only the forearms should move. Hold for a second in the contracted position as you squeeze the biceps.</li><li>Slowly bring back the arms to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/323/delete" class="ex-delete"
               onsubmit="return confirm('Delete High Cable Curls? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete High Cable Curls">Delete</button>
         </form>
@@ -742,7 +747,7 @@
             <ol><li>Sit back on an incline bench with a dumbbell in each hand held at arms length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position.</li><li>While holding the upper arm stationary, curl the weights forward while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second.</li><li>Slowly begin to bring the dumbbells back to starting position as your breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/341/delete" class="ex-delete"
               onsubmit="return confirm('Delete Incline Dumbbell Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Incline Dumbbell Curl">Delete</button>
         </form>
@@ -772,7 +777,7 @@
             <ol><li>Seat yourself on an incline bench with a dumbbell in each hand. You should pressed firmly against he back with your feet together. Allow the dumbbells to hang straight down at your side, holding them with a neutral grip. This will be your starting position.</li><li>Initiate the movement by flexing at the elbow, attempting to keep the upper arm stationary.</li><li>Continue to the top of the movement and pause, then slowly return to the start position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/345/delete" class="ex-delete"
               onsubmit="return confirm('Delete Incline Hammer Curls? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Incline Hammer Curls">Delete</button>
         </form>
@@ -802,7 +807,7 @@
             <ol><li>Hold a dumbbell in each hand and lie back on an incline bench.</li><li>The dumbbells should be at arm&#39;s length hanging at your sides and your palms should be facing out. This will be your starting position.</li><li>Now as you exhale curl the weight outward and up while keeping your forearms in line with your side deltoids. Continue the curl until the dumbbells are at shoulder height and to the sides of your deltoids. Tip: The end of the movement should look similar to a double biceps pose.</li><li>After a second contraction at the top of the movement, start to inhale and slowly lower the weights back to the starting position using the same path used to bring them up.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/346/delete" class="ex-delete"
               onsubmit="return confirm('Delete Incline Inner Biceps Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Incline Inner Biceps Curl">Delete</button>
         </form>
@@ -832,7 +837,7 @@
             <ol><li>Grab a straight bar or E-Z bar attachment that is attached to the low pulley with both hands, using an underhand (palms facing up) shoulder-width grip.</li><li>Lie flat on your back on top of an exercise mat in front of the weight stack with your feet flat against the frame of the pulley machine and your legs straight.</li><li>With your arms extended and your elbows close to your body slightly bend your arms. This will be your starting position.</li><li>While keeping your upper arms stationary and the elbows close to your body, curl the bar up slowly toward your chest as you breathe out and you squeeze the biceps.</li><li>After a second squeeze at the top of the movement, slowly return to the starting position.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/436/delete" class="ex-delete"
               onsubmit="return confirm('Delete Lying Cable Curl? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Lying Cable Curl">Delete</button>
         </form>
@@ -857,15 +862,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

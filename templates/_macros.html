@@ -1,0 +1,10 @@
+{# A client's photo from static/avatars/<name>.jpg, or their initials when there is none. #}
+{% macro avatar(name, size="") -%}
+  {%- set photo = name|client_photo -%}
+  {%- if photo -%}
+    <img class="avatar {{ size }}" src="{{ photo }}" alt="" width="44" height="44">
+  {%- else -%}
+    {%- set p = name.split() -%}
+    <span class="avatar is-initials {{ size }}" aria-hidden="true">{{ p[0][:1] }}{% if p|length > 1 %}{{ p[-1][:1] }}{% endif %}</span>
+  {%- endif -%}
+{%- endmacro %}

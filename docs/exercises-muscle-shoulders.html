@@ -24,6 +24,7 @@
       <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="active" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -142,7 +147,7 @@
             <ol><li>Move the cables to the bottom of the tower and select an appropriate weight.</li><li>Grasp the cables and hold them at shoulder height, palms facing forward. This will be your starting position.</li><li>Keeping your head and chest up, extend through the elbow to press one side directly over head.</li><li>After pausing at the top, return to the starting position and repeat on the opposite side.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/14/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternating Cable Shoulder Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternating Cable Shoulder Press">Delete</button>
         </form>
@@ -172,7 +177,7 @@
             <ol><li>In a standing position, hold a pair of dumbbells at your side.</li><li>Keeping your elbows slightly bent, raise the weights directly in front of you to shoulder height, avoiding any swinging or cheating.</li><li>Return the weights to your side.</li><li>On the next repetition, raise the weights laterally, raising them out to your side to about shoulder height.</li><li>Return the weights to the starting position and continue alternating to the front and side.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/15/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternating Deltoid Raise? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternating Deltoid Raise">Delete</button>
         </form>
@@ -202,7 +207,7 @@
             <ol><li>Clean two kettlebells to your shoulders. Clean the kettlebells to your shoulders by extending through the legs and hips as you pull the kettlebells towards your shoulders. Rotate your wrists as you do so.</li><li>Press one directly overhead by extending through the elbow, turning it so the palm faces forward while holding the other kettlebell stationary .</li><li>Lower the pressed kettlebell to the starting position and immediately press with your other arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/18/delete" class="ex-delete"
               onsubmit="return confirm('Delete Alternating Kettlebell Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Alternating Kettlebell Press">Delete</button>
         </form>
@@ -232,7 +237,7 @@
             <ol><li>Place a bar on the ground behind the head of an incline bench.</li><li>Lay on the bench face down. With a pronated grip, pick the barbell up from the floor. Flex the elbows, performing a reverse curl to bring the bar near your chest. This will be your starting position.</li><li>To begin, press the barbell out in front of your head by extending your elbows. Keep your arms parallel to the ground throughout the movement.</li><li>Return to the starting position and repeat to complete the set.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/24/delete" class="ex-delete"
               onsubmit="return confirm('Delete Anti-Gravity Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Anti-Gravity Press">Delete</button>
         </form>
@@ -262,7 +267,7 @@
             <ol><li>Stand up and extend your arms straight out by the sides. The arms should be parallel to the floor and perpendicular (90-degree angle) to your torso. This will be your starting position.</li><li>Slowly start to make circles of about 1 foot in diameter with each outstretched arm. Breathe normally as you perform the movement.</li><li>Continue the circular motion of the outstretched arms for about ten seconds. Then reverse the movement, going the opposite direction.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/25/delete" class="ex-delete"
               onsubmit="return confirm('Delete Arm Circles? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Arm Circles">Delete</button>
         </form>
@@ -292,7 +297,7 @@
             <ol><li>Sit on an exercise bench with back support and hold two dumbbells in front of you at about upper chest level with your palms facing your body and your elbows bent. Tip: Your arms should be next to your torso. The starting position should look like the contracted portion of a dumbbell curl.</li><li>Now to perform the movement, raise the dumbbells as you rotate the palms of your hands until they are facing forward.</li><li>Continue lifting the dumbbells until your arms are extended above you in straight arm position. Breathe out as you perform this portion of the movement.</li><li>After a second pause at the top, begin to lower the dumbbells to the original position by rotating the palms of your hands towards you. Tip: The left arm will be rotated in a counter clockwise manner while the right one will be rotated clockwise. Breathe in as you perform this portion of the movement.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/26/delete" class="ex-delete"
               onsubmit="return confirm('Delete Arnold Dumbbell Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Arnold Dumbbell Press">Delete</button>
         </form>
@@ -322,7 +327,7 @@
             <ol><li>Run a band around a stationary post like that of a squat rack.</li><li>Grab the band by the handles and stand back so that the tension in the band rises.</li><li>Extend and lift the arms straight in front of you. Tip: Your arms should be straight and parallel to the floor while perpendicular to your torso. Your feet should be firmly planted on the floor spread at shoulder width. This will be your starting position.</li><li>As you exhale, move your arms to the sides and back. Keep your arms extended and parallel to the floor. Continue the movement until the arms are extended to your sides.</li><li>After a pause, go back to the original position as you inhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/31/delete" class="ex-delete"
               onsubmit="return confirm('Delete Back Flyes - With Bands? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Back Flyes - With Bands">Delete</button>
         </form>
@@ -352,7 +357,7 @@
             <ol><li>This exercise is best done with a partner. If you lack a partner, the ball can be thrown and retrieved or thrown against a wall.</li><li>Begin standing a few meters in front of your partner, both facing the same direction. Begin holding the ball between your legs.</li><li>Squat down and then forcefully reverse direction, coming to full extension and you toss the ball over your head to your partner.</li><li>Your partner can then roll the ball back to you. Repeat for the desired number of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/33/delete" class="ex-delete"
               onsubmit="return confirm('Delete Backward Medicine Ball Throw? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Backward Medicine Ball Throw">Delete</button>
         </form>
@@ -382,7 +387,7 @@
             <ol><li>Begin with your arms extended straight out in front of you, holding the band with both hands.</li><li>Initiate the movement by performing a reverse fly motion, moving your hands out laterally to your sides.</li><li>Keep your elbows extended as you perform the movement, bringing the band to your chest. Ensure that you keep your shoulders back during the exercise.</li><li>Pause as you complete the movement, returning to the starting position under control.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/40/delete" class="ex-delete"
               onsubmit="return confirm('Delete Band Pull Apart? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Band Pull Apart">Delete</button>
         </form>
@@ -412,7 +417,7 @@
             <ol><li>Lie back on an Incline Bench. Using a medium width grip (a grip that is slightly wider than shoulder width), lift the bar from the rack and hold it straight over you with your arms straight. This will be your starting position.</li><li>While keeping the arms straight, lift the bar by protracting your shoulder blades, raising the shoulders from the bench as you breathe out.</li><li>Bring back the bar to the starting position as you breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/54/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Incline Shoulder Raise? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Incline Shoulder Raise">Delete</button>
         </form>
@@ -442,7 +447,7 @@
             <ol><li>Stand up straight while holding a barbell using a wide (higher than shoulder width) and overhand (palms facing your body) grip.</li><li>Bend knees slightly and bend over as you keep the natural arch of your back. Let the arms hang in front of you as they hold the bar. Once your torso is parallel to the floor, flare the elbows out and away from your body. Tip: Your torso and your arms should resemble the letter &#34;T&#34;. Now you are ready to begin the exercise.</li><li>While keeping the upper arms perpendicular to the torso, pull the barbell up towards your upper chest as you squeeze the rear delts and you breathe out. Tip: When performed correctly, this exercise should resemble a bench press in reverse. Also, refrain from using your biceps to do the work. Focus on targeting the rear delts; the arms should only act as hooks.</li><li>Slowly go back to the initial position as you breathe in.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/56/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Rear Delt Row? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Rear Delt Row">Delete</button>
         </form>
@@ -472,7 +477,7 @@
             <ol><li>Sit on a bench with back support in a squat rack. Position a barbell at a height that is just above your head. Grab the barbell with a pronated grip (palms facing forward).</li><li>Once you pick up the barbell with the correct grip width, lift the bar up over your head by locking your arms. Hold at about shoulder level and slightly in front of your head. This is your starting position.</li><li>Lower the bar down to the shoulders slowly as you inhale.</li><li>Lift the bar back up to the starting position as you exhale.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/59/delete" class="ex-delete"
               onsubmit="return confirm('Delete Barbell Shoulder Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Barbell Shoulder Press">Delete</button>
         </form>
@@ -502,7 +507,7 @@
             <ol><li>For this exercise you will need a heavy rope anchored at its center 15-20 feet away. Standing in front of the rope, take an end in each hand with your arms extended at your side. This will be your starting position.</li><li>Initiate the movement by rapidly raising one arm to shoulder level as quickly as you can.</li><li>As you let that arm drop to the starting position, raise the opposite side.</li><li>Continue alternating your left and right arms, whipping the ropes up and down as fast as you can.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/68/delete" class="ex-delete"
               onsubmit="return confirm('Delete Battling Ropes? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Battling Ropes">Delete</button>
         </form>
@@ -532,7 +537,7 @@
             <ol><li>Stand up straight while holding a dumbbell in each hand and with an incline bench in front of you.</li><li>While keeping your back straight and maintaining the natural arch of your back, lean forward until your forehead touches the bench in front of you. Let the arms hang in front of you perpendicular to the ground. The palms of your hands should be facing each other and your torso should be parallel to the floor. This will be your starting position.</li><li>Keeping your torso forward and stationary, and the arms straight with a slight bend at the elbows, lift the dumbbells straight to the side until both arms are parallel to the floor. Exhale as you lift the weights. Caution: avoid swinging the torso or bringing the arms back as opposed to the side.</li><li>After a one second contraction at the top, slowly lower the dumbbells back to the starting position.</li><li>Repeat the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/81/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over Dumbbell Rear Delt Raise With Head On Bench? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over Dumbbell Rear Delt Raise With Head On Bench">Delete</button>
         </form>
@@ -562,7 +567,7 @@
             <ol><li>Select a weight and hold the handle of the low pulley with your right hand.</li><li>Bend at the waist until your torso is nearly parallel to the floor. Your legs should be slightly bent with your left hand placed on your lower left thigh. Your right arm should be hanging from your shoulder in front of you and with a slight bend at the elbow. This will be your starting position.</li><li>Raise your right arm, elbow slightly bent, to the side until the arm is parallel to the floor and in line with your right ear. Breathe out as you perform this step.</li><li>Slowly lower the weight back to the starting position as you breathe in.</li><li>Repeat for the recommended amount of repetitions and repeat the movement with the other arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/82/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bent Over Low-Pulley Side Lateral? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bent Over Low-Pulley Side Lateral">Delete</button>
         </form>
@@ -592,7 +597,7 @@
             <ol><li>Sit on a Military Press Bench with a bar at shoulder level with a pronated grip (palms facing forward). Tip: Your grip should be wider than shoulder width and it should create a 90-degree angle between the forearm and the upper arm as the barbell goes down. This is your starting position.</li><li>Once you pick up the barbell with the correct grip, lift the bar up over your head by locking your arms.</li><li>Now lower the bar down to the back of the head slowly as you inhale.</li><li>Lift the bar back up to the starting position as you exhale.</li><li>Lower the bar down to the starting position slowly as you inhale. This is one repetition.</li><li>Alternate in this manner until you complete the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/106/delete" class="ex-delete"
               onsubmit="return confirm('Delete Bradford/Rocky Presses? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Bradford/Rocky Presses">Delete</button>
         </form>
@@ -622,7 +627,7 @@
             <ol><li>Sit next to a low pulley sideways (with legs stretched in front of you or crossed) and grasp the single hand cable attachment with the arm nearest to the cable. Tip: If you can adjust the pulley&#39;s height, you can use a flat bench to sit on instead.</li><li>Position the elbow against your side with the elbow bent at 90° and the arm pointing towards the pulley. This will be your starting position.</li><li>Pull the single hand cable attachment toward your body by internally rotating your shoulder until your forearm is across your abs. You will be creating an imaginary semi-circle. Tip: The forearm should be perpendicular to your torso at all times.</li><li>Slowly go back to the initial position.</li><li>Repeat for the recommended amount of repetitions and then repeat the movement with the next arm.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/118/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Internal Rotation? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Internal Rotation">Delete</button>
         </form>
@@ -652,7 +657,7 @@
             <ol><li>Adjust the pulleys to the appropriate height and adjust the weight. The pulleys should be above your head.</li><li>Grab the left pulley with your right hand and the right pulley with your left hand, crossing them in front of you. This will be your starting position.</li><li>Initiate the movement by moving your arms back and outward, keeping your arms straight as you execute the movement.</li><li>Pause at the end of the motion before returning the handles to the start position.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/124/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Rear Delt Fly? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Rear Delt Fly">Delete</button>
         </form>
@@ -682,7 +687,7 @@
             <ol><li>Sit in the same position on a low pulley row station as you would if you were doing seated cable rows for the back.</li><li>Attach a rope to the pulley and grasp it with an overhand grip. Your arms should be extended and parallel to the floor with the elbows flared out.</li><li>Keep your lower back upright and slide your hips back so that your knees are slightly bent. This will be your starting position.</li><li>Pull the cable attachment towards your upper chest, just below the neck, as you keep your elbows up and out to the sides. Continue this motion as you exhale until the elbows travel slightly behind the back. Tip: Keep your upper arms horizontal, perpendicular to the torso and parallel to the floor throughout the motion.</li><li>Go back to the initial position where the arms are extended and the shoulders are stretched forward. Inhale as you perform this portion of the movement.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/127/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Rope Rear-Delt Rows? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Rope Rear-Delt Rows">Delete</button>
         </form>
@@ -712,7 +717,7 @@
             <ol><li>Stand in the middle of two low pulleys that are opposite to each other and place a flat bench right behind you (in perpendicular fashion to you; the narrow edge of the bench should be the one behind you). Select the weight to be used on each pulley.</li><li>Now sit at the edge of the flat bench behind you with your feet placed in front of your knees.</li><li>Bend forward while keeping your back flat and rest your torso on the thighs.</li><li>Have someone give you the single handles attached to the pulleys. Grasp the left pulley with the right hand and the right pulley with the left after you select your weight. The pulleys should run under your knees and your arms will be extended with palms facing each other and a slight bend at the elbows. This will be the starting position.</li><li>While keeping the arms stationary, raise the upper arms to the sides until they are parallel to the floor and at shoulder height. Exhale during the execution of this movement and hold the contraction for a second.</li><li>Slowly lower your arms to the starting position as you inhale.</li><li>Repeat for the recommended amount of repetitions. Tip: Maintain upper arms perpendicular to torso and a fixed elbow position (10 degree to 30 degree angle) throughout exercise.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/130/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Seated Lateral Raise? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Seated Lateral Raise">Delete</button>
         </form>
@@ -742,7 +747,7 @@
             <ol><li>Move the cables to the bottom of the towers and select an appropriate weight.</li><li>Stand directly in between the uprights. Grasp the cables and hold them at shoulder height, palms facing forward. This will be your starting position.</li><li>Keeping your head and chest up, extend through the elbow to press the handles directly over head.</li><li>After pausing at the top, return to the starting position and repeat.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/131/delete" class="ex-delete"
               onsubmit="return confirm('Delete Cable Shoulder Press? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Cable Shoulder Press">Delete</button>
         </form>
@@ -772,7 +777,7 @@
             <ol><li>While standing upright, hold a barbell plate in both hands at the 3 and 9 o&#39;clock positions. Your palms should be facing each other and your arms should be extended straight out in front of you. This will be your starting position.</li><li>Initiate the movement by rotating the plate as far to one side as possible. Use the same type of movement you would use to turn a steering wheel to one side.</li><li>Reverse the motion, turning it all the way to the opposite side.</li><li>Repeat for the recommended amount of repetitions.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/143/delete" class="ex-delete"
               onsubmit="return confirm('Delete Car Drivers? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Car Drivers">Delete</button>
         </form>
@@ -802,7 +807,7 @@
             <ol><li>Sit on the edge of a chair, gripping the back of it.</li><li>Straighten your arms, keeping your back straight, and pull your upper body forward so you feel a stretch. Hold for 20-30 seconds.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/152/delete" class="ex-delete"
               onsubmit="return confirm('Delete Chair Upper Body Stretch? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Chair Upper Body Stretch">Delete</button>
         </form>
@@ -832,7 +837,7 @@
             <ol><li>The circus bell is an oversized dumbbell with a thick handle. Begin with the dumbbell between your feet, and grip the handle with both hands.</li><li>Clean the dumbbell by extending through your hips and knees to deliver the implement to the desired shoulder, letting go with the extra hand.</li><li>Ensure that you get one of the dumbbell heads behind the shoulder to keep from being thrown off balance. To raise it overhead, dip by flexing the knees, and the drive upwards as you extend the dumbbell overhead, leaning slightly away from it as you do so.</li><li>Carefully guide the bell back to the floor, keeping it under control as much as possible. It is best to perform this event on a thick rubber mat to prevent damage to the floor.</li></ol>
           </details>
         
-        <form method="POST" action="#" class="ex-delete"
+        <form method="POST" action="/exercises/162/delete" class="ex-delete"
               onsubmit="return confirm('Delete Circus Bell? This removes it from any plans too.');">
           <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="Delete Circus Bell">Delete</button>
         </form>
@@ -857,15 +862,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>

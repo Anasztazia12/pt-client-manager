@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 {% block title %}{{ client.name }}{% endblock %}
 {% block content %}
+  {% set parts = client.name.split() %}
+  {% set contact = [client.email, client.phone]|select|join(" · ") %}
+  {% from "_macros.html" import avatar %}
   <div class="page-head">
     <div>
       <p class="eyebrow back-link"><a href="{{ url_for('index') }}">&larr; All clients</a></p>
-      <h1 class="h3 mb-1">{{ client.name }}</h1>
-      <p class="text-muted mb-0">{{ client.email or "" }} {{ client.phone or "" }}</p>
+      <div class="client-head">
+        {{ avatar(client.name, "lg") }}
+        <div>
+          <h1 class="h3 mb-0">{{ client.name }}</h1>
+          {% if contact %}<p class="client-sub">{{ contact }}</p>{% endif %}
+        </div>
+      </div>
     </div>
     <div>
       <a href="{{ url_for('client_edit', client_id=client.id) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
       <form method="POST" action="{{ url_for('client_delete', client_id=client.id) }}" class="d-inline"
-            onsubmit="return confirm('Delete {{ client.name }} and all their plans, sessions and logs?');">
+            onsubmit="return confirm('Delete {{ client.name }} and all their plans, sessions, payments and logs?');">
         <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
       </form>
     </div>
@@ -24,14 +32,15 @@
     <div class="stat"><span class="stat-label">Sessions logged</span><span class="stat-value">{{ client.sessions|length }}</span></div>
     <div class="stat"><span class="stat-label">Calories today</span><span class="stat-value">{{ today_totals.kcal }}{% if client.daily_kcal_target %}<small> / {{ client.daily_kcal_target }}</small>{% endif %}</span></div>
     <div class="stat stat-note"><span class="stat-label">Goal</span><span class="stat-value">{{ client.goal or "Not set" }}</span></div>
-    <div class="stat stat-note{% if client.injuries_notes %} warn{% endif %}"><span class="stat-label">Injuries / notes</span><span class="stat-value">{{ client.injuries_notes or "None noted" }}</span></div>
+    <div class="stat stat-note{% if client.injuries_notes %} warn{% endif %}"><span class="stat-label">Injuries / notes</span><span class="stat-value">{{ client.injuries_notes or "None" }}</span></div>
   </div>
 
+
   <div class="row g-3 mb-3">
-    <div class="col-lg-7" id="progress">
+    <div class="col-xl-7" id="progress">
       <div class="panel">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h5 mb-0">Weight progress</h2>
+        <div class="panel-head">
+          <h2 class="h5">Weight progress</h2>
           {% if latest and latest.waist_cm %}<span class="chip">Waist <strong>{{ latest.waist_cm }} cm</strong></span>{% endif %}
         </div>
         {% set pts = [] %}
@@ -39,23 +48,34 @@
         {% for c in checkins %}{% set _ = pts.append((c.date, c.weight_kg)) %}{% endfor %}
         {% if pts|length >= 2 %}
           {% set ws = pts|map(attribute=1)|list %}
-          {% set lo = ws|min - 1 %}{% set hi = ws|max + 1 %}
-          {% set w, h, pad = 560, 170, 28 %}
+          {% set lo = (ws|min - 0.5)|round(0, 'floor') %}{% set hi = (ws|max + 0.5)|round(0, 'ceil') %}
+          {% set w, h = 640, 220 %}
+          {% set left, right, top, bottom = 52, 16, 22, 28 %}
+          {% set first_day = pts[0][0] %}
+          {% set span = (pts[-1][0] - first_day).days or 1 %}
           <svg class="weight-chart" viewBox="0 0 {{ w }} {{ h }}" role="img" aria-label="Weight from {{ ws[0] }} kg to {{ ws[-1] }} kg">
-            {% for i in range(3) %}{% set gy = pad + i * (h - 2 * pad) / 2 %}<line x1="{{ pad }}" x2="{{ w - pad }}" y1="{{ gy }}" y2="{{ gy }}" class="grid"/>{% endfor %}
-            {% set ns = namespace(d="") %}
-            {% for d, kg in pts %}
-              {% set x = pad + loop.index0 * (w - 2 * pad) / (pts|length - 1) %}
-              {% set y = pad + (hi - kg) / (hi - lo) * (h - 2 * pad) %}
-              {% set ns.d = ns.d ~ ("M" if loop.first else " L") ~ x|round(1) ~ " " ~ y|round(1) %}
+            {% for i in range(3) %}
+              {% set gy = top + i * (h - top - bottom) / 2 %}
+              <line x1="{{ left }}" x2="{{ w - right }}" y1="{{ gy }}" y2="{{ gy }}" class="grid"/>
+              <text x="{{ left - 8 }}" y="{{ gy + 4 }}" class="tick">{{ (hi - i * (hi - lo) / 2)|round(1) }}</text>
             {% endfor %}
+            {% set ns = namespace(d="", x=0) %}
+            {% for d, kg in pts %}
+              {% set ns.x = left + (d - first_day).days / span * (w - left - right) %}
+              {% set y = top + (hi - kg) / (hi - lo) * (h - top - bottom) %}
+              {% set ns.d = ns.d ~ ("M" if loop.first else " L") ~ ns.x|round(1) ~ " " ~ y|round(1) %}
+            {% endfor %}
+            <path d="{{ ns.d }} L{{ ns.x|round(1) }} {{ h - bottom }} L{{ left }} {{ h - bottom }} Z" class="area"/>
             <path d="{{ ns.d }}" class="line"/>
             {% for d, kg in pts %}
-              {% set x = pad + loop.index0 * (w - 2 * pad) / (pts|length - 1) %}
-              {% set y = pad + (hi - kg) / (hi - lo) * (h - 2 * pad) %}
-              <circle cx="{{ x|round(1) }}" cy="{{ y|round(1) }}" r="5" class="dot"/>
-              <text x="{{ x|round(1) }}" y="{{ (y - 12)|round(1) }}" class="val">{{ kg }}</text>
-              <text x="{{ x|round(1) }}" y="{{ h - 6 }}" class="lbl">{{ d.strftime("%d %b") }}</text>
+              {% set x = left + (d - first_day).days / span * (w - left - right) %}
+              {% set y = top + (hi - kg) / (hi - lo) * (h - top - bottom) %}
+              <circle cx="{{ x|round(1) }}" cy="{{ y|round(1) }}" r="3.5" class="dot"/>
+              {% if loop.first or loop.last %}
+                {# a falling line arrives from above, so the last value sits under its point #}
+                <text x="{{ x|round(1) }}" y="{{ (y + 28 if loop.last and pts[-2][1] > kg else y - 10)|round(1) }}" class="val {{ 'start' if loop.first else 'end' }}">{{ kg }}</text>
+                <text x="{{ x|round(1) }}" y="{{ h - 8 }}" class="lbl {{ 'start' if loop.first else 'end' }}">{{ d.strftime("%d %b") }}</text>
+              {% endif %}
             {% endfor %}
           </svg>
         {% else %}
@@ -66,16 +86,16 @@
           {{ checkin_form.date(class="form-control", type="date", **{"aria-label": "Check-in date"}) }}
           {{ checkin_form.weight_kg(class="form-control", placeholder="Weight kg", **{"aria-label": "Weight in kg"}) }}
           {{ checkin_form.waist_cm(class="form-control", placeholder="Waist cm", **{"aria-label": "Waist in cm"}) }}
-          <button type="submit" class="btn btn-primary">+ Check-in</button>
+          <button type="submit" class="btn btn-outline-secondary">Add check-in</button>
         </form>
       </div>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-xl-5">
       <div class="panel">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h5 mb-0">Nutrition, last 7 days</h2>
-          <a href="{{ url_for('nutrition', client_id=client.id) }}" class="btn btn-sm btn-primary">Food diary</a>
+        <div class="panel-head">
+          <h2 class="h5">Calories, last 7 days</h2>
+          <a href="{{ url_for('nutrition', client_id=client.id) }}" class="btn btn-sm btn-outline-secondary">Food diary</a>
         </div>
         <div class="week-bars" role="img" aria-label="Calories logged over the last 7 days">
           {% for d in week %}
@@ -90,63 +110,85 @@
             </a>
           {% endfor %}
         </div>
-        <p class="small text-muted mb-0 mt-2">{% if client.daily_kcal_target %}Line = daily target of {{ client.daily_kcal_target }} kcal. Today: {{ today_totals.protein }} g protein, {{ today_totals.carbs }} g carbs, {{ today_totals.fat }} g fat.{% else %}Set a daily calorie target on the client to see it here.{% endif %}</p>
+        <p class="small text-muted mb-0 mt-2">{% if client.daily_kcal_target %}Dashed line: daily target of {{ client.daily_kcal_target }} kcal. Today: {{ today_totals.protein }} g protein, {{ today_totals.carbs }} g carbs, {{ today_totals.fat }} g fat.{% else %}Set a daily calorie target on the client to see it here.{% endif %}</p>
       </div>
     </div>
   </div>
 
-  <div class="row g-3">
-    <div class="col-lg-6">
+  <div class="row g-3 mb-3">
+    <div class="col-xl-6">
       <div class="panel">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Workout plans</h2>
-        <a href="{{ url_for('plan_new', client_id=client.id) }}" class="btn btn-sm btn-primary">+ New plan</a>
-      </div>
-      {% if client.plans %}
-        <ul class="list-group">
-          {% for plan in client.plans %}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="{{ url_for('plan_detail', plan_id=plan.id) }}">{{ plan.name }}</a>
-              <span class="badge bg-secondary rounded-pill">{{ plan.plan_exercises|length }} exercises</span>
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p class="text-muted">No plans yet.</p>
-      {% endif %}
+        <div class="panel-head">
+          <h2 class="h5">Workout plans</h2>
+          <a href="{{ url_for('plan_new', client_id=client.id) }}" class="btn btn-sm btn-outline-secondary">+ New plan</a>
+        </div>
+        {% if client.plans %}
+          <ul class="list-group">
+            {% for plan in client.plans %}
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{{ url_for('plan_detail', plan_id=plan.id) }}">{{ plan.name }}</a>
+                <span class="badge bg-secondary">{{ plan.plan_exercises|length }} exercises</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="text-muted mb-0">No plans yet.</p>
+        {% endif %}
       </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-xl-6">
       <div class="panel">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Sessions</h2>
-        <a href="{{ url_for('session_new', client_id=client.id) }}" class="btn btn-sm btn-primary">+ Log session</a>
-      </div>
-      {% if client.sessions %}
-        <ul class="list-group">
-          {% for s in client.sessions|sort(attribute='date', reverse=True) %}
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="session-date">{{ s.date.strftime("%a %d %b") }}
-                  {% if s.session_type %}<span class="type-tag type-{{ s.session_type }}">{{ s.session_type }}</span>{% endif %}
-                  {% if s.duration_minutes %}<span class="chip ms-1">{{ s.duration_minutes }} min</span>{% endif %}</span>
-                <span>
-                  <a href="{{ url_for('session_edit', session_id=s.id) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <form method="POST" action="{{ url_for('session_delete', session_id=s.id) }}" class="d-inline"
-                        onsubmit="return confirm('Delete this session?');">
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                  </form>
-                </span>
-              </div>
-              {% if s.notes %}<small class="text-muted">{{ s.notes }}</small>{% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p class="text-muted">No sessions logged yet.</p>
-      {% endif %}
+        <div class="panel-head">
+          <h2 class="h5">Sessions</h2>
+          <a href="{{ url_for('session_new', client_id=client.id) }}" class="btn btn-sm btn-outline-secondary">+ Log session</a>
+        </div>
+        {% if client.sessions %}
+          <ul class="list-group">
+            {% for s in client.sessions|sort(attribute='date', reverse=True) %}
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                  <span class="d-flex align-items-center gap-2 flex-wrap">
+                    <span class="session-date">{{ s.date.strftime("%a %d %b") }}</span>
+                    {% if s.session_type %}<span class="type-tag type-{{ s.session_type }}">{{ s.session_type }}</span>{% endif %}
+                    {% if s.duration_minutes %}<span class="text-muted small">{{ s.duration_minutes }} min</span>{% endif %}
+                  </span>
+                  <span>
+                    <a href="{{ url_for('session_edit', session_id=s.id) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <form method="POST" action="{{ url_for('session_delete', session_id=s.id) }}" class="d-inline"
+                          onsubmit="return confirm('Delete this session?');">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </span>
+                </div>
+                {% if s.notes %}<small class="text-muted">{{ s.notes }}</small>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="text-muted mb-0">No sessions logged yet.</p>
+        {% endif %}
       </div>
     </div>
+  </div>
+
+  <div class="panel payments-panel" id="payments">
+    <div class="panel-head"><h2 class="h5">Payments</h2></div>
+    {% if stripe_enabled %}
+      <form method="POST" action="{{ url_for('payment_new', client_id=client.id) }}" novalidate class="payment-row mb-3">
+        {{ payment_form.hidden_tag() }}
+        {{ payment_form.description(class="form-control", placeholder="What it's for, e.g. 4 sessions", **{"aria-label": "What the payment is for"}) }}
+        {{ payment_form.amount(class="form-control", placeholder="Amount (" ~ currency|upper ~ ")", inputmode="decimal", **{"aria-label": "Amount in " ~ currency|upper}) }}
+        <button type="submit" class="btn btn-primary">Create payment link</button>
+      </form>
+    {% else %}
+      <p class="text-muted small">Stripe is not set up yet. Add STRIPE_SECRET_KEY to create payment links.</p>
+    {% endif %}
+    {% if payments %}
+      {% set show_client = false %}
+      {% include "_payment_rows.html" %}
+    {% else %}
+      <p class="text-muted mb-0">No payments yet.</p>
+    {% endif %}
   </div>
 {% endblock %}

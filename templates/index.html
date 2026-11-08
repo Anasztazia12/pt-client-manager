@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Clients{% endblock %}
 {% block content %}
+  {% from "_macros.html" import avatar %}
   <div class="page-head">
     <div>
       <p class="eyebrow">{% if q %}{{ clients|length }} result{{ "s" if clients|length != 1 }} for “{{ q }}”{% else %}{{ clients|length }} active client{{ "s" if clients|length != 1 }}{% endif %}</p>
@@ -10,24 +11,37 @@
   </div>
 
   {% if clients %}
-    <div class="row g-3">
-      {% for client in clients %}
-        {% set parts = client.name.split() %}
-        <div class="col-md-6 col-lg-4">
-          <a class="client-card" href="{{ url_for('client_detail', client_id=client.id) }}">
-            <div class="client-top">
-              <span class="initials" aria-hidden="true">{{ parts[0][:1] }}{% if parts|length > 1 %}{{ parts[-1][:1] }}{% endif %}</span>
-              <h2>{{ client.name }}</h2>
-            </div>
-            <p class="client-goal">{{ client.goal or "No goal set" }}</p>
-            <div class="chips">
-              <span class="chip"><strong>{{ client.plans|length }}</strong> plan{{ "s" if client.plans|length != 1 }}</span>
-              <span class="chip"><strong>{{ client.sessions|length }}</strong> session{{ "s" if client.sessions|length != 1 }}</span>
-              {% if client.start_date %}<span class="chip">Since {{ client.start_date.strftime("%b %Y") }}</span>{% endif %}
-            </div>
-          </a>
-        </div>
-      {% endfor %}
+    <div class="table-wrap">
+      <div class="table-responsive border-0">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th class="d-none d-md-table-cell">Goal</th>
+              <th class="text-end">Plans</th>
+              <th class="text-end">Sessions</th>
+              <th class="d-none d-md-table-cell">Client since</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for client in clients %}
+              {% set parts = client.name.split() %}
+              <tr class="row-link">
+                <td>
+                  <div class="who">
+                    {{ avatar(client.name) }}
+                    <span><a class="stretched-link" href="{{ url_for('client_detail', client_id=client.id) }}"><b>{{ client.name }}</b></a>{% if client.email %}<small>{{ client.email }}</small>{% endif %}</span>
+                  </div>
+                </td>
+                <td class="d-none d-md-table-cell">{{ client.goal or "No goal set" }}</td>
+                <td class="text-end">{{ client.plans|length }}</td>
+                <td class="text-end">{{ client.sessions|length }}</td>
+                <td class="d-none d-md-table-cell text-nowrap text-muted">{% if client.start_date %}{{ client.start_date.strftime("%b %Y") }}{% else %}&ndash;{% endif %}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
   {% else %}
     <p class="text-muted">{% if q %}No clients match “{{ q }}”.{% else %}No clients yet. Add your first client to get started.{% endif %}</p>

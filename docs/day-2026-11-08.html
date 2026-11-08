@@ -21,9 +21,10 @@
     </a>
     <nav class="side-nav">
       <p class="side-label">Workspace</p>
-      <a class="" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a class="active" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>Overview</a>
       <a class="" href="clients.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.5 3.5 5.2"/></svg>Clients</a>
       <a class="" href="nutrition.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10M17 21V3c-2.5 1.5-3.5 4-3.5 7.5V13H17"/></svg>Nutrition</a>
+      <a class="" href="payments.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>Payments</a>
       <p class="side-label">Tools</p>
       <a class="" href="calculator.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15v2.5"/></svg>Calorie calculator</a>
       <a class="" href="exercises.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Exercise library</a>
@@ -32,16 +33,20 @@
   </aside>
 
   <div class="main">
+    
+      <div class="demo-bar">Demo with sample data. Click around freely; changes are not saved.</div>
+    
+
     <header class="topbar">
       <button class="topbar-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-      <form class="topbar-search" method="GET" action="#" role="search">
+      <form class="topbar-search" method="GET" action="/" role="search">
         <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" name="q" placeholder="Search clients" value="" aria-label="Search clients">
       </form>
-      <span class="topbar-date">Tue 03 Nov 2026</span>
+      <span class="topbar-date">Sun 08 Nov 2026</span>
     </header>
 
-    <main class="content"><div class="demo-bar">Demo with sample clients. Click around freely; changes are not saved.</div>
+    <main class="content">
       
         
       
@@ -51,7 +56,7 @@
   <div class="page-head">
     <div>
       <p class="eyebrow"><a href="index.html">&larr; Overview</a></p>
-      <h1 class="h3 mb-0">Sunday 08 November</h1>
+      <h1 class="h3 mb-0">Today, Sunday 08 November</h1>
     </div>
     <div class="day-nav">
       <a class="btn btn-outline-secondary btn-sm" href="day-2026-11-07.html" aria-label="Previous day">&larr;</a>
@@ -60,8 +65,8 @@
   </div>
 
   <div class="stat-grid day-stats">
-    <div class="stat"><span class="stat-label">Sessions</span><span class="stat-value">0</span></div>
-    <div class="stat"><span class="stat-label">Time coached</span><span class="stat-value">0 min</span></div>
+    <div class="stat"><span class="stat-label">Sessions</span><span class="stat-value">3</span></div>
+    <div class="stat"><span class="stat-label">Time coached</span><span class="stat-value">160 min</span></div>
   </div>
 
   <div class="row g-3">
@@ -69,31 +74,68 @@
       <h2 class="ov-h2">Sessions</h2>
       <div class="ov-clients">
         
-          <div class="panel calc-empty"><p class="mb-0 text-muted">Nothing logged yet for this day.</p></div>
+          <a class="ov-client" href="clients-5.html">
+            <img class="avatar " src="static/avatars/amara-osei.jpg" alt="" width="44" height="44">
+            <div class="ov-client-main">
+              <h3>Amara Osei</h3>
+              <div class="ov-facts">
+                <span class="type-tag type-cardio" style="margin-left:0">cardio</span>
+                <span><b>45</b> min</span>
+              </div>
+              <p class="ov-goal mt-1 mb-0">Weighted step-ups went well. Longer walk this weekend.</p>
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        
+          <a class="ov-client" href="clients-7.html">
+            <img class="avatar " src="static/avatars/lucy-hart.jpg" alt="" width="44" height="44">
+            <div class="ov-client-main">
+              <h3>Lucy Hart</h3>
+              <div class="ov-facts">
+                <span class="type-tag type-stretching" style="margin-left:0">stretching</span>
+                <span><b>40</b> min</span>
+              </div>
+              <p class="ov-goal mt-1 mb-0">No knee pain on split squats. Start walk-run intervals.</p>
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        
+          <a class="ov-client" href="clients-3.html">
+            <img class="avatar " src="static/avatars/michael-brown.jpg" alt="" width="44" height="44">
+            <div class="ov-client-main">
+              <h3>Michael Brown</h3>
+              <div class="ov-facts">
+                <span class="type-tag type-strength" style="margin-left:0">strength</span>
+                <span><b>75</b> min</span>
+              </div>
+              <p class="ov-goal mt-1 mb-0">New best on bench press. Keep rest at 2 minutes.</p>
+            </div>
+            <span class="ov-arrow" aria-hidden="true">&rarr;</span>
+          </a>
         
       </div>
     </div>
     <div class="col-lg-5">
-      <h2 class="ov-h2">Clients</h2>
+      <h2 class="ov-h2">Didn't train this day</h2>
       <div class="ov-attention">
         
+          <a href="clients-6-sessions-new.html">
+            <img class="avatar sm" src="static/avatars/daniel-novak.jpg" alt="" width="44" height="44">
+            <span><b>Daniel Novak</b><small>+ Log a session</small></span>
+          </a>
+        
           <a href="clients-1-sessions-new.html">
-            <span class="initials sm" aria-hidden="true">EC</span>
+            <img class="avatar sm" src="static/avatars/emma-clarke.jpg" alt="" width="44" height="44">
             <span><b>Emma Clarke</b><small>+ Log a session</small></span>
           </a>
         
           <a href="clients-2-sessions-new.html">
-            <span class="initials sm" aria-hidden="true">JP</span>
+            <img class="avatar sm" src="static/avatars/james-patel.jpg" alt="" width="44" height="44">
             <span><b>James Patel</b><small>+ Log a session</small></span>
           </a>
         
           <a href="clients-4-sessions-new.html">
-            <span class="initials sm" aria-hidden="true">MB</span>
-            <span><b>Michael Brown</b><small>+ Log a session</small></span>
-          </a>
-        
-          <a href="clients-3-sessions-new.html">
-            <span class="initials sm" aria-hidden="true">ST</span>
+            <img class="avatar sm" src="static/avatars/sophie-turner.jpg" alt="" width="44" height="44">
             <span><b>Sophie Turner</b><small>+ Log a session</small></span>
           </a>
         
@@ -109,15 +151,36 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var button = e.target.closest('[data-copy]');
+      if (!button) return;
+      navigator.clipboard.writeText(button.dataset.copy).then(function () {
+        button.textContent = 'Copied';
+        setTimeout(function () { button.textContent = 'Copy link'; }, 2000);
+      }, function () {
+        window.prompt('Copy this link:', button.dataset.copy);
+      });
+    });
+  </script>
 <script>
-document.addEventListener('submit', function (e) {
-  if (e.target.id === 'calcForm') return;
-  e.preventDefault();
-  var t = document.querySelector('.demo-toast');
-  if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; document.body.appendChild(t); }
-  t.textContent = 'This is a demo, so nothing is saved.';
-  t.classList.add('show');
-  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
-}, true);
+(function () {
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'demo-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  document.addEventListener('submit', function (e) {
+    if (e.target.id === 'calcForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    toast('This is a demo, so nothing is saved.');
+  }, true);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[data-demo-off]')) { e.preventDefault(); toast('This page is not part of the demo.'); }
+  });
+})();
 </script></body>
 </html>
